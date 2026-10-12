@@ -1,0 +1,1282 @@
+[
+  {
+    "path": ".flutter-version",
+    "size": 7,
+    "sha256": "AF7AD6B385523C1C98977A15B50C53B1FD4F35B1C5D85513600A03BA3284F6B1"
+  },
+  {
+    "path": ".gitignore",
+    "size": 202,
+    "sha256": "3A63BBD803EE3E097F3B486E88E0C76596D733181BFCF2D036058CC233C2FC45"
+  },
+  {
+    "path": "AGENTS.md",
+    "size": 15278,
+    "sha256": "5DADA7B7B1EA0DCC56A2864413A3A3CC4F877B8A744DF91FB9A9C3BBC58FA5C6"
+  },
+  {
+    "path": "analysis_options.yaml",
+    "size": 128,
+    "sha256": "C4750227403D47AB57DF1745B8604229AEB77180F420CEBD8FEA0AE65AD7C6AC"
+  },
+  {
+    "path": "android/app/build.gradle.kts",
+    "size": 1136,
+    "sha256": "487C98606C6ECC7453812862E6CA4377C976302C4E27C102A822DC6387BF21E2"
+  },
+  {
+    "path": "android/app/src/debug/AndroidManifest.xml",
+    "size": 235,
+    "sha256": "B821625B1B9360B3D2C5E068CBECF95414D83747BBEC83D24886053F7996B334"
+  },
+  {
+    "path": "android/app/src/main/AndroidManifest.xml",
+    "size": 1390,
+    "sha256": "75E088E1A2E84949A18FDC248D84671EA0508EE09D2CB3931A2E05B7CF94F8EF"
+  },
+  {
+    "path": "android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+    "size": 804,
+    "sha256": "AC951E151F6BE1FFEF2AB1800ECD1E5B9A288A2AA95242AA0C9DDD0821A00A72"
+  },
+  {
+    "path": "android/app/src/main/kotlin/com/happiness/threads/MainActivity.kt",
+    "size": 5917,
+    "sha256": "CFAFF34E5CDD6D0408FD65880124037C4DD69D1115018922D02AB6E7D1030DFB"
+  },
+  {
+    "path": "android/app/src/main/kotlin/com/happiness/threads/ModeMotionStream.kt",
+    "size": 2454,
+    "sha256": "3D6077C5E95D53161E8BFFC5A638A509CCB43A1D5E49A7ADF646F69406544AC5"
+  },
+  {
+    "path": "android/app/src/main/res/drawable-nodpi/user_app_icon.png",
+    "size": 5345463,
+    "sha256": "757EA45FD003028614750D81AA39B3BF95712602D43C2E8799FB3013D0F52A4A"
+  },
+  {
+    "path": "android/app/src/main/res/drawable/app_icon.xml",
+    "size": 424,
+    "sha256": "4E01C0E1C1B51DE3A5B7450AF028A1446665D3BC813012BC32C05B611B5FA499"
+  },
+  {
+    "path": "android/app/src/main/res/drawable/launch_background.xml",
+    "size": 178,
+    "sha256": "32FD394240A788B16AEBB6F7BF5BD5D2B3F33FED5880690B2CF4F38BFA7B5FA1"
+  },
+  {
+    "path": "android/app/src/main/res/values/styles.xml",
+    "size": 388,
+    "sha256": "375905DDA9D2E4F6E16C4B609DD976F54D757D42B5C5767B530323EB7263173D"
+  },
+  {
+    "path": "android/app/src/profile/AndroidManifest.xml",
+    "size": 218,
+    "sha256": "D39BE72484ED9F620B4923361F7D7D6BD7D66B468569039DFA5AC3461430CF47"
+  },
+  {
+    "path": "android/build.gradle.kts",
+    "size": 405,
+    "sha256": "82FB9B1D651005C7CB103B3F0F8834765A82EAA1BEAFA3ED46D1A7E09E442981"
+  },
+  {
+    "path": "android/gradle.properties",
+    "size": 250,
+    "sha256": "1A06EC7E8D112C657F570B600C99A7DEEB9917642FD3CC8014414E86856BB54A"
+  },
+  {
+    "path": "android/gradle/wrapper/gradle-wrapper.jar",
+    "size": 46175,
+    "sha256": "B3A875DDC1F044746E1B1A55F645584505F4A10438C1AFEA9F15E92A7C42EC13"
+  },
+  {
+    "path": "android/gradle/wrapper/gradle-wrapper.properties",
+    "size": 289,
+    "sha256": "5D853E63D2F0193D6F4E0BDCC1EC9E0B1983A1C910F13DCF687D944DF8305B79"
+  },
+  {
+    "path": "android/gradlew",
+    "size": 8640,
+    "sha256": "B2FE376B143A459BA5D0BD290DC89BEED5399FC6D159CD1214BD642EA94BCF07"
+  },
+  {
+    "path": "android/gradlew.bat",
+    "size": 2825,
+    "sha256": "9386E790D58B9368CA8E034536A5BAA688643D51CB37BFA462503D36FD0291A6"
+  },
+  {
+    "path": "android/settings.gradle.kts",
+    "size": 706,
+    "sha256": "5E7B0B60560B052B5B511894075DDF70230994BB4C87E0696A90CB4286AFEC4A"
+  },
+  {
+    "path": "assets/action_cards/action01.png",
+    "size": 2065982,
+    "sha256": "67E91F269F1CB1CFCE25ACB337251D24B335EF3D3376918A4ADBCA3F27D1C39F"
+  },
+  {
+    "path": "assets/action_cards/action02.png",
+    "size": 2065982,
+    "sha256": "67E91F269F1CB1CFCE25ACB337251D24B335EF3D3376918A4ADBCA3F27D1C39F"
+  },
+  {
+    "path": "assets/action_cards/action03.png",
+    "size": 2012241,
+    "sha256": "7F036CBA11957CDBC989DAA8E760EB9578FD020057134DF58A41952F8B6D5EAA"
+  },
+  {
+    "path": "assets/action_cards/action04.png",
+    "size": 1957842,
+    "sha256": "50FD8542AAB7E16483AA4A4A4213489AE702B025CF12FD10416197FCDC259DA1"
+  },
+  {
+    "path": "assets/action_cards/action05.png",
+    "size": 2022432,
+    "sha256": "6DDF8069E892FFAC532CBA5EEB28D432D2CB95DCDEA6A4627895A3A8EFC172EF"
+  },
+  {
+    "path": "assets/audio/background_music.mp3",
+    "size": 1174306,
+    "sha256": "01893611D429D5DA73F8333BDAB4E15FD86B95B6A941524A79494E919B075C63"
+  },
+  {
+    "path": "assets/backgrounds/farm_scene.png",
+    "size": 2305324,
+    "sha256": "5756DAF0630A7DDA2CB6BED0649B6D36DDAF8DEFE24C512D20A4DB202454E618"
+  },
+  {
+    "path": "assets/backgrounds/mode_grass.png",
+    "size": 4270044,
+    "sha256": "74E0B6D0F6E904F6BB1DB3EEC8971374781B13AEDC4D5855B7C9808EB2986530"
+  },
+  {
+    "path": "assets/backgrounds/README.md",
+    "size": 343,
+    "sha256": "04D83C2DB7A9AE6CEE6D0A88C0FBC3E7835DA2A65142ECE8E8139DDAE4EB9CB5"
+  },
+  {
+    "path": "assets/crops/白萝卜.png",
+    "size": 1153185,
+    "sha256": "5D63E73226EA74824BE0D5890CDD494C8F83C3EEF268E422CDE266E4EB813CD1"
+  },
+  {
+    "path": "assets/crops/包菜.png",
+    "size": 1013077,
+    "sha256": "B8FE498B1D0350187332351431A1EFF6662B0616FD4B045FC44BBB23893BE3B3"
+  },
+  {
+    "path": "assets/crops/菠萝.png",
+    "size": 940043,
+    "sha256": "60FA0A693D53E1CC339BF862F32C4E0100E6D3DFB1497D79A0E9442113E1FB70"
+  },
+  {
+    "path": "assets/crops/草莓.png",
+    "size": 758811,
+    "sha256": "D615F0E71F0901D5871EF9E899F06B5C12748733A1CABB0F4B98845F6CA5B874"
+  },
+  {
+    "path": "assets/crops/橙子.png",
+    "size": 766918,
+    "sha256": "DF47280A623CF2302715758CAFD8BB505CDBF1D1DE61CC64F3600E7F3F88C438"
+  },
+  {
+    "path": "assets/crops/大蒜.png",
+    "size": 769717,
+    "sha256": "1AF3EF54D20052F20F7E63FCC13251147E869239A3BDA09C382B3915F042326C"
+  },
+  {
+    "path": "assets/crops/番茄.png",
+    "size": 832711,
+    "sha256": "34BB9E129982170EF97EA766373AC03E4C58EDED04448EAA609000F193A973D0"
+  },
+  {
+    "path": "assets/crops/哈密瓜.png",
+    "size": 924213,
+    "sha256": "CDCCA51E6897289D888C2CECF74CAE4751C3192696B549DA97F06DDCA97162AB"
+  },
+  {
+    "path": "assets/crops/荷兰豆.png",
+    "size": 599741,
+    "sha256": "09227E6E2FB2107B92B1549E3DB4E1B3F4400FC24566E2D27527CED0AB2A4B4A"
+  },
+  {
+    "path": "assets/crops/胡萝卜.png",
+    "size": 1176180,
+    "sha256": "DB8FB564B94EF69A3DDC8F727BA637964B612D2D1C489C319B7D0CED8AB51AE1"
+  },
+  {
+    "path": "assets/crops/黄瓜.png",
+    "size": 1154074,
+    "sha256": "A7C67D369FB7DB98EAA08A251AF3CAE983AE90C83005827E0A6C9D7C19C11F5C"
+  },
+  {
+    "path": "assets/crops/茄子.png",
+    "size": 628361,
+    "sha256": "D4EDAF1ABFDAB2602C4D5CBADD02BB7C20DB7ED8739AD72FBDAE043C0A92702B"
+  },
+  {
+    "path": "assets/crops/梨.png",
+    "size": 690089,
+    "sha256": "EF5CF897CC680FA1D97D0882D02127FCAE7B6A8A3B9449A3E52E2182FB5D433D"
+  },
+  {
+    "path": "assets/crops/荔枝.png",
+    "size": 1269087,
+    "sha256": "A6E4BEFD2742C2C0F76548E4CFB842697AD064288585A8858F70ACCE0B620EF5"
+  },
+  {
+    "path": "assets/crops/猕猴桃.png",
+    "size": 1293747,
+    "sha256": "9098F9F03E37DD2590105F9B7D95CC836F5CD749F17339877946D9AB926EC18E"
+  },
+  {
+    "path": "assets/crops/南瓜.png",
+    "size": 817308,
+    "sha256": "7D6BC7D884291D6434B99F7D941210FA8394956964DBDAE0AFD6348C97B0417E"
+  },
+  {
+    "path": "assets/crops/柠檬.png",
+    "size": 718230,
+    "sha256": "3C9A6654E938088C49D038D058E777A7FC5565318BB8A046997775530953A4FE"
+  },
+  {
+    "path": "assets/crops/青椒.png",
+    "size": 851159,
+    "sha256": "569A38E126433FE2B533286CD915A9351B92B4DBDBBEA1B863525BDD5288FEB4"
+  },
+  {
+    "path": "assets/crops/桃子.png",
+    "size": 921555,
+    "sha256": "7F1E6097AF8F5F20FA20E2BA021AEBAAED180010BB5AC47CC21C06B906C7B8CF"
+  },
+  {
+    "path": "assets/crops/土豆.png",
+    "size": 681975,
+    "sha256": "A272D382340FE0A18755A2A74C8874D5887BC200CE72A889C06EB6CF106DB76B"
+  },
+  {
+    "path": "assets/crops/西瓜.png",
+    "size": 802318,
+    "sha256": "818380FB63C8CC02BF7483ABEEEA619C4419A2884F167C390F6E280D44DBAFE8"
+  },
+  {
+    "path": "assets/crops/香蕉.png",
+    "size": 605075,
+    "sha256": "1B92AC849B3638C082ECD74F7959ACEE63988D47D3988226F9CE7C61D05F8546"
+  },
+  {
+    "path": "assets/crops/杨桃.png",
+    "size": 687846,
+    "sha256": "690AABFB07325DBEB0729D23FEA69DF03CE4F6F20EA5BF8E402EA639A6E2B5B7"
+  },
+  {
+    "path": "assets/crops/椰子.png",
+    "size": 866294,
+    "sha256": "3166F8338A3CA50F1E70E5CD88AB7D04AF1F524FD75354D489FA71FFB5004A11"
+  },
+  {
+    "path": "assets/crops/玉米.png",
+    "size": 782993,
+    "sha256": "AD7BBE79217F84F205620F516BFD5EF074E8864E975336498DEC2DFA38BEAEB7"
+  },
+  {
+    "path": "assets/crops/README.md",
+    "size": 336,
+    "sha256": "D1C579EB60C1DB20129A6A83F0866246D9AB8F9C3B0CDBD62C200C2EFCFECF9B"
+  },
+  {
+    "path": "assets/storybook/action_night.png",
+    "size": 2978158,
+    "sha256": "7F5F370B504B698F5292204B773686D20CC4BADCAD07554BF742D03C8C356915"
+  },
+  {
+    "path": "assets/storybook/action_paper.png",
+    "size": 2594256,
+    "sha256": "79717A1013B90DE6010AC767894E01137FDE5F4B0D487D26BF6BF38E9E3F1DE7"
+  },
+  {
+    "path": "assets/storybook/crop-atlas.png",
+    "size": 1886285,
+    "sha256": "375C0098EEA4DA5039B77D92049F58CA575F0FF49C9537A9BA734650588E4D35"
+  },
+  {
+    "path": "assets/storybook/crops/crop01.png",
+    "size": 115681,
+    "sha256": "60D8AED35B9813BA199488E2F55FFBC28965E72BC184FEC11F32C88E2EA4E321"
+  },
+  {
+    "path": "assets/storybook/crops/crop02.png",
+    "size": 87753,
+    "sha256": "0E4E9897B82FDB0DB0A7464E223CCAE7EA03C3F73B51373768A2FE12695A56B3"
+  },
+  {
+    "path": "assets/storybook/crops/crop03.png",
+    "size": 93233,
+    "sha256": "386975064BD8A233111C2EBDAB71207B8CEFDDE63FADC5BAC76EC3872308B412"
+  },
+  {
+    "path": "assets/storybook/crops/crop04.png",
+    "size": 81783,
+    "sha256": "E9DB552CD92EF72015BA7623D6EB4E573EF731A900242FB5628A940808DFB286"
+  },
+  {
+    "path": "assets/storybook/crops/crop05.png",
+    "size": 78845,
+    "sha256": "EED19B34CE0CE75324DFA3F37F6BC2A61F83303E582BED2864535E758881D09B"
+  },
+  {
+    "path": "assets/storybook/crops/crop06.png",
+    "size": 74817,
+    "sha256": "FCD4782FB8733A2A18724E9964D0D75E57B02C26B5B7D77948DB9677610D9DFC"
+  },
+  {
+    "path": "assets/storybook/crops/crop07.png",
+    "size": 82520,
+    "sha256": "F7F2A597C4C11F3597FAB1658EE1FBF7D044F5606084C3BCCB19C9B2C27A0E56"
+  },
+  {
+    "path": "assets/storybook/crops/crop08.png",
+    "size": 97759,
+    "sha256": "CF0E739D7AA57D09BA412CE2FE0B201EED3691D3A0946C6F03905BDF6AE583C5"
+  },
+  {
+    "path": "assets/storybook/crops/crop09.png",
+    "size": 102132,
+    "sha256": "AEE47B2682A3E5EE9F6E6134EB6DC86D90371D4370C749EBFBAA1D025646C9B7"
+  },
+  {
+    "path": "assets/storybook/crops/crop10.png",
+    "size": 96759,
+    "sha256": "35007E4C55AFEA4189AC2B2B39F8022D7EE489346105489DF12980EF511B177A"
+  },
+  {
+    "path": "assets/storybook/crops/crop11.png",
+    "size": 104677,
+    "sha256": "C4015C9122A5BB7135EB39C063B034E17AF3421EA43CE9FAB56C44D9670CB1EC"
+  },
+  {
+    "path": "assets/storybook/crops/crop12.png",
+    "size": 86696,
+    "sha256": "6623F7284CC43E691D6E00FD292CD4FE6C8AC1D7B8B201B1B199AF4640A41301"
+  },
+  {
+    "path": "assets/storybook/crops/crop13.png",
+    "size": 91259,
+    "sha256": "3875C348D8CD36BC3B627E76CDF6CB54F7477B8F369C409AD703ECB8DB04F334"
+  },
+  {
+    "path": "assets/storybook/crops/crop14.png",
+    "size": 81221,
+    "sha256": "C01897DBD0A2E4AA47496A0B5540DB5007844CE9FFE43974F37B479869A62295"
+  },
+  {
+    "path": "assets/storybook/crops/crop15.png",
+    "size": 80056,
+    "sha256": "3FDB88821221BF0CAC5D789EDBA7CBC039C28525373B224F61DB4DFBE0475FE0"
+  },
+  {
+    "path": "assets/storybook/crops/crop16.png",
+    "size": 77411,
+    "sha256": "B171BF542D76D9BD90748C4D50729F72C930CF08495586CBF46F5C8F5F15BD7B"
+  },
+  {
+    "path": "assets/storybook/crops/crop17.png",
+    "size": 86808,
+    "sha256": "743D3059548B3809F57E9B7B370EE80DB278B4E44AD4C3DB92DD6A18A89BFBEC"
+  },
+  {
+    "path": "assets/storybook/crops/crop18.png",
+    "size": 87417,
+    "sha256": "57590DEFF739AE12E58DB635739E16669E6AE568F4B7827DB0038D5DBD01FE62"
+  },
+  {
+    "path": "assets/storybook/crops/crop19.png",
+    "size": 88017,
+    "sha256": "C496869FF8F601F24D6C9B6958BF370BCD682A388C22DFAF5973E5E300C93CB5"
+  },
+  {
+    "path": "assets/storybook/crops/crop20.png",
+    "size": 85030,
+    "sha256": "E5FDB1A3AA1F3AC0140FC94516A920879EE7802D7F8C08A704298CA94DED0116"
+  },
+  {
+    "path": "assets/storybook/crops/crop21.png",
+    "size": 89005,
+    "sha256": "2F8548C77D6A8B1E2E7440EAAF5EF5BC4B9D506F7128B1C97C9D2B01BADFA52D"
+  },
+  {
+    "path": "assets/storybook/crops/crop22.png",
+    "size": 76887,
+    "sha256": "1DB56EEE490BD05B97BA43E634C92BD92E3784FD5FF4989077243B82526D2402"
+  },
+  {
+    "path": "assets/storybook/crops/crop23.png",
+    "size": 100746,
+    "sha256": "5C4ADCE517E6ECDA4514313FE7A7255EE69C5F8C583A1AD5C56AF6AC679E8B34"
+  },
+  {
+    "path": "assets/storybook/crops/crop24.png",
+    "size": 65975,
+    "sha256": "4BBD326416D2496612BA7578137B8E081DC0A53E0982B594232B00ABD8C02A79"
+  },
+  {
+    "path": "assets/storybook/crops/crop25.png",
+    "size": 61699,
+    "sha256": "6F7A8193398C4B10029B2452B276AF591C3C99042680178770E4764C48D63615"
+  },
+  {
+    "path": "assets/storybook/farm_scene.png",
+    "size": 2903041,
+    "sha256": "55C5B2AC2E864D2A028C7225C3653DA91E38743BB73EC35A8DE61F15E0CCE6E7"
+  },
+  {
+    "path": "assets/storybook/fonts/LXGWWenKaiLite-Regular.ttf",
+    "size": 13872424,
+    "sha256": "140C99BA4E28E817CEC49BF82A0C5FCDC4FE633FB9DFDA16D0EE8D59A8545F15"
+  },
+  {
+    "path": "assets/storybook/fonts/OFL.txt",
+    "size": 5176,
+    "sha256": "0333A85FE077B6849F8E417ACC44E8BD879442CEB681E271ACF93E2D57FD4E2E"
+  },
+  {
+    "path": "assets/storybook/game_title.png",
+    "size": 1897646,
+    "sha256": "5D2F418BD0A5E1BD4E49836B01DC40EFFAA1BEC60942CEC34430966EE67FFA8A"
+  },
+  {
+    "path": "assets/storybook/greedy_worms.png",
+    "size": 2091360,
+    "sha256": "2F67613ADE08EE9898D40A2A0FC4FA63EB6B49A0B3F73D8292005F5B61A9D101"
+  },
+  {
+    "path": "assets/storybook/land_plot.png",
+    "size": 2713203,
+    "sha256": "654918EFD346D0D7943369E3AA989F1B0B393364DB963578730B4742234127C8"
+  },
+  {
+    "path": "assets/storybook/mode_scene.png",
+    "size": 2744618,
+    "sha256": "0492EE8AC18EC689F3EF4AC0FCCF085824AE9555D27101D069E0DB854573A0B7"
+  },
+  {
+    "path": "assets/storybook/night_sky.png",
+    "size": 95909,
+    "sha256": "074B18053AE0105C120DAA1606B026B493C65522AA2B19FEC432947A4DD5E1B5"
+  },
+  {
+    "path": "assets/storybook/paper_texture.png",
+    "size": 233185,
+    "sha256": "541F943D277DEC741A470C4445B357CAC02CE48D49FD97DDCCC6D078A04BE7A5"
+  },
+  {
+    "path": "assets/tiles/land_plot.png",
+    "size": 1844337,
+    "sha256": "17FE10CADC0947B15C05813DBCB97EAA7321BC383A459AB68216CCD9F18755D3"
+  },
+  {
+    "path": "assets/tiles/README.md",
+    "size": 378,
+    "sha256": "CF586C3A1915AF6136D6188CF2A6C75A17CBFB4F97219528F069997E1FDCC532"
+  },
+  {
+    "path": "assets/title/game_title.png",
+    "size": 2184334,
+    "sha256": "C041495CBAAB8332F02ADD658731E57263FF9CD96FAD440131BE66BEB3515A8F"
+  },
+  {
+    "path": "assets/worms/greedy_worms.png",
+    "size": 1347215,
+    "sha256": "648012A0E5A2A36EC1DF66A04F9C2ADB633055B9828AA76AA4F7E0DED40B623C"
+  },
+  {
+    "path": "assets/worms/README.md",
+    "size": 339,
+    "sha256": "D76F1409DD13BA8CFFB3E9FF22D7FA645DAABA0594C3882377FE42CA785F5FAC"
+  },
+  {
+    "path": "docs/ACTION_CARD_ART_MANIFEST.json",
+    "size": 2140,
+    "sha256": "A11CDBD18B4631FD5A7967A02FCEE5626D0C88A17DCDDE867DA512CB3A8DBD54"
+  },
+  {
+    "path": "docs/ACTION_HAND_AND_ICON_UPDATE.md",
+    "size": 4693,
+    "sha256": "1CDA66ADC9FD6809E2847A0CE4EC5AE85F75CA7792766610B668F6B7A2C5DAF1"
+  },
+  {
+    "path": "docs/APK_0_3_0.md",
+    "size": 2062,
+    "sha256": "6B471B24872EFFC69FAD274AA64A645F268CB1B52B2B6E5364A5BEBDE9C2E919"
+  },
+  {
+    "path": "docs/APK_0_3_1.md",
+    "size": 2588,
+    "sha256": "976A97CA27E3670F38059E8CCB9D19CB05B1A11D8623000E8A94AEB83920B8F6"
+  },
+  {
+    "path": "docs/APK_0_3_2.md",
+    "size": 2596,
+    "sha256": "101D4FCBBDAD7865794A7B72E69C33EC321F6B8B282C8BABAC2FEC5D4D8CB90E"
+  },
+  {
+    "path": "docs/APK_0_4_0.json",
+    "size": 766,
+    "sha256": "7E59ADA26CFDBC9E96D68DD6DED5070BA195EB39DCFCA79A050F9EF3B8C77C2B"
+  },
+  {
+    "path": "docs/APK_0_4_0.md",
+    "size": 2057,
+    "sha256": "A1651D8219F98550F6747B2B43531B4F2FBF331357D8C21E96E516A36DBA26FE"
+  },
+  {
+    "path": "docs/APK_0_4_1.json",
+    "size": 872,
+    "sha256": "ABA7737601CDA30CD2280058B561F84BE5E385F69CAEF8C8E31FF87ABF99F3D8"
+  },
+  {
+    "path": "docs/APK_0_4_1.md",
+    "size": 2238,
+    "sha256": "3ABF4F5DDEEE9E997E09A220436CE28032D5D56F738B83F580FA4FC02AE660C0"
+  },
+  {
+    "path": "docs/APK_0_5_0.json",
+    "size": 915,
+    "sha256": "4A155EF18AD75FEB307CF199AE3E7E60A7A8CB5A13F2492EBFBCEC9B4B305E91"
+  },
+  {
+    "path": "docs/APK_0_5_0.md",
+    "size": 2490,
+    "sha256": "E843619A1C07CEDD69EDDC12592D60A274231AE8156BF7361535CCD158DDEA5E"
+  },
+  {
+    "path": "docs/APK_0_5_1.json",
+    "size": 952,
+    "sha256": "05BECFC745592F43CCE6E8CE1DDCCF4FF9725C4CEE1F303B0A35549B95361D60"
+  },
+  {
+    "path": "docs/APK_0_5_1.md",
+    "size": 2208,
+    "sha256": "EE2BCD3752CD283A553F03F5063165E7448AF999D7826A64228FBF30DD31D26E"
+  },
+  {
+    "path": "docs/APK_0_6_0.json",
+    "size": 1267,
+    "sha256": "4BE735F85401E90C0433A7B2ED45B57C105377F0B68EC798BCC3E4995C1C7755"
+  },
+  {
+    "path": "docs/APK_0_6_0.md",
+    "size": 1900,
+    "sha256": "7645748C36B5958EDC944E8C5721010189C29D0F52D9E491F8C408FD2783F8F7"
+  },
+  {
+    "path": "docs/APK_0_6_1.json",
+    "size": 1267,
+    "sha256": "343785FC50483A55962EA688E79C5D07BDF62BE2344D1F621F0EB35C100C0757"
+  },
+  {
+    "path": "docs/APK_0_6_1.md",
+    "size": 2033,
+    "sha256": "60575A1B2AFD119FC2EB76051D8F7443BB76EF406ADB3A0620BB3F293319B6C5"
+  },
+  {
+    "path": "docs/APK_0_6_2.json",
+    "size": 1267,
+    "sha256": "B77E4DD71684598BD42FFE86EA60676185E89DDB0F758981BBBCEACFDE2663FC"
+  },
+  {
+    "path": "docs/APK_0_6_2.md",
+    "size": 2301,
+    "sha256": "F762FEC9BAC068BFDDAADBE64D54B315B12D8078CB0953E073F4FEF123E7F372"
+  },
+  {
+    "path": "docs/APK_0_6_3.json",
+    "size": 1620,
+    "sha256": "A8C195C9DFE98D5DC43F99B100F9BD97B1B4072BF0634BBC9B5B3FDCF3D713B9"
+  },
+  {
+    "path": "docs/APK_0_6_3.md",
+    "size": 2323,
+    "sha256": "C53F97BA744A4581967E87347196B4664E0796D8968B3CE8F4EBC02338B3A0ED"
+  },
+  {
+    "path": "docs/APK_0_6_4.json",
+    "size": 1883,
+    "sha256": "C3BBBC0F40A89529D03FE5B648F94B01D0CA8EBC2A03727A0C3B1F2CEA35A802"
+  },
+  {
+    "path": "docs/APK_0_6_4.md",
+    "size": 2684,
+    "sha256": "139D2E66A9D4E1F0366EF1261F0616B3072CC8A36DC77DCB0F33949B282AAF35"
+  },
+  {
+    "path": "docs/APK_0_6_5.json",
+    "size": 2045,
+    "sha256": "F5AF53AC083CE9D154F94D688EB174A937C46625A18439959F844BF8E186DC97"
+  },
+  {
+    "path": "docs/APK_0_6_5.md",
+    "size": 1840,
+    "sha256": "0B563E8D16348AE692763137101008462A7D59F80657942F903DEABC79AD5414"
+  },
+  {
+    "path": "docs/APK_0_6_6.json",
+    "size": 1618,
+    "sha256": "EA0D2DEB3952C8EE174115B6D059EC114FEDEF7C1AC64FE77830982913C0C1B7"
+  },
+  {
+    "path": "docs/APK_0_6_6.md",
+    "size": 1397,
+    "sha256": "ADE65B11CA6AC92D78301342A02FF2EB57FFBE477906D95F8CC3D36E510E5F4F"
+  },
+  {
+    "path": "docs/APK_0_6_7.json",
+    "size": 1885,
+    "sha256": "F98D7F5B44A088537DF968A65189DC034645C4F5711A55CDF018EEFCE95F59DB"
+  },
+  {
+    "path": "docs/APK_0_6_7.md",
+    "size": 1911,
+    "sha256": "7545C48C0431394CEDE57137B953332C34470732C856E7576D9CDEDE64B6D053"
+  },
+  {
+    "path": "docs/APK_0_6_8.json",
+    "size": 2192,
+    "sha256": "DB69771C9186772B71CA5C0C224A9D2CA572518DD6BEC13F7693CD653091B7D0"
+  },
+  {
+    "path": "docs/APK_0_6_8.md",
+    "size": 1558,
+    "sha256": "82437E42ABF15826010557AE017FF1A73A060299EE7D8BA5D0DD57CDAC5CD9DE"
+  },
+  {
+    "path": "docs/APP_ICON_MANIFEST.json",
+    "size": 358,
+    "sha256": "C3730FC822791540F3023A109ADF7BCFD237DFE7C0031BAA109ADE93AE5326B7"
+  },
+  {
+    "path": "docs/ARCHITECTURE.md",
+    "size": 22190,
+    "sha256": "84C16ECFA1D9550DD9DCAAA72FDF4E80B340D22C20B27BBDE02FED6D9180CBF5"
+  },
+  {
+    "path": "docs/ART_PROMPTS.json",
+    "size": 14241,
+    "sha256": "307195FA70733CC4246CAA432349F50A7F3C24E240A24CB82152E27230571CC5"
+  },
+  {
+    "path": "docs/ART_STYLE.md",
+    "size": 4252,
+    "sha256": "D9443B6B4AAC20C5FAC29B190B5F5F58AAB7CE156568F6BF7F7F13A4DFF4E858"
+  },
+  {
+    "path": "docs/ART_UI_UPDATE.md",
+    "size": 4042,
+    "sha256": "16D8BFE25055E3DB99DEA1C6AF721DD375C17D7EE4D34EEE33E6A6403B0EEE58"
+  },
+  {
+    "path": "docs/ART_VALIDATION.json",
+    "size": 2124,
+    "sha256": "096BEB9C3750912DD81FCFB96931701B7184D7CD3D57F12A64679BA15EDF2791"
+  },
+  {
+    "path": "docs/AUTOMATIC_ROUTES_AND_SCENE_TONE_UPDATE.md",
+    "size": 4248,
+    "sha256": "02FF7836554777581754BD3A157594D4175D1E3F437F007BB10263F94F9ACF88"
+  },
+  {
+    "path": "docs/BACKGROUND_ART_MANIFEST.json",
+    "size": 361,
+    "sha256": "9898022EA58B071CA6BD19EAD4AE0814CF2DC2779C8B848DADE945F1F96658A7"
+  },
+  {
+    "path": "docs/BACKGROUND_MUSIC_MANIFEST.json",
+    "size": 335,
+    "sha256": "5FA6F1FEBEDCC64287447F6112CFFED5CDE8371EB4BDACE0C9F88641CF4EC9E6"
+  },
+  {
+    "path": "docs/BACKGROUND_MUSIC_UPDATE.md",
+    "size": 2602,
+    "sha256": "CA5A45A699400C54551888DA8DC7EA743F2971C62E90B019836F4773497800C1"
+  },
+  {
+    "path": "docs/CARD_ART_INTAKE.md",
+    "size": 3870,
+    "sha256": "1CF0CBED4400126768C9E8CE454AB9EB4FBC81868368BC0F1376494A69F02B88"
+  },
+  {
+    "path": "docs/CARD_ART_MANIFEST.json",
+    "size": 8333,
+    "sha256": "BF753192B54943C7FC282C15266A0FFC7477B5491BBCE17092C5F75C4DBFFE24"
+  },
+  {
+    "path": "docs/CARD_IMAGE_LOADING.md",
+    "size": 4253,
+    "sha256": "9CDEA6A5991C9A5BA2D6EDD5104B22429726E3C84AAAFC1485CE00205FC459E3"
+  },
+  {
+    "path": "docs/COMPUTER_MODE_UPDATE.md",
+    "size": 4810,
+    "sha256": "E4F7C1185EBBF143457BBE4886E155BD01D616260FC5A9C0E81DBA13DD79748A"
+  },
+  {
+    "path": "docs/CROP_ART_MANIFEST.json",
+    "size": 11332,
+    "sha256": "7F5119CE41739B19F655479F58181DFF9A1A58FF5F73557936D42D5F42FD4FA3"
+  },
+  {
+    "path": "docs/DEVELOPMENT.md",
+    "size": 8181,
+    "sha256": "B59FBA6C2D4EBBE053D68B8EE9D67A702FA1D13126BFA2B4154F44FFBA5524AC"
+  },
+  {
+    "path": "docs/EATEN_TITLE_AND_HISTORY_UPDATE.md",
+    "size": 2893,
+    "sha256": "83CE8785A7AF02281975B87CEB9AE9D7256B2F8C24F2A3D5B0642A314624430D"
+  },
+  {
+    "path": "docs/FARM_INTERACTION_UPDATE.md",
+    "size": 3631,
+    "sha256": "93767737E85AF3858C37DC0890FC95C2EAF1DCFAE2C753971E087B85A8B5C782"
+  },
+  {
+    "path": "docs/FARM_RETHEME_UPDATE.md",
+    "size": 3467,
+    "sha256": "95661AEF41D05BE0E87DF91DE570EB7A6D9AF53DBA8193036837C4BA9B5769E9"
+  },
+  {
+    "path": "docs/FARM_RETHEME_VALIDATION.json",
+    "size": 3518,
+    "sha256": "9B5ED98E70419F4E20773CCD082D894A457A18A2713C12DB624B6F884A0F77B0"
+  },
+  {
+    "path": "docs/FARM_SCENE_MANIFEST_0_6_0.json",
+    "size": 4223,
+    "sha256": "E9B2FC9731C4EB4B1FAA9587FF0DB44827B8A7C6420AEAAC3BCD3FDA2E6A0A77"
+  },
+  {
+    "path": "docs/FARM_SCENE_MANIFEST.json",
+    "size": 854,
+    "sha256": "A6016BBDC3DB60F731F3A144BBDB6CF11400A92414255841E3346B1442455457"
+  },
+  {
+    "path": "docs/FREE_STICKER_PHYSICS_AND_LIGHT_UPDATE.md",
+    "size": 3135,
+    "sha256": "2C43C3F07B7E98462613A8AB1F97B0B81F5D9509AAEC63972366FFF43F80650E"
+  },
+  {
+    "path": "docs/INFECTION_LIMIT_FIX.md",
+    "size": 4949,
+    "sha256": "7F51A52F2CEF9CB98F451C399002E27AF5361ED4472F059B6DA1BF6AD7365584"
+  },
+  {
+    "path": "docs/LEGACY_0_6_2_MIGRATION_VALIDATION.json",
+    "size": 545,
+    "sha256": "6546A8D82D10B19C201DA34C842C8ACD8FADD339310205B22B10121C69AA1B1F"
+  },
+  {
+    "path": "docs/MODE_ART_MANIFEST.json",
+    "size": 5271,
+    "sha256": "7BA877B267DB85922AD0AFD8C07AB68EF295AF1300B46B9A0594E0A8AC6FDEA5"
+  },
+  {
+    "path": "docs/NO_TARGET_VICTORY_UPDATE.md",
+    "size": 4298,
+    "sha256": "82F88DFFA1DB3259BA3FC050FC7A6EA2878DDEF8AAFA8D63BFEAB37B882B9527"
+  },
+  {
+    "path": "docs/OMEN_HAND_UPDATE.md",
+    "size": 4880,
+    "sha256": "C408A99AB7BBBE4B0BA1457B71FD7EF5F2799B40E2126A2CBF22EC42D3C77D0C"
+  },
+  {
+    "path": "docs/PARTIAL_ACTIONS_AND_MODE_STICKERS_UPDATE.md",
+    "size": 4071,
+    "sha256": "B4217F44EF7ED2BD60B20A7D6E7486A32D91317BE959D27461346BD4DFA146FF"
+  },
+  {
+    "path": "docs/PORTRAIT_LAYOUT_UPDATE.md",
+    "size": 5395,
+    "sha256": "6D2299911064938798300D2B185BB45AFC65341ACFD211508CC35525CDF502F9"
+  },
+  {
+    "path": "docs/REMAINING_ACTION_RANGE_UPDATE.md",
+    "size": 2814,
+    "sha256": "9ED23B93D6A16E21F94E50AF4B94A70B9FAF9A676961BDED5BE111FB06AC9F38"
+  },
+  {
+    "path": "docs/RULE_UPDATE_CHECKLIST.md",
+    "size": 4875,
+    "sha256": "DF75C9331DBD1B9011B0DDAC3985B15F6483DF98EB574E7550700D9FCA9A7BAD"
+  },
+  {
+    "path": "docs/RULES_FEEDBACK_UPDATE.md",
+    "size": 3448,
+    "sha256": "30B0C387B51DBD8C02E2128E3A9CDF55511E45B255FE5B608753A475FE7C6C3D"
+  },
+  {
+    "path": "docs/RULES_INTRODUCTION.md",
+    "size": 1982,
+    "sha256": "3B78999D1FF40CD911596B3B69ED5BFC3FF6BD76FE1BA1C6409CC205FA62B77B"
+  },
+  {
+    "path": "docs/RULES_TEXT_AND_MARK_UNDO_UPDATE.md",
+    "size": 5764,
+    "sha256": "93E2555C49A3D3C11456BE5550ABA74562D657D3B44FCF00CF59CE319BEF54B9"
+  },
+  {
+    "path": "docs/RULES.md",
+    "size": 19884,
+    "sha256": "6612FBF48403711E9A3382DF8821EDD55AFF14B8B61410397719D6AD8707A8D6"
+  },
+  {
+    "path": "docs/SETTINGS_AND_CARD_PREVIEW_UPDATE.md",
+    "size": 4070,
+    "sha256": "B30170F919D067D34F414694B825437531397DFD230B513A94A93B3BB6B42612"
+  },
+  {
+    "path": "docs/STORYBOOK_ART_MANIFEST.json",
+    "size": 7794,
+    "sha256": "6A9E49AA514EC48718EA2C9F23A3CD3499BCE74EF3509EC68333BF9AF92C91D3"
+  },
+  {
+    "path": "docs/TITLE_ART_MANIFEST.json",
+    "size": 508,
+    "sha256": "7EA8C5C1E18D66E6818928DDDD7EF16954130156028ED3D0EC2E31B5B1E9E73D"
+  },
+  {
+    "path": "docs/VALIDATION.md",
+    "size": 18173,
+    "sha256": "7CEB30BC9652B546DA56C7FEF93FBED6F84C8DCDCDB81C511BEE87E4E5271143"
+  },
+  {
+    "path": "docs/WORM_ART_MANIFEST.json",
+    "size": 651,
+    "sha256": "A017879BD09B127890543B4FAC58A3420B39DC0ED669C450DE6690BDCE0C4CD5"
+  },
+  {
+    "path": "lib/audio/background_music_controller.dart",
+    "size": 2697,
+    "sha256": "D50E53C8D737325227043131C83FF6858750B2551493228C9B5EAAF12CEF0121"
+  },
+  {
+    "path": "lib/game_constants.dart",
+    "size": 2991,
+    "sha256": "92059C488E15DD6A65FC2DB7D61F0E6D71BB9618C15B3FA54A32660E98B8A4EF"
+  },
+  {
+    "path": "lib/game/computer_opponent.dart",
+    "size": 10145,
+    "sha256": "CE2F3DFDECBB838E914D8FF573C11E328E43846483EC683DCD30D3AD45270B6C"
+  },
+  {
+    "path": "lib/game/game_controller.dart",
+    "size": 6895,
+    "sha256": "84F87E342A46CFD134624BC483475BE4A67F0158D2F984E545C64AFBE46FEA7C"
+  },
+  {
+    "path": "lib/game/game_engine.dart",
+    "size": 26368,
+    "sha256": "3F53C5EF8D21690A702B5E22CEC835FCB92FC8C326353A9DF2F5D1FFA20DB7C6"
+  },
+  {
+    "path": "lib/game/infection_route_resolver.dart",
+    "size": 4431,
+    "sha256": "B066BD71DF205B747DF034FD4F922479A9C8AE5DAF52CA91611E65FC3E155856"
+  },
+  {
+    "path": "lib/main.dart",
+    "size": 6185,
+    "sha256": "8DE429A88A4114FC911F8CBC6CB077DBD9CE1001E9966395426ABEED051096B4"
+  },
+  {
+    "path": "lib/models/deduction_notes.dart",
+    "size": 2446,
+    "sha256": "CCCCD06ECA42EFF9C84CD3545B0B4567D4AD542DB2502CEE42003F99641EC1CE"
+  },
+  {
+    "path": "lib/models/game_mode.dart",
+    "size": 205,
+    "sha256": "5FB92C6F96085ACE17E1A3206DE343A65A33E2DA53E98C92289F41E488111E04"
+  },
+  {
+    "path": "lib/models/game_rules.dart",
+    "size": 720,
+    "sha256": "82BD1C5F74D51304B395CA04C7B712AB716CB41AAE27A7CFBB3F7782A7728FEA"
+  },
+  {
+    "path": "lib/models/game_state.dart",
+    "size": 23685,
+    "sha256": "23A95A59CF1AFFE95264164C7F0EEA212EB17C4479D6C260A9CCBB9F724EE185"
+  },
+  {
+    "path": "lib/models/girl_card.dart",
+    "size": 3494,
+    "sha256": "23468DC378E51BCDD53D460815EDF8A904565CD71D3962DAB6CFB3FC046FFD84"
+  },
+  {
+    "path": "lib/models/infection_action.dart",
+    "size": 1723,
+    "sha256": "20C6DEF7E048CCAA5A961BD7B9787D63943DE6048E44BC907190B911A271E330"
+  },
+  {
+    "path": "lib/models/infection_selection.dart",
+    "size": 520,
+    "sha256": "46893BEA354CDEEF4200DA4A1774C5AF25CA963AF66711968B673BC1CB149899"
+  },
+  {
+    "path": "lib/models/surveillance_mark.dart",
+    "size": 475,
+    "sha256": "C0C5DFEDE603F9ED647327F46BDB2D09C5C191C5DB1B6C93A940DDF1F8317557"
+  },
+  {
+    "path": "lib/storage/game_storage.dart",
+    "size": 1976,
+    "sha256": "946384C14BEE152C82753B6E0B40815E09048CBB9A0C539AAC6FAEE2AE8EECE6"
+  },
+  {
+    "path": "lib/ui/action_card_artwork.dart",
+    "size": 531,
+    "sha256": "FC6DE860193F1529420934CE472A9F6D96E9B7F357CDCCC6492E4FDC4B5470F7"
+  },
+  {
+    "path": "lib/ui/crop_artwork.dart",
+    "size": 332,
+    "sha256": "92D1EA86EA60E63EDCFF8079CD1029FDCD8D9F6624374A85FA2090FC4A2D72FF"
+  },
+  {
+    "path": "lib/ui/crop_damage_artwork.dart",
+    "size": 4031,
+    "sha256": "E0B558A30E7660AF4F2761D6153B039C58BC8D330F173797C5F74EB9D3FF27C5"
+  },
+  {
+    "path": "lib/ui/farm_scene_geometry.dart",
+    "size": 2051,
+    "sha256": "C3F6C21F3970D5A05471FC9C4425F254D2CDCB76822F5DC71494CC4940C8A9F9"
+  },
+  {
+    "path": "lib/ui/game_artwork.dart",
+    "size": 13124,
+    "sha256": "EA17308274461844A34DFC7AB07EA2E19A53F884246BB912DDD49D4CAC53A8EE"
+  },
+  {
+    "path": "lib/ui/game_introduction.dart",
+    "size": 1392,
+    "sha256": "168D098BA25B1D0BB5D5D37EEF42AF2F76D6B1C7352F239F2F55F869C742352B"
+  },
+  {
+    "path": "lib/ui/game_mode_page.dart",
+    "size": 4755,
+    "sha256": "DBCAA99F328F94AED8D205FBED1CCB267417DCE03DAEF61022F695F21178B43E"
+  },
+  {
+    "path": "lib/ui/game_night_style.dart",
+    "size": 1795,
+    "sha256": "8E9C730EEBFC6C0574AFACC3BD9C7188D56E0454317785883C7ABF4CAC5B2337"
+  },
+  {
+    "path": "lib/ui/game_page.dart",
+    "size": 41068,
+    "sha256": "C73F69A420276C02CCFCC84E903081489FF3C5B41123F7C19F65CB54C1C81F0E"
+  },
+  {
+    "path": "lib/ui/game_theme.dart",
+    "size": 4474,
+    "sha256": "09CC143FB7369BEED9A49103DDA91FEBE613478CB4E84A9E11CA951E6C367739"
+  },
+  {
+    "path": "lib/ui/mode_motion_controller.dart",
+    "size": 3318,
+    "sha256": "95E3898E821CFB9D962FCAEC1B687524A345BCA0E9424A88D5CFDBD835375D4C"
+  },
+  {
+    "path": "lib/ui/mode_sticker_physics.dart",
+    "size": 6302,
+    "sha256": "0C0FB00327E9C69A3C438EBDEBA201895723A6307AB2EED2A81D2AE98AE837DD"
+  },
+  {
+    "path": "lib/ui/paper_surface.dart",
+    "size": 2978,
+    "sha256": "FE4A9408940FC7AA5B04772501AFF919C33EDE6347B5F3AF440120477560D3CE"
+  },
+  {
+    "path": "lib/ui/widgets/action_button_hint.dart",
+    "size": 2138,
+    "sha256": "36126CD7FB2598108DC24A54785FDB51518B66C6B9B0FED4A582C4CC9B97B7D3"
+  },
+  {
+    "path": "lib/ui/widgets/action_card_hand.dart",
+    "size": 12119,
+    "sha256": "BBCBAA5F567BC37805A498A1B0CF07B980A59EA1A6933C32D192F47F05C99617"
+  },
+  {
+    "path": "lib/ui/widgets/action_card_preview.dart",
+    "size": 7947,
+    "sha256": "EB78D8E8541CD47ABE03B9F9E5053DD18E4D017E82D967526371913B72E30AC2"
+  },
+  {
+    "path": "lib/ui/widgets/crop_image_view.dart",
+    "size": 3709,
+    "sha256": "62965BD57E052BF2C73A93D462D667D4AB1179D3079CE41975034F2D569A3871"
+  },
+  {
+    "path": "lib/ui/widgets/deduction_note_widgets.dart",
+    "size": 7060,
+    "sha256": "958B07BF01415992CE203670BD7A2B19C9B45AA7EF870F8158CF95098479AB23"
+  },
+  {
+    "path": "lib/ui/widgets/eaten_crop_effect.dart",
+    "size": 3102,
+    "sha256": "B4284C4E3D1290CA24C82BF885B285D35CE852F6F993D62751DC82228B8C943F"
+  },
+  {
+    "path": "lib/ui/widgets/game_feedback_watermark.dart",
+    "size": 919,
+    "sha256": "E5C3E7850716E542A580260E79338A18FE92ABDA125CFE6551EDE7F7C29E06FD"
+  },
+  {
+    "path": "lib/ui/widgets/game_rules_dialog.dart",
+    "size": 4050,
+    "sha256": "A464531C28F2DCD04F1A7A101957DB254148B0070CDFF264DA107B2FF459EA2F"
+  },
+  {
+    "path": "lib/ui/widgets/game_scene_background.dart",
+    "size": 3740,
+    "sha256": "CFB2D2956BB0EC4D8389BACFCBD699F2EE53AB9B4E989E64B9A18E2D79C54208"
+  },
+  {
+    "path": "lib/ui/widgets/game_title_image.dart",
+    "size": 901,
+    "sha256": "49892C625AE50317A10C20A39B91848BDE3EFA2389908A70DA490E529745B236"
+  },
+  {
+    "path": "lib/ui/widgets/girl_card_view.dart",
+    "size": 11939,
+    "sha256": "7B7BBF5A0ECBC5E86A96CDEC482FEF35C8FEC6398AD640E1F0C71F483ED3DFD8"
+  },
+  {
+    "path": "lib/ui/widgets/infection_round_legend.dart",
+    "size": 1371,
+    "sha256": "19A6DBAA4A2023B91FB5755262C0125EEBF2A9EE7BAE4B526EADC9E4F9CEAE68"
+  },
+  {
+    "path": "lib/ui/widgets/mode_sticker_scene.dart",
+    "size": 5228,
+    "sha256": "138EDC117000C055B8172B601C4BE3F07B66FB37B8E1FD1E69033C8F33EE2B1F"
+  },
+  {
+    "path": "lib/ui/widgets/omen_instruction_icons.dart",
+    "size": 5663,
+    "sha256": "A3429D97DF898FD128A25144EC74E57AFE0108631B2CA32C263B340371954A6C"
+  },
+  {
+    "path": "lib/ui/widgets/worm_walkway.dart",
+    "size": 4874,
+    "sha256": "1395F252E15E441767ADA4216B5B14760C40E097251C99981EE41017193CC52D"
+  },
+  {
+    "path": "pubspec.lock",
+    "size": 9940,
+    "sha256": "0D87197D464F68E1F3F6355B6AC4DEA03EC7D5577B85CD41E96F78F49C1CFDAC"
+  },
+  {
+    "path": "pubspec.yaml",
+    "size": 725,
+    "sha256": "919B199B7B51D929ACA2C6A57FB59D84D3F69DF37F50E6023FC7A51103DFE7AD"
+  },
+  {
+    "path": "README.md",
+    "size": 8980,
+    "sha256": "9388360B56C83B44A6E196A487DFF5EA0552F2B94113F81A630CCC2D4B9DAAB3"
+  },
+  {
+    "path": "scripts/bootstrap_cloud.sh",
+    "size": 2987,
+    "sha256": "0941BFA1815D5F96EA362A1460E053616373B5D98B0570D46C7DEA1E5792BDFC"
+  },
+  {
+    "path": "scripts/cloud_env.sh",
+    "size": 1055,
+    "sha256": "C8502AD10D3955EB67AB2FB995103CD8708A15E5F7CA7949CD93B1968E2DC987"
+  },
+  {
+    "path": "scripts/configure_gradle_proxy.py",
+    "size": 1923,
+    "sha256": "263607E0101B4744D4EB609ACE7B98F129D552E3F70339F04D574E9C624CAA04"
+  },
+  {
+    "path": "scripts/install_cloud_jdk.py",
+    "size": 2034,
+    "sha256": "38661703167C0C7C06B695E9F2814364C0A81DF0AA879A5CDD1D2994875D8E9C"
+  },
+  {
+    "path": "test/action_card_hand_test.dart",
+    "size": 19405,
+    "sha256": "BA02240A2A2635CCA8B2BB2CDFFCB11FE5C39EB5D84D0D22867DAFBEEDC20746"
+  },
+  {
+    "path": "test/automatic_infection_routes_test.dart",
+    "size": 12407,
+    "sha256": "89ACDCC55B4F579A6AE0AF4ACA107671A7AC4CB3E4A0E1652BD5B050B42D28E6"
+  },
+  {
+    "path": "test/background_music_test.dart",
+    "size": 6342,
+    "sha256": "26262D94F4865C8CA977607151D45C14C43A63E486E47793B69DEE8BC84CCE11"
+  },
+  {
+    "path": "test/card_image_test.dart",
+    "size": 10240,
+    "sha256": "2CD74CB25074A86B4FFFCB72A337B59F708E586688ACF4D4C940861E471718E6"
+  },
+  {
+    "path": "test/computer_mode_page_test.dart",
+    "size": 14713,
+    "sha256": "8B11E12A324BEB2CAE55C99E586797EA564616DC05B8BD5DDE9332978FAF561B"
+  },
+  {
+    "path": "test/computer_opponent_test.dart",
+    "size": 9657,
+    "sha256": "7414B327D1979780F7CB4B985E14ACF37B4898B92ECFED238235672E01AF7723"
+  },
+  {
+    "path": "test/deduction_notes_test.dart",
+    "size": 11617,
+    "sha256": "2E4D78E3DA2A9D417C75D0E250BDF33110A680038D1CA571B5D831EDFFA7193C"
+  },
+  {
+    "path": "test/eaten_title_and_history_test.dart",
+    "size": 13564,
+    "sha256": "07B05AC2DAC75DA1084620EC59D80D9ACEAD66DAE31244EAB7B067320808BC6F"
+  },
+  {
+    "path": "test/farm_interaction_hints_test.dart",
+    "size": 6359,
+    "sha256": "2D4FD7B8F130DC7B855C38610CC704CA38C684B5DC1D54C243E0FD4E5D0BADCE"
+  },
+  {
+    "path": "test/farm_source_alignment_test.dart",
+    "size": 3923,
+    "sha256": "77845C8F0A2AF77742C49F13F0C285F897A5A6797A3E4D03C8D520DF8002C3F9"
+  },
+  {
+    "path": "test/game_artwork_test.dart",
+    "size": 8255,
+    "sha256": "5DD0F0E92FFFE87AA139D859CDE86133E5CB0BA717E8BB27FA818EB9AE8F3C04"
+  },
+  {
+    "path": "test/game_controller_test.dart",
+    "size": 3400,
+    "sha256": "45CF0149DA93D773DF2DAFBBA5981CA97B4B9CE2257EF3D3D7725B7B24FAA585"
+  },
+  {
+    "path": "test/game_engine_test.dart",
+    "size": 21734,
+    "sha256": "F33366C9C6F3BBF753DF771E6FE32558C123663490ADA3F30D5FBC8D77C90EF7"
+  },
+  {
+    "path": "test/game_page_test.dart",
+    "size": 8469,
+    "sha256": "5A67D93E25864088B003D9D8B35546C8BB859490E616D279CF22B21593FE999D"
+  },
+  {
+    "path": "test/game_storage_test.dart",
+    "size": 4023,
+    "sha256": "181019BE46835E8CD60799E94EF6F12059ADD270FB5A7FDB9E39010A6FD88279"
+  },
+  {
+    "path": "test/helpers/computer_fixtures.dart",
+    "size": 4337,
+    "sha256": "5F307FE1168BCECAE4FEC5B5B2D1E606E47D79ED5BA0F96BF7F740A923F41A53"
+  },
+  {
+    "path": "test/helpers/game_fixtures.dart",
+    "size": 2637,
+    "sha256": "DF3A9B2057B2E47DEA28B3891219359B1EA881FCA2F0302D701327FFB8E4BABA"
+  },
+  {
+    "path": "test/infection_limit_page_test.dart",
+    "size": 3867,
+    "sha256": "68315FF0ECE97F991F6F83D51284692EDFC83905C17CE443A684EDEB5A7D172B"
+  },
+  {
+    "path": "test/infection_range_preview_test.dart",
+    "size": 2573,
+    "sha256": "9B7A9CBDB8D6786BDFE203B9042B01DFD97769BAA48ABD9C99D5E602A3DA8786"
+  },
+  {
+    "path": "test/infection_round_colors_test.dart",
+    "size": 4316,
+    "sha256": "656351908EA7A7978B26D57A8FD4F9457BD3E43B93C4E44922580B0F42025431"
+  },
+  {
+    "path": "test/mode_sticker_motion_test.dart",
+    "size": 11498,
+    "sha256": "FD1941A17A853C2E5A26C32ED0ADED3676B1CC2BC4D973D49B5170E19503C88B"
+  },
+  {
+    "path": "test/mode_sticker_physics_test.dart",
+    "size": 4366,
+    "sha256": "1255715D511E59C6B7ED21EBC9CD3D9E5BCE88FA4384663564CB389DB7E4A3BB"
+  },
+  {
+    "path": "test/monitored_infection_limit_test.dart",
+    "size": 10198,
+    "sha256": "FC1F202F40D2C749D082B2151CD41584CDD57A2D6F971C730AA890262754CA14"
+  },
+  {
+    "path": "test/night_first_round_test.dart",
+    "size": 5208,
+    "sha256": "AEDA4F0D63E85F1E806C212E6BF18B58072E58FA373ED27B0AC0351998BC35AB"
+  },
+  {
+    "path": "test/night_scene_test.dart",
+    "size": 11039,
+    "sha256": "DC9B1B79388A63DE5603C62005218A4741C1C5CCA08705A4D5223D1DDE69E54E"
+  },
+  {
+    "path": "test/no_infection_target_test.dart",
+    "size": 10277,
+    "sha256": "1CFC47B9CD85D2C1AFC04F76204D3773DA6BFDCAE0052226C3058F501548E1AB"
+  },
+  {
+    "path": "test/omen_hand_test.dart",
+    "size": 10283,
+    "sha256": "9C2B2FBDBB793B1F7C20A98371CCC15D73A7FBD014379A89188B9932627AA2F6"
+  },
+  {
+    "path": "test/partial_action_completion_test.dart",
+    "size": 8852,
+    "sha256": "1D2AC485C8A902160D7B07DD4381A3045D30AFC4CBA1E9B3FDE5AD545D7B2CDC"
+  },
+  {
+    "path": "test/portrait_layout_test.dart",
+    "size": 16317,
+    "sha256": "DA09FF5F97EDA140FEB863DC0E127EFC40EA3DA9CCFF441BA6F7FBE0C3CDDDC7"
+  },
+  {
+    "path": "test/remaining_action_range_test.dart",
+    "size": 7325,
+    "sha256": "E89F99E5E1C9C9D4A7DB5240289DA14B4E193418F5592141501BC6762E6B39C8"
+  },
+  {
+    "path": "test/rules_feedback_test.dart",
+    "size": 8593,
+    "sha256": "C32BDB61811FE2217284A205C3E35945FCDC9A316554D802C710CDB152B8BC7A"
+  },
+  {
+    "path": "test/scene_tone_and_night_guidance_test.dart",
+    "size": 4285,
+    "sha256": "143639931CC0CCE510016E0AD721F19D4C9A231CD8642DFEE0135C51FDA8507F"
+  },
+  {
+    "path": "test/storybook_preview_test.dart",
+    "size": 6899,
+    "sha256": "00C1E51C672FA638FB59692D73DA8C82EC37CFB0AF7898045EA4CC6629EE4584"
+  },
+  {
+    "path": "test/surveillance_undo_test.dart",
+    "size": 8223,
+    "sha256": "3D262B9D7E957EEEE53EBB4924875668A6A415BD34F01EF4699EDB07A53804AB"
+  }
+]

@@ -1,0 +1,35 @@
+name: happiness_threads
+description: 捉虫子——安卓平板本地双人非对称推理桌游。
+publish_to: none
+version: 0.6.9+19
+
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.5.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/crops/
+    - assets/backgrounds/
+    - assets/worms/
+    - assets/tiles/
+    - assets/action_cards/
+    - assets/audio/
+    - assets/title/
+    - assets/storybook/
+    - assets/storybook/crops/
+    - assets/storybook/fonts/OFL.txt
+  fonts:
+    - family: WenKai
+      fonts:
+        - asset: assets/storybook/fonts/LXGWWenKaiLite-Regular.ttf

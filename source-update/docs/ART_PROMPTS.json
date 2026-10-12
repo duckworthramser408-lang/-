@@ -1,0 +1,135 @@
+{
+  "version": "0.6.9+19",
+  "date": "2026-10-12",
+  "reference": "用户提供的美术风格.zip，共8张参考图",
+  "generation": "内置 image_gen.imagegen；游戏文字、牌号及环/十指示使用 Flutter 原生渲染",
+  "additional_reference": "用户提供的行动牌.zip；与项目保留的原行动牌PNG逐文件SHA-256一致。新版保留全部环/十指示图形，使用原生水粉笔触重绘。",
+  "prompts": [
+    {
+      "key": "crops",
+      "prompt": "Restyle the FIRST image, a 5 by 5 transparent crop sprite atlas, into the storybook gouache / painted paper collage art direction of reference images 2, 3, 4. The first image is the asset being edited; the other images are STYLE references only, do not copy their characters or lettering. Keep an exact evenly spaced five-column five-row grid with one complete isolated crop per cell, preserve the identities and order: row1 cabbage, pumpkin, cantaloupe, potato, garlic; row2 starfruit, lemon, peach, coconut, orange; row3 kiwi, corn, pear, tomato, white radish; row4 carrot, eggplant, strawberry, lychee, snow pea; row5 pineapple, watermelon wedge, green bell pepper, banana, cucumber. Cute small black/brown dot eyes and little smiles on each crop, warm brown irregular pencil outlines, chalky softly mottled gouache pigment, cream paper cutout rim, subtle grain within the colored shapes. Muted sage and olive greens, warm honey yellows, peach coral red, natural cream shadows. Preserve each fruit's distinct recognizable silhouette. Front/top three quarter simplified view, NOT photorealistic, NOT glossy plastic, NOT neon. Each crop centered in its equal sized cell with enough empty separation to cut the atlas into 25 independent square files, no overlaps or pieces straddling cells. Transparent background everywhere outside each paper cutout. No letters, numbers, captions, scenery, labels or guide grid. Square 5x5 production sprite sheet, high resolution.",
+      "input_images": [
+        "original-crops-atlas.png",
+        "reference-02.jpg",
+        "reference-03.jpg",
+        "reference-08.jpg"
+      ],
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/crop-atlas.png",
+      "used_in_game": true
+    },
+    {
+      "key": "farm",
+      "prompt": "Transform the FIRST image (portrait flat farm grass game background) into a warm hand-painted storybook farm background matching the gouache paper textures, muted palette and irregular brown pencil lines of the other three STYLE references. Portrait 9:16 mobile game background. Main gameplay overlays occupy the middle and upper two thirds: keep this central 80% of width very quiet pale sage meadow with fine paper grain and softly brushed variation, no grid or built in vegetables. Small decorative leafy plants, white daisies, tiny ochre blossoms, soft painted grasses along the very outer left and right edges only, a tiny glimpse of pale blue sky and rolling green hills at the uppermost 6%, a very subtle warm oat parchment-like clearing at bottom third for the hand of cards. Cohesive natural pastel palette oat #F5E8C9, sage #8CAA70, honey #E7B65F, pond blue #AFCFD2, peach #D99883 and warm brown #634936. Flat gouache storybook farm, real visible paper texture, restrained colored pencil edges, charming simple compositions. No characters, no crops in the central field, no UI, no words, no letters, no logos, no photorealism, no 3D. Fill entire portrait canvas.",
+      "input_images": [
+        "farm_scene.png",
+        "reference-03.jpg",
+        "reference-04.jpg",
+        "reference-08.jpg"
+      ],
+      "transparent_background": false,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/farm_scene.png",
+      "used_in_game": true
+    },
+    {
+      "key": "soil",
+      "prompt": "Restyle the FIRST image, a top down square farm soil tile, to match the hand-painted gouache paper storybook aesthetic of the two reference images. Produce a single farm tile as a transparent cutout: rounded irregular square earthy warm cocoa and terracotta soil patch, delicate soft brown pencil border, shallow loosely painted cultivation lines, sparse tiny sage-green grass blades just around the outer edge. Broad quiet central soil area left empty because a large fruit sprite will be overlaid there. Oat cream paper-cut rim softly irregular, real paper grain and matte gouache pigment, muted sage olive green, warm tan brown. Top down orthographic icon, equal square aspect, center the entire tile with a small transparent margin on every side, avoid deep 3D perspective. No crops, no insect, no text, no glossy shading, no neon green.",
+      "input_images": [
+        "land_plot.png",
+        "reference-02.jpg",
+        "reference-08.jpg"
+      ],
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/land_plot.png",
+      "used_in_game": true
+    },
+    {
+      "key": "worms",
+      "prompt": "Restyle the FIRST image, the transparent horizontal strip of three friendly farm insects, in the gouache storybook paper cutout style of the other references. Exact three equal-width horizontal cells, one fully isolated insect in each, in SAME order: left a chubby green caterpillar holding a small leaf; middle a coral-red and brown-spotted round ladybug holding a small ear of corn; right a sage green grasshopper holding a small leaf, recognizable long folded hind legs and feelers. Cute tiny dark eyes and smiles. Warm brown colored pencil outlines, cream white paper cutout rim, muted sage green honey yellow peach coral, textured matte gouache with fine grain. Fully transparent background outside the 3 individual cutouts, no ground shadows between them, generous transparent gutters and margin so they can be separated in 3 equal horizontal cells. Wide 3:1 transparent sprite strip. Do not add insects, words, logos, labels or scenery.",
+      "input_images": [
+        "greedy_worms.png",
+        "reference-02.jpg",
+        "reference-08.jpg"
+      ],
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/greedy_worms.png",
+      "used_in_game": true
+    },
+    {
+      "key": "title",
+      "prompt": "Restyle the FIRST image, a Chinese mobile game title on transparent background, in the painted storybook farm style of the other references. Render ONLY the exact three Chinese characters 捉虫子, correct legible strokes, one horizontal line of large hand-painted playful rounded brush lettering. Honey-yellow and soft coral gouache letters with warm brown pencil outlines on a thin irregular cream paper cutout rim. Small sage green leaves and one tiny smiling green caterpillar decorate the edge without covering the characters. Flat paper-collage craft illustration with visible gouache grain, no glossy inflatable 3D appearance. Friendly handcrafted children's book title, wide 16:9 canvas with large transparent margins above and below, the title itself fills width and about half the height. True transparent background outside cutout, no additional text or labels or frames.",
+      "input_images": [
+        "game_title.png",
+        "reference-02.jpg",
+        "reference-08.jpg"
+      ],
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/game_title.png",
+      "used_in_game": true
+    },
+    {
+      "key": "card",
+      "prompt": "Restyle the FIRST image (an old ornate portrait action card) into a quiet painted paper game card backdrop matching the gouache storybook references. Portrait 9:16, flat front-facing card filling canvas. Replace old dark navy gold art completely: warm oat cream handmade paper with grain, irregular lightly scalloped warm brown pencil border, small sage olive leaves and tiny honey-yellow flowers around outside margin. UPPER 50 percent deliberately blank light parchment, no marks, because game rule symbols and numbers will be drawn there in code. At LOWER 60-to-85 percent, a small friendly group of three insects painted in muted gouache: sage green caterpillar, coral ladybug holding corn, green grasshopper with leaf; simple cute dot eyes, cream cutout outlines, sparse paper leaf collage details. Keep bottom 10 percent blank parchment for text drawn by the game. Gentle top-to-bottom light paper palette, lots of empty space, readable at small size, crisp frame silhouette. NO text, no symbols, no writing, no runes, no diamonds, no logos, no elaborate ornamental crest, no glossy 3D. Opaque paper card background.",
+      "input_images": [
+        "action01.png",
+        "reference-02.jpg",
+        "reference-08.jpg"
+      ],
+      "transparent_background": false,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/action_paper.png",
+      "used_in_game": true
+    },
+    {
+      "key": "night_farm",
+      "prompt": "Edit this painted daytime farm background into its matching NIGHT variant, identical portrait 9:16 layout and same soft gouache paper collage style. Preserve horizon, farm hills, edge foliage positions and the large quiet central field so an existing 5x5 crop board can be overlaid unchanged. Change the sky to deep muted dusty indigo blue with one small cream crescent moon at top center, a few hand-painted tiny warm stars high in the sky. Moonlit desaturated sage/teal meadow, soft smoky blue-green shadows and fine paper grain. Edges have faint honey fireflies and pale moonlit cream daisy petals; keep all decorative light dots OUT of the central gameplay field. Calm cozy children's storybook night, clearly different from daytime, no black crush, still enough midtone light to show soil tiles and crops. Lower third muted dark blue-green parchment-like clearing for card hand. Warm highlights contrast with cool night. NOT a daytime scene with blue transparent overlay: paint believable moonlit colors and moon/stars. No text, no UI, no grid, no vegetable sprites, no characters. Full canvas opaque.",
+      "input_images": [
+        "farm_scene.png"
+      ],
+      "transparent_background": false,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/farm_night.png",
+      "used_in_game": false
+    },
+    {
+      "key": "night_card",
+      "prompt": "Edit this warm DAY action card paper into its matching NIGHT card paper. Preserve EXACT 9:16 silhouette, thin scalloped hand-painted frame, the same three friendly insects in the lower illustration region, and all blank areas in the upper half and bottom for game text drawn in code. Deep but gently luminous dusty teal-blue handmade paper center, charcoal sepia pencil frame, muted moonlit sage leaf edges, tiny honey flowers and small cream moon at the very top frame edge. A few gold starlight specks around outer border only, never the central blank symbols region. The three insects remain cute and clearly identifiable in the same arrangement: green caterpillar, coral ladybug holding corn, green grasshopper. Warm rim light, lighter slate paper-grain interior that will show native oat-cream symbols clearly. Cohesive matte watercolor/gouache grain, flat craft paper textures, no glossy shading. Strong obvious NIGHT palette different from warm cream day card, no words, no letters, no game rule symbols baked in, no logos. Opaque full portrait card.",
+      "input_images": [
+        "action_paper.png"
+      ],
+      "transparent_background": false,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/action_night.png",
+      "used_in_game": true
+    },
+    {
+      "key": "mode_farm",
+      "prompt": "Edit this hand-painted game farm grass background into a matching ENTRY / MODE SELECTION scene. Preserve the storybook gouache papergrain and same palette sage olive green, honey yellow, sky blue, peach, oat cream, warm brown. Portrait 9:16 with pale blue sky and soft cream clouds across upper quarter, loosely painted green farm hills and one tiny warm roof house in background edge. Lower ground a softly painted pastel green meadow. The CENTER region from 20% to 85% height must be mostly quiet lightly textured oat cream and very pale sage clearing for a large title and two paper menu buttons that the game will overlay. Delicate cut-paper foliage, daisies and layered blue-green/ochre paper collage shapes confined to left and right outermost edges, bottom corners and topmost edge. A warm welcoming pop-up children's farm book feeling. Keep central values soft and quiet, no image of cards, no UI, no text, no lettering, no insects or fruit sprites (25 matching cutout crop stickers will float above this background dynamically). Full canvas opaque.",
+      "input_images": [
+        "farm_scene.png",
+        "reference-02.jpg",
+        "reference-03.jpg"
+      ],
+      "transparent_background": false,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/mode_scene.png",
+      "used_in_game": true
+    },
+    {
+      "key": "night_sky",
+      "prompt": "Edit this portrait 941x1672 painted night scene into a TRANSPARENT SKY DECORATION overlay for the same canvas. Keep only the small cream honey crescent moon and the few small softly painted stars in the uppermost 7 percent, in their current approximate positions. REMOVE ALL OTHER ELEMENTS: sky color, clouds, hills, houses, grass, foliage, ground, flowers, fireflies and every other mark must become transparent. Output true alpha transparency, with almost the entire portrait canvas empty. Keep the same portrait 9:16 canvas, crescent centered horizontally near y=50/1672, a few tiny warm yellow stars to left and right within y<100/1672. The moon and stars themselves retain flat matte gouache paper grain and softly irregular pencil/brush edges from the original. No square background around them, no haze filling the canvas, no text. This will overlay a separate aligned moonlit farm image; it must contain zero landscape or horizon artwork.",
+      "input_images": [
+        "farm_night.png"
+      ],
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "runtime_asset": "assets/storybook/night_sky.png",
+      "used_in_game": true
+    }
+  ]
+}

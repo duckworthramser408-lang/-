@@ -1,0 +1,261 @@
+{
+  "version": "0.6.9+19",
+  "algorithm": "SHA-256",
+  "assets": [
+    {
+      "path": "assets/storybook/action_night.png",
+      "bytes": 2978158,
+      "sha256": "7F5F370B504B698F5292204B773686D20CC4BADCAD07554BF742D03C8C356915",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "path": "assets/storybook/action_paper.png",
+      "bytes": 2594256,
+      "sha256": "79717A1013B90DE6010AC767894E01137FDE5F4B0D487D26BF6BF38E9E3F1DE7",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "path": "assets/storybook/crop-atlas.png",
+      "bytes": 1886285,
+      "sha256": "375C0098EEA4DA5039B77D92049F58CA575F0FF49C9537A9BA734650588E4D35",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/storybook/crops/crop01.png",
+      "bytes": 115681,
+      "sha256": "60D8AED35B9813BA199488E2F55FFBC28965E72BC184FEC11F32C88E2EA4E321",
+      "width": 254,
+      "height": 209
+    },
+    {
+      "path": "assets/storybook/crops/crop02.png",
+      "bytes": 87753,
+      "sha256": "0E4E9897B82FDB0DB0A7464E223CCAE7EA03C3F73B51373768A2FE12695A56B3",
+      "width": 220,
+      "height": 206
+    },
+    {
+      "path": "assets/storybook/crops/crop03.png",
+      "bytes": 93233,
+      "sha256": "386975064BD8A233111C2EBDAB71207B8CEFDDE63FADC5BAC76EC3872308B412",
+      "width": 203,
+      "height": 230
+    },
+    {
+      "path": "assets/storybook/crops/crop04.png",
+      "bytes": 81783,
+      "sha256": "E9DB552CD92EF72015BA7623D6EB4E573EF731A900242FB5628A940808DFB286",
+      "width": 190,
+      "height": 216
+    },
+    {
+      "path": "assets/storybook/crops/crop05.png",
+      "bytes": 78845,
+      "sha256": "EED19B34CE0CE75324DFA3F37F6BC2A61F83303E582BED2864535E758881D09B",
+      "width": 229,
+      "height": 205
+    },
+    {
+      "path": "assets/storybook/crops/crop06.png",
+      "bytes": 74817,
+      "sha256": "FCD4782FB8733A2A18724E9964D0D75E57B02C26B5B7D77948DB9677610D9DFC",
+      "width": 181,
+      "height": 198
+    },
+    {
+      "path": "assets/storybook/crops/crop07.png",
+      "bytes": 82520,
+      "sha256": "F7F2A597C4C11F3597FAB1658EE1FBF7D044F5606084C3BCCB19C9B2C27A0E56",
+      "width": 223,
+      "height": 218
+    },
+    {
+      "path": "assets/storybook/crops/crop08.png",
+      "bytes": 97759,
+      "sha256": "CF0E739D7AA57D09BA412CE2FE0B201EED3691D3A0946C6F03905BDF6AE583C5",
+      "width": 213,
+      "height": 217
+    },
+    {
+      "path": "assets/storybook/crops/crop09.png",
+      "bytes": 102132,
+      "sha256": "AEE47B2682A3E5EE9F6E6134EB6DC86D90371D4370C749EBFBAA1D025646C9B7",
+      "width": 234,
+      "height": 206
+    },
+    {
+      "path": "assets/storybook/crops/crop10.png",
+      "bytes": 96759,
+      "sha256": "35007E4C55AFEA4189AC2B2B39F8022D7EE489346105489DF12980EF511B177A",
+      "width": 210,
+      "height": 231
+    },
+    {
+      "path": "assets/storybook/crops/crop11.png",
+      "bytes": 104677,
+      "sha256": "C4015C9122A5BB7135EB39C063B034E17AF3421EA43CE9FAB56C44D9670CB1EC",
+      "width": 248,
+      "height": 195
+    },
+    {
+      "path": "assets/storybook/crops/crop12.png",
+      "bytes": 86696,
+      "sha256": "6623F7284CC43E691D6E00FD292CD4FE6C8AC1D7B8B201B1B199AF4640A41301",
+      "width": 179,
+      "height": 239
+    },
+    {
+      "path": "assets/storybook/crops/crop13.png",
+      "bytes": 91259,
+      "sha256": "3875C348D8CD36BC3B627E76CDF6CB54F7477B8F369C409AD703ECB8DB04F334",
+      "width": 190,
+      "height": 242
+    },
+    {
+      "path": "assets/storybook/crops/crop14.png",
+      "bytes": 81221,
+      "sha256": "C01897DBD0A2E4AA47496A0B5540DB5007844CE9FFE43974F37B479869A62295",
+      "width": 208,
+      "height": 199
+    },
+    {
+      "path": "assets/storybook/crops/crop15.png",
+      "bytes": 80056,
+      "sha256": "3FDB88821221BF0CAC5D789EDBA7CBC039C28525373B224F61DB4DFBE0475FE0",
+      "width": 166,
+      "height": 267
+    },
+    {
+      "path": "assets/storybook/crops/crop16.png",
+      "bytes": 77411,
+      "sha256": "B171BF542D76D9BD90748C4D50729F72C930CF08495586CBF46F5C8F5F15BD7B",
+      "width": 168,
+      "height": 248
+    },
+    {
+      "path": "assets/storybook/crops/crop17.png",
+      "bytes": 86808,
+      "sha256": "743D3059548B3809F57E9B7B370EE80DB278B4E44AD4C3DB92DD6A18A89BFBEC",
+      "width": 210,
+      "height": 233
+    },
+    {
+      "path": "assets/storybook/crops/crop18.png",
+      "bytes": 87417,
+      "sha256": "57590DEFF739AE12E58DB635739E16669E6AE568F4B7827DB0038D5DBD01FE62",
+      "width": 205,
+      "height": 225
+    },
+    {
+      "path": "assets/storybook/crops/crop19.png",
+      "bytes": 88017,
+      "sha256": "C496869FF8F601F24D6C9B6958BF370BCD682A388C22DFAF5973E5E300C93CB5",
+      "width": 226,
+      "height": 182
+    },
+    {
+      "path": "assets/storybook/crops/crop20.png",
+      "bytes": 85030,
+      "sha256": "E5FDB1A3AA1F3AC0140FC94516A920879EE7802D7F8C08A704298CA94DED0116",
+      "width": 212,
+      "height": 233
+    },
+    {
+      "path": "assets/storybook/crops/crop21.png",
+      "bytes": 89005,
+      "sha256": "2F8548C77D6A8B1E2E7440EAAF5EF5BC4B9D506F7128B1C97C9D2B01BADFA52D",
+      "width": 166,
+      "height": 237
+    },
+    {
+      "path": "assets/storybook/crops/crop22.png",
+      "bytes": 76887,
+      "sha256": "1DB56EEE490BD05B97BA43E634C92BD92E3784FD5FF4989077243B82526D2402",
+      "width": 227,
+      "height": 201
+    },
+    {
+      "path": "assets/storybook/crops/crop23.png",
+      "bytes": 100746,
+      "sha256": "5C4ADCE517E6ECDA4514313FE7A7255EE69C5F8C583A1AD5C56AF6AC679E8B34",
+      "width": 208,
+      "height": 220
+    },
+    {
+      "path": "assets/storybook/crops/crop24.png",
+      "bytes": 65975,
+      "sha256": "4BBD326416D2496612BA7578137B8E081DC0A53E0982B594232B00ABD8C02A79",
+      "width": 211,
+      "height": 223
+    },
+    {
+      "path": "assets/storybook/crops/crop25.png",
+      "bytes": 61699,
+      "sha256": "6F7A8193398C4B10029B2452B276AF591C3C99042680178770E4764C48D63615",
+      "width": 143,
+      "height": 226
+    },
+    {
+      "path": "assets/storybook/farm_scene.png",
+      "bytes": 2903041,
+      "sha256": "55C5B2AC2E864D2A028C7225C3653DA91E38743BB73EC35A8DE61F15E0CCE6E7",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "path": "assets/storybook/fonts/LXGWWenKaiLite-Regular.ttf",
+      "bytes": 13872424,
+      "sha256": "140C99BA4E28E817CEC49BF82A0C5FCDC4FE633FB9DFDA16D0EE8D59A8545F15"
+    },
+    {
+      "path": "assets/storybook/fonts/OFL.txt",
+      "bytes": 5176,
+      "sha256": "0333A85FE077B6849F8E417ACC44E8BD879442CEB681E271ACF93E2D57FD4E2E"
+    },
+    {
+      "path": "assets/storybook/game_title.png",
+      "bytes": 1897646,
+      "sha256": "5D2F418BD0A5E1BD4E49836B01DC40EFFAA1BEC60942CEC34430966EE67FFA8A",
+      "width": 1672,
+      "height": 940
+    },
+    {
+      "path": "assets/storybook/greedy_worms.png",
+      "bytes": 2091360,
+      "sha256": "2F67613ADE08EE9898D40A2A0FC4FA63EB6B49A0B3F73D8292005F5B61A9D101",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "path": "assets/storybook/land_plot.png",
+      "bytes": 2713203,
+      "sha256": "654918EFD346D0D7943369E3AA989F1B0B393364DB963578730B4742234127C8",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/storybook/mode_scene.png",
+      "bytes": 2744618,
+      "sha256": "0492EE8AC18EC689F3EF4AC0FCCF085824AE9555D27101D069E0DB854573A0B7",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "path": "assets/storybook/night_sky.png",
+      "bytes": 95909,
+      "sha256": "074B18053AE0105C120DAA1606B026B493C65522AA2B19FEC432947A4DD5E1B5",
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "path": "assets/storybook/paper_texture.png",
+      "bytes": 233185,
+      "sha256": "541F943D277DEC741A470C4445B357CAC02CE48D49FD97DDCCC6D078A04BE7A5",
+      "width": 400,
+      "height": 360
+    }
+  ]
+}
