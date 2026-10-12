@@ -15,33 +15,33 @@ class ModeStickerScene extends StatefulWidget {
   final ModeMotionController? motionController;
   static const backgroundPath = GameArtwork.modeBackgroundPath;
   // 最小档与当前屏幕对局作物使用同一土地内框、同一CropImageView；
-  // 最大档宽高各3倍，各张保留原图比例。仅改变模式页装饰。
+  // 最大档宽高各2倍，各张保留原图比例。仅改变模式页装饰。
   static const stickerScales = <double>[
     1,
     1.25,
-    1.5,
-    1.05,
-    1.35,
-    1.8,
-    1.1,
-    1.55,
-    1.15,
-    1.85,
-    2.2,
-    1.45,
-    1.2,
-    1.9,
-    1.7,
-    2.0,
-    1.6,
-    3,
-    1.95,
-    1.4,
+    1.50,
+    1.04,
+    1.33,
+    1.71,
+    1.08,
+    1.54,
+    1.12,
     1.75,
-    2.3,
-    1.3,
-    2.1,
-    1.65,
+    1.92,
+    1.42,
+    1.17,
+    1.79,
+    1.63,
+    1.83,
+    1.58,
+    2,
+    1.88,
+    1.38,
+    1.67,
+    1.96,
+    1.29,
+    1.46,
+    1.21,
   ];
 
   @override
@@ -68,8 +68,9 @@ class _ModeStickerSceneState extends State<ModeStickerScene>
   }
 
   void _animate() {
-    if (!_foreground || _motion.target == Offset.zero) return;
-    _physics?.shake(_motion.target);
+    if (!_foreground) return;
+    _physics?.setGravity(_motion.target);
+    if (_physics?.isSleeping != false) return;
     if (_ticker.isActive || _physics == null) return;
     _previous = Duration.zero;
     _ticker.start();
@@ -143,6 +144,10 @@ class _ModeStickerSceneState extends State<ModeStickerScene>
                   edge: edge,
                   scales: ModeStickerScene.stickerScales,
                 );
+                // 首个传感器事件可能早于布局；布局完成后接上当前重力。
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  if (mounted) _animate();
+                });
               }
               return ValueListenableBuilder<int>(
                 valueListenable: _frame,

@@ -1,0 +1,34 @@
+{
+  "version_name": "0.6.9",
+  "version_code": 19,
+  "package": "com.happiness.threads",
+  "file": "catch-bugs-0.6.9.apk",
+  "size_bytes": 127906982,
+  "sha256": "229159b6c115ec047e7e4429f475320abdd3f7a64174d8db5f76f98dbbdecc18",
+  "certificate_sha256": "6c88114cf4aa4060c5f671b322c296bcdc9e0bcd4c7be44775526133529c5aab",
+  "same_upgrade_signature": false,
+  "abis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86_64"
+  ],
+  "min_sdk": 24,
+  "target_sdk": 35,
+  "internet_permission": false,
+  "signature_verified": true,
+  "verified_new_art_assets": 37,
+  "font_license_bundled": true,
+  "music_asset_uncompressed": true,
+  "real_device_tested": false,
+  "action_instruction_order": [
+    "十＋环",
+    "十＋环",
+    "环＋环",
+    "十＋十",
+    "环＋十＋十"
+  ],
+  "action_icons_day_and_night_verified": true,
+  "shared_day_night_horizon": true,
+  "build_commit": "f4d3ed6a3fefbb8f6c87f73637e92ff602241064",
+  "build_run_url": "https://github.com/duckworthramser408-lang/catch-bug-app/actions/runs/38255357446"
+}

@@ -220,11 +220,13 @@ class ActionCardImage extends StatelessWidget {
     this.imagePath,
     this.night = true,
     this.highResolution = false,
+    this.previewDetails = false,
   });
   final OmenCard card;
   final String? imagePath;
   final bool night;
   final bool highResolution;
+  final bool previewDetails;
 
   @override
   Widget build(BuildContext context) => GameNightStyle.apply(
@@ -269,7 +271,12 @@ class ActionCardImage extends StatelessWidget {
           child: SizedBox(
             width: width,
             height: height,
-            child: Stack(
+            child: ClipRRect(
+              key: ValueKey('action-card-rounded-${card.id}'),
+              borderRadius: BorderRadius.circular(
+                previewDetails ? width * .065 : 0,
+              ),
+              child: Stack(
               fit: StackFit.expand,
               children: [
                 image,
@@ -315,7 +322,7 @@ class ActionCardImage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
+                if (!previewDetails) Positioned(
                   left: width * .16,
                   right: width * .16,
                   top: height * .86,
@@ -327,7 +334,47 @@ class ActionCardImage extends StatelessWidget {
                     ),
                   ),
                 ),
+                if (previewDetails)
+                  Positioned(
+                    left: width * .13,
+                    right: width * .13,
+                    top: height * .795,
+                    height: height * .045,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        '行动牌 · ${card.label}',
+                        key: const ValueKey('preview-card-name'),
+                        style: TextStyle(
+                          color: foreground,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                if (previewDetails)
+                  Positioned(
+                    left: width * .12,
+                    right: width * .12,
+                    top: height * .845,
+                    height: height * .10,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        '${card.displayInstructions.map((method) => method == InfectionMethod.ring ? '环：周围八格' : '十：同一行或列').join('；')}。\n每个指示由不同贪吃虫\n啃食一个作物。',
+                        key: const ValueKey('preview-card-effect'),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: foreground,
+                          fontSize: 12,
+                          height: 1.35,
+                        ),
+                      ),
+                    ),
+                  ),
               ],
+              ),
             ),
           ),
         );

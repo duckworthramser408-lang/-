@@ -122,6 +122,26 @@ class GirlCardView extends StatelessWidget {
                       key: ValueKey('card-placeholder-${girl.id}'),
                       color: terrain ? Colors.transparent : placeholder,
                     ),
+                    if (terrain && accompliceHighlight)
+                      Positioned.fill(
+                        child: IgnorePointer(
+                          child: DecoratedBox(
+                            key: ValueKey('accomplice-ground-glow-${girl.id}'),
+                            decoration: BoxDecoration(
+                              gradient: RadialGradient(
+                                center: const Alignment(0, .28),
+                                radius: .72,
+                                colors: [
+                                  const Color(0xFF86D9FF).withValues(alpha: .86),
+                                  const Color(0xFF579DD1).withValues(alpha: .55),
+                                  const Color(0xFF579DD1).withValues(alpha: 0),
+                                ],
+                                stops: const [0, .42, 1],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     if (crop != null)
                       GameNightStyle.apply(
                         night: night,

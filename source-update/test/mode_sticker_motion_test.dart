@@ -55,23 +55,29 @@ void main() {
     messenger.setMockStreamHandler(ModeMotionController.eventChannel, null);
   });
 
-  test('真实事件通道接收方向输入，首样校准、反向摇动、异常加速度限制与停止解绑', () async {
+  test('真实通道提取持续重力方向，忽略摇动尖峰并在停止/离页解绑', () async {
     final motion = ModeMotionController();
     await motion.start();
     await Future<void>.delayed(Duration.zero);
     expect(listens, 1);
     sink!.success([0.0, 9.8]);
     await Future<void>.delayed(Duration.zero);
-    expect(motion.target, Offset.zero);
+    expect(motion.target.dx, 0);
+    expect(motion.target.dy, closeTo(9.8, .01));
     sink!.success([4.0, 12.0]);
     await Future<void>.delayed(Duration.zero);
     expect(motion.target.dx, lessThan(0));
     expect(motion.target.dy, greaterThan(0));
+    final beforeSpike = motion.target;
     sink!.success([-30.0, -30.0]);
     await Future<void>.delayed(Duration.zero);
-    expect(motion.target.dx, greaterThan(0));
-    expect(motion.target.dy, lessThan(0));
-    expect(motion.target.distance, lessThanOrEqualTo(30.000001));
+    expect(motion.target, beforeSpike);
+    for (var i = 0; i < 80; i++) {
+      motion.acceptAccelerometerSample([-7.0, 4.0]);
+    }
+    expect(motion.target.dx, greaterThan(6));
+    expect(motion.target.dy, greaterThan(0));
+    expect(motion.target.distance, lessThanOrEqualTo(9.810001));
     final previous = motion.target;
     motion.acceptAccelerometerSample([double.nan, 1]);
     motion.acceptAccelerometerSample(['bad']);
@@ -83,26 +89,34 @@ void main() {
     await Future<void>.delayed(Duration.zero);
     sink!.success([-3.0, 8.0]);
     await Future<void>.delayed(Duration.zero);
-    expect(motion.target, Offset.zero); // 恢复后台后按新握持姿势校准。
+    expect(motion.target.dx, closeTo(3, .01)); // 恢复后跟随新握持方向。
+    expect(motion.target.dy, closeTo(8, .01));
     motion.dispose();
     await Future<void>.delayed(Duration.zero);
     expect(cancels, 2);
   });
 
-  test('静止、采样噪声和缓慢倾斜不会托住贴纸，新的摇动才给惯性', () {
+  test('缓慢倾斜与稳定握持保留飘落方向，静止噪声不反复通知', () {
     final motion = ModeMotionController();
+    var notifications = 0;
+    motion.addListener(() => notifications++);
     motion.acceptAccelerometerSample([0.0, 9.8]);
     for (var i = 0; i < 100; i++) {
-      motion.acceptAccelerometerSample([
-        i * .01,
-        9.8 + (i.isEven ? .02 : -.02),
-      ]);
-      expect(motion.target, Offset.zero);
+      motion.acceptAccelerometerSample([.02, 9.8 + (i.isEven ? .02 : -.02)]);
     }
-    motion.acceptAccelerometerSample([-8, 13]);
-    expect(motion.target.distance, greaterThan(2));
-    motion.acceptAccelerometerSample([-8, 13]);
-    expect(motion.target, Offset.zero);
+    expect(notifications, 1);
+    for (var i = 0; i < 160; i++) {
+      motion.acceptAccelerometerSample([-i * .04, 7.0]);
+    }
+    for (var i = 0; i < 100; i++) {
+      motion.acceptAccelerometerSample([-6.4, 7.0]);
+    }
+    expect(motion.target.dx, greaterThan(6));
+    expect(motion.target.dy, greaterThan(6));
+    for (var i = 0; i < 120; i++) {
+      motion.acceptAccelerometerSample([0.0, 0.0]);
+    }
+    expect(motion.target, Offset.zero); // 手机平放时无屏幕平面重力。
     motion.dispose();
   });
 
@@ -138,7 +152,7 @@ void main() {
     expect(listens, 0);
   });
 
-  testWidgets('25贴纸全屏自由运动、停止摇动继续落堆，后台暂停/恢复、离页取消', (tester) async {
+  testWidgets('25贴纸轻柔倾斜飘落，后台暂停/恢复、离页取消', (tester) async {
     tester.view.physicalSize = const Size(360, 640);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
@@ -162,13 +176,14 @@ void main() {
     final later = tester.getRect(sticker);
     expect(early, isNot(original));
     expect(later, isNot(early));
-    await tester.pump(const Duration(milliseconds: 50));
-    await tester.pump(const Duration(milliseconds: 50));
+    for (var i = 0; i < 120; i++) {
+      await tester.pump(const Duration(milliseconds: 16));
+    }
     expect(
       (tester.getRect(sticker).topLeft - original.topLeft).distance,
       greaterThan(24),
     ); // 已解除原位置附近24像素的偏移限制。
-    motion.acceptAccelerometerSample([-4.0, 12.0]); // 停止摇动，重力仍继续。
+    motion.acceptAccelerometerSample([-4.0, 8.0]); // 稳定倾斜仍保留重力方向。
     final beforePause = tester.getRect(sticker);
     for (var i = 1; i <= 25; i++) {
       final rect = tester.getRect(find.byKey(ValueKey('mode-sticker-$i')));
@@ -184,7 +199,8 @@ void main() {
     await tester.pump(const Duration(seconds: 2));
     expect(tester.getRect(sticker), beforePause);
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 16));
     expect(listens, 2);
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pump();
@@ -243,7 +259,7 @@ void main() {
   });
 
   for (final size in [const Size(360, 640), const Size(800, 1280)]) {
-    testWidgets('${size.width.toInt()}最小贴纸等于游戏内同一作物，最大同作物宽高三倍，游戏无贴纸层', (
+    testWidgets('${size.width.toInt()}最小贴纸等于游戏内同一作物，最大同作物宽高两倍，游戏无贴纸层', (
       tester,
     ) async {
       tester.view.physicalSize = size;
@@ -285,8 +301,8 @@ void main() {
       );
       expect(modeSmallest.width, closeTo(smallest.width, 0.01));
       expect(modeSmallest.height, closeTo(smallest.height, 0.01));
-      expect(modeLargest.width, closeTo(strawberry.width * 3, 0.01));
-      expect(modeLargest.height, closeTo(strawberry.height * 3, 0.01));
+      expect(modeLargest.width, closeTo(strawberry.width * 2, 0.01));
+      expect(modeLargest.height, closeTo(strawberry.height * 2, 0.01));
       expect(ModeStickerScene.stickerScales.toSet().length, 25);
       expect(controller.state.toJson(), stateBefore);
       await tester.pumpWidget(

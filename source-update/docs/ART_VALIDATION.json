@@ -61,8 +61,13 @@
       "chinese_font": "WenKai",
       "all_card_instructions_checked": true
     },
-    "android_apk": "not built",
+    "android_apk": "release built and verified by GitHub Actions",
     "android_device": "not tested",
-    "github_upload": "not performed"
+    "github_upload": "published; GitHub artifact SHA-256 matches build checksums",
+    "github_release_url": "https://github.com/duckworthramser408-lang/catch-bug-app/releases/tag/v0.6.9",
+    "github_build_url": "https://github.com/duckworthramser408-lang/catch-bug-app/actions/runs/38255357446",
+    "apk_sha256": "229159b6c115ec047e7e4429f475320abdd3f7a64174d8db5f76f98dbbdecc18",
+    "same_upgrade_signature": false,
+    "new_signature_accepted_by_user": true
   }
 }

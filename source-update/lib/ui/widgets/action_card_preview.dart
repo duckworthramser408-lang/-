@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../game_constants.dart';
-import '../game_theme.dart';
 import 'action_card_hand.dart';
 
 /// Purely visual overlay. The bottom hand remains outside its hit-test bounds,
@@ -65,76 +64,31 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
             onTap: widget.onDismiss,
             child: const ColoredBox(color: Color(0x45634936)),
           ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 38, vertical: 6),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 340),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final width = math.min(
+                math.min(340.0, math.max(1.0, constraints.maxWidth - 76)),
+                math.max(1.0, constraints.maxHeight - 12) * 941 / 1672,
+              );
+              return Center(
                 child: GestureDetector(
                   key: widget.frameKey,
                   onTap: () {}, // Artwork itself is not blank dismiss space.
-                  child: Container(
+                  child: SizedBox(
                     key: const ValueKey('card-preview-content'),
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: widget.night
-                          ? GamePalette.nightPaper
-                          : GamePalette.surface,
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: GamePalette.honey),
-                      boxShadow: const [
-                        BoxShadow(color: Colors.black38, blurRadius: 18),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          '行动牌 · ${widget.card.label}',
-                          key: const ValueKey('preview-card-name'),
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: widget.night
-                                ? GamePalette.highlight
-                                : GamePalette.ink,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Expanded(
-                          child: ActionCardImage(
-                            key: const ValueKey(
-                              'preview-high-resolution-image',
-                            ),
-                            card: widget.card,
-                            highResolution: true,
-                            // Native instructions remain bright on either paper.
-                            night: widget.night,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          '${widget.card.displayInstructions.map((method) => method == InfectionMethod.ring ? '环：周围八格' : '十：同一行或列').join('；')}。\n每个指示由不同贪吃虫啃食一个作物。',
-                          key: const ValueKey('preview-card-effect'),
-                          textScaler: TextScaler.linear(
-                            math.min(
-                              MediaQuery.textScalerOf(context).scale(1),
-                              1.3,
-                            ),
-                          ),
-                          style: TextStyle(
-                            fontSize: 11,
-                            height: 1.25,
-                            color: widget.night
-                                ? GamePalette.nightInk
-                                : GamePalette.ink,
-                          ),
-                        ),
-                      ],
+                    width: width,
+                    height: width * 1672 / 941,
+                    child: ActionCardImage(
+                      key: const ValueKey('preview-high-resolution-image'),
+                      card: widget.card,
+                      highResolution: true,
+                      previewDetails: true,
+                      night: widget.night,
                     ),
                   ),
                 ),
-              ),
-            ),
+              );
+            },
           ),
         ],
       ),

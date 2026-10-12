@@ -571,6 +571,18 @@ class _GamePageState extends State<GamePage>
     }
   }
 
+  void _returnHome() {
+    if (_dialogOpen || _dialogScheduled || widget.onReturnToModes == null) {
+      return;
+    }
+    _dismissPreviewImmediately();
+    _playParticles.stop();
+    _stopHintPulse();
+    _music.setSceneActive(false);
+    // 宿主沿用原保存队列与电脑任务清理，直接回到模式首页。
+    widget.onReturnToModes!();
+  }
+
   Future<void> _openRules() async {
     if (_dialogOpen || _dialogScheduled) return;
     setState(() => _dialogOpen = true);
@@ -688,7 +700,7 @@ class _GamePageState extends State<GamePage>
                           !_dialogOpen)
                         Positioned(
                           top: 12,
-                          left: 112,
+                          left: 164,
                           right: 8,
                           height: 44,
                           child: DeductionNoteToolbar(
@@ -761,6 +773,20 @@ class _GamePageState extends State<GamePage>
                               tooltip: '设置',
                               onPressed: _dialogOpen ? null : _openSettings,
                               icon: const Icon(Icons.settings_outlined),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          SizedBox(
+                            width: 44,
+                            height: 44,
+                            child: IconButton.filledTonal(
+                              key: const ValueKey('return-home-button'),
+                              tooltip: '返回首页',
+                              onPressed:
+                                  _dialogOpen || widget.onReturnToModes == null
+                                  ? null
+                                  : _returnHome,
+                              icon: const Icon(Icons.arrow_back_rounded),
                             ),
                           ),
                         ],

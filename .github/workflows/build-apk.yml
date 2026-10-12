@@ -1,15 +1,15 @@
-name: Build storybook APK 0.6.9
+name: Build storybook APK 0.6.10
 
 on:
   push:
-    branches: [codex/storybook-apk-0.6.9]
+    branches: [codex/gentle-home-0.6.10]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: storybook-apk-0.6.9
+  group: storybook-apk-0.6.10
   cancel-in-progress: false
 
 jobs:
@@ -30,6 +30,23 @@ jobs:
           test "$(git -C "$RUNNER_TEMP/flutter" rev-parse HEAD)" = 5fc346839b5d0eef006ed8404392afb4dfae428d
           echo "$RUNNER_TEMP/flutter/bin" >> "$GITHUB_PATH"
           "$RUNNER_TEMP/flutter/bin/flutter" config --no-analytics
+      - name: Check source
+        working-directory: app
+        run: |
+          flutter pub get --enforce-lockfile
+          dart format lib/ui/mode_motion_controller.dart lib/ui/mode_sticker_physics.dart lib/ui/widgets/mode_sticker_scene.dart lib/ui/widgets/girl_card_view.dart lib/ui/widgets/action_card_hand.dart lib/ui/widgets/action_card_preview.dart lib/ui/game_page.dart test/mode_sticker_motion_test.dart test/mode_sticker_physics_test.dart test/home_and_preview_update_test.dart
+          flutter analyze
+          flutter test --machine > ../flutter-tests.jsonl
+          flutter test --no-pub --dart-define=EXPORT_ART_PREVIEWS=true test/storybook_preview_test.dart
+      - name: Retain actual Flutter previews and test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: previews-and-tests-0.6.10
+          path: |
+            app/outputs/previews/*.png
+            flutter-tests.jsonl
+          retention-days: 30
       - name: Install Android build packages
         run: |
           sdk_root="$RUNNER_TEMP/android-sdk"
@@ -43,12 +60,6 @@ jobs:
           echo "$sdk_root/platform-tools" >> "$GITHUB_PATH"
           { yes || true; } | "$sdk_root/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$sdk_root" --licenses > /dev/null
           "$sdk_root/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$sdk_root" "platform-tools" "platforms;android-36" "build-tools;36.0.0" "ndk;28.2.13676358" "cmake;3.22.1"
-      - name: Check source
-        working-directory: app
-        run: |
-          flutter pub get --enforce-lockfile
-          flutter analyze
-          flutter test
       - name: Build release APK
         working-directory: app
         run: flutter build apk --release --no-pub
@@ -57,10 +68,10 @@ jobs:
       - name: Retain verified build output
         uses: actions/upload-artifact@v4
         with:
-          name: catch-bugs-0.6.9
+          name: catch-bugs-0.6.10
           path: |
-            release/catch-bugs-0.6.9.apk
-            release/catch-bugs-0.6.9-source.zip
+            release/catch-bugs-0.6.10.apk
+            release/catch-bugs-0.6.10-source.zip
             release/APK-validation.json
             release/SHA256SUMS.txt
           retention-days: 30
@@ -68,5 +79,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create v0.6.9 --draft --target "$GITHUB_SHA" --title "捉虫子 0.6.9 · 绘本美术版" --notes-file release/release-notes.md release/catch-bugs-0.6.9.apk release/catch-bugs-0.6.9-source.zip release/APK-validation.json release/SHA256SUMS.txt
-          gh release edit v0.6.9 --draft=false
+          gh release create v0.6.10 --draft --target "$GITHUB_SHA" --title "捉虫子 0.6.10 · 轻柔飘落与预览修复" --notes-file release/release-notes.md release/catch-bugs-0.6.10.apk release/catch-bugs-0.6.10-source.zip release/APK-validation.json release/SHA256SUMS.txt app/outputs/previews/01-mode.png app/outputs/previews/03-day.png app/outputs/previews/04-night.png app/outputs/previews/05-card-preview.png
+          gh release edit v0.6.10 --draft=false
