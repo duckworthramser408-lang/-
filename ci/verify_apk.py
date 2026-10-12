@@ -37,8 +37,12 @@ out = root / 'release'
 out.mkdir(exist_ok=True)
 target = out / 'catch-bugs-0.6.10.apk'
 shutil.copyfile(apk, target)
-test_events = [json.loads(line) for line in (root / 'flutter-tests.jsonl').read_text().splitlines() if line.strip()]
-test_results = [event for event in test_events if event.get('type') == 'testDone' and not event.get('hidden')]
+test_events = []
+for line in (root / 'flutter-tests.jsonl').read_text().splitlines():
+    if line.strip():
+        decoded = json.loads(line)
+        test_events.extend(decoded if isinstance(decoded, list) else [decoded])
+test_results = [event for event in test_events if isinstance(event, dict) and event.get('type') == 'testDone' and not event.get('hidden')]
 passed = sum(not event.get('skipped') and event.get('result') == 'success' for event in test_results)
 skipped = sum(bool(event.get('skipped')) for event in test_results)
 assert passed >= 240 and all(event.get('result') == 'success' for event in test_results)

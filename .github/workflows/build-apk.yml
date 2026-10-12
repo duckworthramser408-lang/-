@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: storybook-apk-0.6.10
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
