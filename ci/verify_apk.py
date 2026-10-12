@@ -14,7 +14,10 @@ sdk = Path(os.environ.get('ANDROID_HOME') or os.environ['ANDROID_SDK_ROOT'])
 tools = sdk / 'build-tools/36.0.0'
 badging = subprocess.check_output([str(tools / 'aapt2'), 'dump', 'badging', str(apk)], text=True)
 assert "package: name='com.happiness.threads' versionCode='19' versionName='0.6.9'" in badging
-assert "sdkVersion:'24'" in badging and "targetSdkVersion:'35'" in badging
+minimum = int(re.search(r"(?:minSdkVersion|sdkVersion):\s*'(\d+)'", badging).group(1))
+target_sdk = int(re.search(r"targetSdkVersion:\s*'(\d+)'", badging).group(1))
+assert minimum == 24 and target_sdk == 35, f'Unexpected SDK versions: {minimum}/{target_sdk}'
+print(f'APK manifest verified: min SDK {minimum}, target SDK {target_sdk}.')
 assert 'android.permission.INTERNET' not in badging
 signing = subprocess.check_output([str(tools / 'apksigner'), 'verify', '--verbose', '--print-certs', str(apk)], text=True)
 certificate = re.search(r'Signer #1 certificate SHA-256 digest: ([a-fA-F0-9]+)', signing).group(1).lower()
