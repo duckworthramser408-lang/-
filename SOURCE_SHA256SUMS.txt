@@ -1,0 +1,1 @@
+d86a332b4896f15322d5eaf80856af32b53e99bec27739b4c8484b0a70b51f67  catch-bugs-0.6.8-source.zip

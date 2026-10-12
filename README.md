@@ -11,3 +11,9 @@
 239项完整自动测试与静态检查通过。APK资源、签名与清单已校验。实际安卓/鸿蒙设备安装和触屏流畅性尚未验证。
 
 SHA256：`39cf7490f004ce5f9f1d004df72efb82b352f55f99c958f938ef2f3c88380809`
+
+## 完整项目源码0.6.8
+
+[下载完整Flutter源码ZIP](catch-bugs-0.6.8-source.zip)（约47.5MB）。源码包需要解压，包含lib、全部图片和音乐assets、android、docs、scripts和test。解压后阅读README.md，编译说明在docs/DEVELOPMENT.md。源码与0.6.8 APK对应，213个工程文件已核验。
+
+SHA256：`d86a332b4896f15322d5eaf80856af32b53e99bec27739b4c8484b0a70b51f67`
