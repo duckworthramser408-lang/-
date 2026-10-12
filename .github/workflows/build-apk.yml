@@ -46,6 +46,12 @@ jobs:
           path: |
             app/outputs/previews/*.png
             flutter-tests.jsonl
+            app/lib/ui/mode_motion_controller.dart
+            app/lib/ui/mode_sticker_physics.dart
+            app/lib/ui/widgets/action_card_hand.dart
+            app/lib/ui/widgets/girl_card_view.dart
+            app/test/home_and_preview_update_test.dart
+            app/test/mode_sticker_physics_test.dart
           retention-days: 30
       - name: Install Android build packages
         run: |

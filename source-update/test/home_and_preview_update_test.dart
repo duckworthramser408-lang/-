@@ -115,6 +115,10 @@ void main() {
     for (final id in [1, 5, 25]) {
       expect(find.byKey(ValueKey('accomplice-ground-glow-$id')), findsOneWidget);
     }
+    // 先走真实设备的inactive交接；paused时Flutter已暂停绘制帧。
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+    await tester.pump();
+    expect(glows(), findsNothing, reason: '失焦先遮挡秘密棋盘');
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
     await tester.pump();
     expect(glows(), findsNothing);

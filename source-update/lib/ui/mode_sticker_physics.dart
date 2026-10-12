@@ -110,12 +110,15 @@ class ModeStickerPhysics {
         _walls(body);
       }
     }
-    // 接触堆叠中速度解有微小残差；以最终实际位移判断落稳，
-    // 连续0.8秒稳定才休眠，不能在飞行最高点提前停止。
+    // 接触堆叠的速度解有微小残差：先确认每张贴纸由边界或
+    // 下方贴纸支撑，再按实际位移判断落稳，不能在空中提前休眠。
+    final supported = _supportedBodies();
     var quiet = true;
     for (var i = 0; i < bodies.length; i++) {
-      if ((bodies[i].position - before[i]).distance > size.height * .00002 ||
-          bodies[i].velocity.distance > 2) {
+      if (!supported[i] ||
+          (bodies[i].position - before[i]).distance > size.height * .0002 ||
+          (_gravityDirection == Offset.zero &&
+              bodies[i].velocity.distance > 2)) {
         quiet = false;
         break;
       }
@@ -129,6 +132,42 @@ class ModeStickerPhysics {
         body.angularVelocity = 0;
       }
     }
+  }
+
+  List<bool> _supportedBodies() {
+    if (_gravityDirection == Offset.zero) {
+      return List.filled(bodies.length, true);
+    }
+    final direction = _gravityDirection / _gravityDirection.distance;
+    final supported = [
+      for (final body in bodies)
+        (direction.dx < -.05 && body.position.dx <= body.wallInset + .5) ||
+            (direction.dx > .05 &&
+                body.position.dx >= size.width - body.wallInset - .5) ||
+            (direction.dy < -.05 && body.position.dy <= body.wallInset + .5) ||
+            (direction.dy > .05 &&
+                body.position.dy >= size.height - body.wallInset - .5),
+    ];
+    for (var pass = 0; pass < bodies.length; pass++) {
+      var changed = false;
+      for (var i = 0; i < bodies.length; i++) {
+        if (supported[i]) continue;
+        for (var j = 0; j < bodies.length; j++) {
+          if (!supported[j] || i == j) continue;
+          final delta = bodies[j].position - bodies[i].position;
+          final distance = delta.distance;
+          if (distance <= bodies[i].radius + bodies[j].radius + 1 &&
+              delta.dx * direction.dx + delta.dy * direction.dy >
+                  distance * .20) {
+            supported[i] = true;
+            changed = true;
+            break;
+          }
+        }
+      }
+      if (!changed) break;
+    }
+    return supported;
   }
 
   void _collide(ModeStickerBody a, ModeStickerBody b, int i, int j) {

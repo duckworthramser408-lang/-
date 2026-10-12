@@ -1006,8 +1006,8 @@
   },
   {
     "path": "lib/ui/mode_sticker_physics.dart",
-    "size": 6118,
-    "sha256": "C28A00977DCD5AE1DA2679ED54AD16347A8430B2C3A69CC88C7B6DE343F54B7E"
+    "size": 7600,
+    "sha256": "10300016C47A85B2DD7890F7C7697FB50C5388C89AA7896DB36435B88A3661A9"
   },
   {
     "path": "lib/ui/paper_surface.dart",
@@ -1206,8 +1206,8 @@
   },
   {
     "path": "test/home_and_preview_update_test.dart",
-    "size": 7091,
-    "sha256": "534062ACC42EF0DB8578EDD0E635D5BB7A9A31BF6535E9F77F6FE36CB19B1A34"
+    "size": 7352,
+    "sha256": "CF734CBD4598C1910A0DB55C998A90408CC71DA2997724BDFE19FD38B2D986A4"
   },
   {
     "path": "test/infection_limit_page_test.dart",
