@@ -1,0 +1,18 @@
+[
+  {
+    "path": "assets/audio/card_chime.wav",
+    "bytes": 21212,
+    "sha256": "86B6A9C22F9F39ACF044DDFDAFFA154D3C19C9A2BBC6584CCC89CEC192C267B8",
+    "sample_rate": 44100,
+    "channels": 1,
+    "duration_ms": 240
+  },
+  {
+    "path": "assets/audio/crop_pop.wav",
+    "bytes": 10188,
+    "sha256": "1B19FC1BA9E1B5668E60942511E2019DA99BA2F85EB7C7546467C3836F7D1250",
+    "sample_rate": 44100,
+    "channels": 1,
+    "duration_ms": 115
+  }
+]

@@ -277,103 +277,104 @@ class ActionCardImage extends StatelessWidget {
                 previewDetails ? width * .065 : 0,
               ),
               child: Stack(
-              fit: StackFit.expand,
-              children: [
-                image,
-                Positioned(
-                  left: width * .12,
-                  right: width * .12,
-                  top: height * .10,
-                  height: height * .09,
-                  child: FittedBox(
-                    child: Text(
-                      '行动牌 ${card.id.toString().padLeft(2, '0')}',
-                      style: TextStyle(
-                        color: foreground,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: width * .12,
-                  right: width * .12,
-                  top: height * .24,
-                  height: height * .13,
-                  child: FittedBox(
-                    child: OmenInstructionsView(
-                      instructions: card.displayInstructions,
-                      color: foreground,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: width * .15,
-                  right: width * .15,
-                  top: height * .40,
-                  height: height * .06,
-                  child: FittedBox(
-                    child: Text(
-                      card.displayInstructions
-                          .map((method) => method.label)
-                          .join(' ＋ '),
-                      style: TextStyle(color: foreground, fontSize: 14),
-                    ),
-                  ),
-                ),
-                if (!previewDetails) Positioned(
-                  left: width * .16,
-                  right: width * .16,
-                  top: height * .86,
-                  height: height * .055,
-                  child: FittedBox(
-                    child: Text(
-                      '啃食 ${card.instructions.length} 次',
-                      style: TextStyle(color: foreground, fontSize: 14),
-                    ),
-                  ),
-                ),
-                if (previewDetails)
+                fit: StackFit.expand,
+                children: [
+                  image,
                   Positioned(
-                    left: width * .13,
-                    right: width * .13,
-                    top: height * .795,
-                    height: height * .045,
+                    left: width * .12,
+                    right: width * .12,
+                    top: height * .10,
+                    height: height * .09,
                     child: FittedBox(
-                      fit: BoxFit.scaleDown,
                       child: Text(
-                        '行动牌 · ${card.label}',
-                        key: const ValueKey('preview-card-name'),
+                        '行动牌 ${card.id.toString().padLeft(2, '0')}',
                         style: TextStyle(
                           color: foreground,
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
                   ),
-                if (previewDetails)
                   Positioned(
                     left: width * .12,
                     right: width * .12,
-                    top: height * .845,
-                    height: height * .10,
+                    top: height * .24,
+                    height: height * .13,
                     child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        '${card.displayInstructions.map((method) => method == InfectionMethod.ring ? '环：周围八格' : '十：同一行或列').join('；')}。\n每个指示由不同贪吃虫\n啃食一个作物。',
-                        key: const ValueKey('preview-card-effect'),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: foreground,
-                          fontSize: 12,
-                          height: 1.35,
-                        ),
+                      child: OmenInstructionsView(
+                        instructions: card.displayInstructions,
+                        color: foreground,
                       ),
                     ),
                   ),
-              ],
+                  Positioned(
+                    left: width * .15,
+                    right: width * .15,
+                    top: height * .40,
+                    height: height * .06,
+                    child: FittedBox(
+                      child: Text(
+                        card.displayInstructions
+                            .map((method) => method.label)
+                            .join(' ＋ '),
+                        style: TextStyle(color: foreground, fontSize: 14),
+                      ),
+                    ),
+                  ),
+                  if (!previewDetails)
+                    Positioned(
+                      left: width * .16,
+                      right: width * .16,
+                      top: height * .86,
+                      height: height * .055,
+                      child: FittedBox(
+                        child: Text(
+                          '啃食 ${card.instructions.length} 次',
+                          style: TextStyle(color: foreground, fontSize: 14),
+                        ),
+                      ),
+                    ),
+                  if (previewDetails)
+                    Positioned(
+                      left: width * .13,
+                      right: width * .13,
+                      top: height * .795,
+                      height: height * .045,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          '行动牌 · ${card.label}',
+                          key: const ValueKey('preview-card-name'),
+                          style: TextStyle(
+                            color: foreground,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  if (previewDetails)
+                    Positioned(
+                      left: width * .12,
+                      right: width * .12,
+                      top: height * .845,
+                      height: height * .10,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          '${card.displayInstructions.map((method) => method == InfectionMethod.ring ? '环：周围八格' : '十：同一行或列').join('；')}。\n每个指示由不同贪吃虫\n啃食一个作物。',
+                          key: const ValueKey('preview-card-effect'),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: foreground,
+                            fontSize: 12,
+                            height: 1.35,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
           ),

@@ -1,15 +1,15 @@
-name: Build storybook APK 0.6.10
+name: Build storybook APK 0.6.11
 
 on:
   push:
-    branches: [codex/gentle-home-0.6.10]
+    branches: [codex/touch-feedback-0.6.11]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: storybook-apk-0.6.10
+  group: storybook-apk-0.6.11
   cancel-in-progress: true
 
 jobs:
@@ -34,7 +34,7 @@ jobs:
         working-directory: app
         run: |
           flutter pub get --enforce-lockfile
-          dart format lib/ui/mode_motion_controller.dart lib/ui/mode_sticker_physics.dart lib/ui/widgets/mode_sticker_scene.dart lib/ui/widgets/girl_card_view.dart lib/ui/widgets/action_card_hand.dart lib/ui/widgets/action_card_preview.dart lib/ui/game_page.dart test/mode_sticker_motion_test.dart test/mode_sticker_physics_test.dart test/home_and_preview_update_test.dart
+          dart format lib/game/game_engine.dart lib/game/game_controller.dart lib/ui/mode_sticker_physics.dart lib/ui/widgets/mode_sticker_scene.dart lib/ui/widgets/girl_card_view.dart lib/ui/widgets/action_card_preview.dart lib/ui/game_page.dart lib/ui/crop_touch_controller.dart lib/ui/widgets/crop_touch_lift.dart lib/audio/action_sound_controller.dart test/mode_sticker_motion_test.dart test/mode_sticker_physics_test.dart test/home_and_preview_update_test.dart test/touch_and_turn_update_test.dart test/action_card_hand_test.dart test/computer_mode_page_test.dart test/farm_interaction_hints_test.dart test/game_page_test.dart test/infection_limit_page_test.dart test/surveillance_undo_test.dart
           flutter analyze
           flutter test --machine > ../flutter-tests.jsonl
           flutter test --no-pub --dart-define=EXPORT_ART_PREVIEWS=true test/storybook_preview_test.dart
@@ -42,16 +42,12 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: previews-and-tests-0.6.10
+          name: previews-and-tests-0.6.11
           path: |
             app/outputs/previews/*.png
             flutter-tests.jsonl
-            app/lib/ui/mode_motion_controller.dart
-            app/lib/ui/mode_sticker_physics.dart
-            app/lib/ui/widgets/action_card_hand.dart
-            app/lib/ui/widgets/girl_card_view.dart
-            app/test/home_and_preview_update_test.dart
-            app/test/mode_sticker_physics_test.dart
+            app/lib/
+            app/test/
           retention-days: 30
       - name: Install Android build packages
         run: |
@@ -74,10 +70,10 @@ jobs:
       - name: Retain verified build output
         uses: actions/upload-artifact@v4
         with:
-          name: catch-bugs-0.6.10
+          name: catch-bugs-0.6.11
           path: |
-            release/catch-bugs-0.6.10.apk
-            release/catch-bugs-0.6.10-source.zip
+            release/catch-bugs-0.6.11.apk
+            release/catch-bugs-0.6.11-source.zip
             release/APK-validation.json
             release/SHA256SUMS.txt
           retention-days: 30
@@ -85,5 +81,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create v0.6.10 --draft --target "$GITHUB_SHA" --title "捉虫子 0.6.10 · 轻柔飘落与预览修复" --notes-file release/release-notes.md release/catch-bugs-0.6.10.apk release/catch-bugs-0.6.10-source.zip release/APK-validation.json release/SHA256SUMS.txt app/outputs/previews/01-mode.png app/outputs/previews/03-day.png app/outputs/previews/04-night.png app/outputs/previews/05-card-preview.png
-          gh release edit v0.6.10 --draft=false
+          gh release create v0.6.11 --draft --target "$GITHUB_SHA" --title "捉虫子 0.6.11 · 触摸反馈与自动交接" --notes-file release/release-notes.md release/catch-bugs-0.6.11.apk release/catch-bugs-0.6.11-source.zip release/APK-validation.json release/SHA256SUMS.txt app/outputs/previews/01-mode.png app/outputs/previews/03-day.png app/outputs/previews/04-night.png app/outputs/previews/05-card-preview.png
+          gh release edit v0.6.11 --draft=false

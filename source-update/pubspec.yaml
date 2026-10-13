@@ -1,7 +1,7 @@
 name: happiness_threads
 description: 捉虫子——安卓平板本地双人非对称推理桌游。
 publish_to: none
-version: 0.6.10+20
+version: 0.6.11+21
 
 environment:
   sdk: '>=3.8.0 <4.0.0'

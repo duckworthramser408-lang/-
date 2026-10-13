@@ -26,7 +26,11 @@ class ActionCardPreview extends StatefulWidget {
 }
 
 class _ActionCardPreviewState extends State<ActionCardPreview>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
+  late final AnimationController _press = AnimationController(vsync: this,
+    duration: const Duration(milliseconds: 80), reverseDuration: const Duration(milliseconds: 180));
+  late final AnimationController _sparkle = AnimationController(vsync: this,
+    duration: const Duration(milliseconds: 560));
   late final AnimationController _fade = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 180),
@@ -36,6 +40,8 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
     super.didUpdateWidget(oldWidget);
     if (widget.closing != oldWidget.closing) {
       if (widget.closing) {
+        _press.stop();
+        _sparkle.stop();
         _fade.reverse();
       } else {
         _fade.forward();
@@ -45,6 +51,8 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
 
   @override
   void dispose() {
+    _press.dispose();
+    _sparkle.dispose();
     _fade.dispose();
     super.dispose();
   }
@@ -73,18 +81,28 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
               return Center(
                 child: GestureDetector(
                   key: widget.frameKey,
-                  onTap: () {}, // Artwork itself is not blank dismiss space.
+                  onTapDown: (_) { _press.forward(); _sparkle.forward(from: 0); },
+                  onTapUp: (_) => _press.reverse(),
+                  onTapCancel: () => _press.reverse(),
+                  onTap: () {}, // 点击只反馈，不出牌、不取消预览。
                   child: SizedBox(
                     key: const ValueKey('card-preview-content'),
                     width: width,
                     height: width * 1672 / 941,
-                    child: ActionCardImage(
+                    child: AnimatedBuilder(animation: _press, builder: (context, child) =>
+                      Transform.translate(key: const ValueKey('preview-press'),
+                        offset: Offset(0, 4 * _press.value),
+                        child: Transform.scale(scale: 1 - .018 * _press.value, child: child)),
+                      child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, children: [ActionCardImage(
                       key: const ValueKey('preview-high-resolution-image'),
                       card: widget.card,
                       highResolution: true,
                       previewDetails: true,
                       night: widget.night,
                     ),
+                    IgnorePointer(child: CustomPaint(key: const ValueKey('preview-touch-sparkles'),
+                      painter: _PreviewTouchSparkles(_sparkle))),
+                    ])),
                   ),
                 ),
               );
@@ -94,6 +112,25 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
       ),
     ),
   );
+}
+
+class _PreviewTouchSparkles extends CustomPainter {
+  _PreviewTouchSparkles(this.animation) : super(repaint: animation);
+  final Animation<double> animation;
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (animation.value <= 0 || animation.value >= 1) return;
+    final t = Curves.easeOut.transform(animation.value);
+    for (var i = 0; i < 14; i++) {
+      final side = i.isEven ? -1.0 : 1.0;
+      final origin = Offset(side < 0 ? 0 : size.width, size.height * (.30 + (i ~/ 2) * .064));
+      final point = origin + Offset(side * (3 + t * (9 + (i % 4) * 3)), -t * (4 + i % 5 * 2));
+      canvas.drawCircle(point, .8 + (i % 3) * .35,
+        Paint()..color = const Color(0xFFFFF8DC).withValues(alpha: (1 - animation.value) * .85));
+    }
+  }
+  @override
+  bool shouldRepaint(_PreviewTouchSparkles oldDelegate) => oldDelegate.animation != animation;
 }
 
 /// A finite burst after the preview is gone. Deterministic decorative particles

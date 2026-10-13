@@ -1,0 +1,43 @@
+{
+  "version_name": "0.6.10",
+  "version_code": 20,
+  "package": "com.happiness.threads",
+  "file": "catch-bugs-0.6.10.apk",
+  "size_bytes": 128054510,
+  "sha256": "801433b301f438c8a53ac2f60dfd9da6373004a4b293e78f4773fad07123c5c8",
+  "certificate_sha256": "25416b7ee13b8b9b8c7d3400b2ada130d5e23c2d5a4f02f7d4d97b4399565107",
+  "same_upgrade_signature": false,
+  "abis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86_64"
+  ],
+  "min_sdk": 24,
+  "target_sdk": 35,
+  "internet_permission": false,
+  "signature_verified": true,
+  "verified_new_art_assets": 37,
+  "font_license_bundled": true,
+  "music_asset_uncompressed": true,
+  "real_device_tested": false,
+  "action_instruction_order": [
+    "十＋环",
+    "十＋环",
+    "环＋环",
+    "十＋十",
+    "环＋十＋十"
+  ],
+  "action_icons_day_and_night_verified": true,
+  "shared_day_night_horizon": true,
+  "build_commit": "34eb3b62b2a4b7a771a7448c273de83b537bf56a",
+  "tests_passed": 247,
+  "tests_skipped": 1,
+  "actual_flutter_previews": 8,
+  "gentle_gravity_drift": true,
+  "sticker_scale_min": 1,
+  "sticker_scale_max": 2,
+  "direct_home_button": true,
+  "private_night_ground_glow": true,
+  "rounded_preview_with_in_card_description": true,
+  "build_run_url": "https://github.com/duckworthramser408-lang/catch-bug-app/actions/runs/38275492836"
+}

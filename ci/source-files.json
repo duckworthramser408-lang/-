@@ -11,13 +11,13 @@
   },
   {
     "path": "AGENTS.md",
-    "size": 15971,
-    "sha256": "8E3373958E80CF0F3C3D4D92819DCCBE581D9E3AEC3B0D24923CA6F9DE82BBBC"
+    "size": 16926,
+    "sha256": "5EB0C6AE1AEFF2E9795F4DD29DB08954805D45896FCF4A62C31CEDD3004DA13C"
   },
   {
     "path": "README.md",
-    "size": 9371,
-    "sha256": "0D03082845BC29A0C188FCB4AFD8AEB07AEA45B37CFCC8CE34E35D5E3095A61D"
+    "size": 9642,
+    "sha256": "D0987D156A24FE7FDCC29A3F0537303CD44AD3C20CE8A4F11FCFD4DE9F30ED61"
   },
   {
     "path": "analysis_options.yaml",
@@ -26,8 +26,8 @@
   },
   {
     "path": "android/app/build.gradle.kts",
-    "size": 1136,
-    "sha256": "487C98606C6ECC7453812862E6CA4377C976302C4E27C102A822DC6387BF21E2"
+    "size": 1280,
+    "sha256": "31882E4DAD2AB6C535C8483C5BF9F202484EBC5950185406CF3CCFADBC463E89"
   },
   {
     "path": "android/app/src/debug/AndroidManifest.xml",
@@ -45,9 +45,14 @@
     "sha256": "AC951E151F6BE1FFEF2AB1800ECD1E5B9A288A2AA95242AA0C9DDD0821A00A72"
   },
   {
+    "path": "android/app/src/main/kotlin/com/happiness/threads/CardSoundEffects.kt",
+    "size": 2955,
+    "sha256": "19C72B29BFC1A1D511A061F2FCA3CCA72BE218325FF4F324B2CD5ABDA835D9BA"
+  },
+  {
     "path": "android/app/src/main/kotlin/com/happiness/threads/MainActivity.kt",
-    "size": 5917,
-    "sha256": "CFAFF34E5CDD6D0408FD65880124037C4DD69D1115018922D02AB6E7D1030DFB"
+    "size": 6252,
+    "sha256": "60B520EEBB97201B7B61493E945AFC48E8B60CD52A8168496138E014432A13CF"
   },
   {
     "path": "android/app/src/main/kotlin/com/happiness/threads/ModeMotionStream.kt",
@@ -143,6 +148,16 @@
     "path": "assets/audio/background_music.mp3",
     "size": 1174306,
     "sha256": "01893611D429D5DA73F8333BDAB4E15FD86B95B6A941524A79494E919B075C63"
+  },
+  {
+    "path": "assets/audio/card_chime.wav",
+    "size": 21212,
+    "sha256": "86B6A9C22F9F39ACF044DDFDAFFA154D3C19C9A2BBC6584CCC89CEC192C267B8"
+  },
+  {
+    "path": "assets/audio/crop_pop.wav",
+    "size": 10188,
+    "sha256": "1B19FC1BA9E1B5668E60942511E2019DA99BA2F85EB7C7546467C3836F7D1250"
   },
   {
     "path": "assets/backgrounds/README.md",
@@ -585,6 +600,11 @@
     "sha256": "60575A1B2AFD119FC2EB76051D8F7443BB76EF406ADB3A0620BB3F293319B6C5"
   },
   {
+    "path": "docs/APK_0_6_10.json",
+    "size": 1313,
+    "sha256": "A6571FE23C275B5E70CAB90A8F0EB26FAC07AFB440EB3847DA5B087B4727A6E9"
+  },
+  {
     "path": "docs/APK_0_6_2.json",
     "size": 1267,
     "sha256": "B77E4DD71684598BD42FFE86EA60676185E89DDB0F758981BBBCEACFDE2663FC"
@@ -666,8 +686,8 @@
   },
   {
     "path": "docs/ARCHITECTURE.md",
-    "size": 22883,
-    "sha256": "30FA5106F03973FFF8009503DD32E9C9591DF3C3C34CA5F5FCF34CC8CC5A3FEE"
+    "size": 23838,
+    "sha256": "42107C3456D4C9CF4E0E2C9C43043D66A5AACC50C6BB70D01B19903E1B9CFD0D"
   },
   {
     "path": "docs/ART_PROMPTS.json",
@@ -821,8 +841,8 @@
   },
   {
     "path": "docs/RULES.md",
-    "size": 20577,
-    "sha256": "D0693C0C2F297090241E09BCDC5ECA644272EBEF7031D159ACEF30EEF82712A0"
+    "size": 21532,
+    "sha256": "C0DD9104538B50CDDCE6D686013E396EA96163AF16F06EAEA023FF6EEC02C382"
   },
   {
     "path": "docs/RULES_FEEDBACK_UPDATE.md",
@@ -860,14 +880,29 @@
     "sha256": "7EA8C5C1E18D66E6818928DDDD7EF16954130156028ED3D0EC2E31B5B1E9E73D"
   },
   {
+    "path": "docs/TOUCH_AND_TURN_UPDATE.md",
+    "size": 2728,
+    "sha256": "887F1B02A7E340D2EEFDD488448135836F79144205EA1761D700339093664BCE"
+  },
+  {
+    "path": "docs/TOUCH_AUDIO_MANIFEST.json",
+    "size": 445,
+    "sha256": "C150F5EAFD3C2B0E29E50947D126D47E286D4501733FE82B898D1E56F5AB204B"
+  },
+  {
     "path": "docs/VALIDATION.md",
-    "size": 18569,
-    "sha256": "444389CB215A2D5D434AB004C6AF5C33CF4D5E10FEE2F0C8281D37E697D61903"
+    "size": 18933,
+    "sha256": "383E256EFB26B508ED7A5CC5B9BC3A76F8BA0980844807EFEDD72154094C2DF3"
   },
   {
     "path": "docs/WORM_ART_MANIFEST.json",
     "size": 651,
     "sha256": "A017879BD09B127890543B4FAC58A3420B39DC0ED669C450DE6690BDCE0C4CD5"
+  },
+  {
+    "path": "lib/audio/action_sound_controller.dart",
+    "size": 832,
+    "sha256": "C00D28C3AC453AB194EBF237D47E0C321C0C86CCAFB3096C948446F8133D4D4A"
   },
   {
     "path": "lib/audio/background_music_controller.dart",
@@ -881,13 +916,13 @@
   },
   {
     "path": "lib/game/game_controller.dart",
-    "size": 6895,
-    "sha256": "84F87E342A46CFD134624BC483475BE4A67F0158D2F984E545C64AFBE46FEA7C"
+    "size": 6889,
+    "sha256": "FD226D5D9351879920268FF09FF9E7D24C895331504E5C55548BE7FE207ECBD1"
   },
   {
     "path": "lib/game/game_engine.dart",
-    "size": 26368,
-    "sha256": "3F53C5EF8D21690A702B5E22CEC835FCB92FC8C326353A9DF2F5D1FFA20DB7C6"
+    "size": 26850,
+    "sha256": "4A8281F391E2F117D8F913582FFE7BB246770E410A9C6622511D8EA0AA4EFC2E"
   },
   {
     "path": "lib/game/infection_route_resolver.dart",
@@ -965,6 +1000,11 @@
     "sha256": "E0B558A30E7660AF4F2761D6153B039C58BC8D330F173797C5F74EB9D3FF27C5"
   },
   {
+    "path": "lib/ui/crop_touch_controller.dart",
+    "size": 1917,
+    "sha256": "E92787C02EAB8CC7B980B99B85C653690BB3DE71685E3A3CF5B6E6C02E27E2BC"
+  },
+  {
     "path": "lib/ui/farm_scene_geometry.dart",
     "size": 2051,
     "sha256": "C3F6C21F3970D5A05471FC9C4425F254D2CDCB76822F5DC71494CC4940C8A9F9"
@@ -991,8 +1031,8 @@
   },
   {
     "path": "lib/ui/game_page.dart",
-    "size": 42126,
-    "sha256": "2C79208F4AC85CCBF8BD8093BE13AC0DEB3B662818BBB59730A60A1CAA0B2E20"
+    "size": 42770,
+    "sha256": "BE5F27F5CE6688EE20C640245D6EBB8F2A47A9A00E74C8E9F24BBBADC6238B5D"
   },
   {
     "path": "lib/ui/game_theme.dart",
@@ -1001,13 +1041,13 @@
   },
   {
     "path": "lib/ui/mode_motion_controller.dart",
-    "size": 3181,
-    "sha256": "3A182D633F397942451F1A2B01D9FBBC492F2E0F8865FD42114837D47C36EE87"
+    "size": 3165,
+    "sha256": "5DC0ED9F8A5CE63A211FB573A2720171F4C7B28F7013CB91E4C87F1CF67326D3"
   },
   {
     "path": "lib/ui/mode_sticker_physics.dart",
-    "size": 7600,
-    "sha256": "10300016C47A85B2DD7890F7C7697FB50C5388C89AA7896DB36435B88A3661A9"
+    "size": 8207,
+    "sha256": "C6D001D6256B1513FD68CCAC710ED35F9FB95AC69871C8850E673228C47122F3"
   },
   {
     "path": "lib/ui/paper_surface.dart",
@@ -1021,18 +1061,23 @@
   },
   {
     "path": "lib/ui/widgets/action_card_hand.dart",
-    "size": 14128,
-    "sha256": "00979942383E4EA71342462E8C464490728AD7DB706569A5B74590CE3AD00F95"
+    "size": 14364,
+    "sha256": "7B8FB2BD60922F966016730F1F276466C65B1CBFE6419B9BBA8D916D18EDC32A"
   },
   {
     "path": "lib/ui/widgets/action_card_preview.dart",
-    "size": 5674,
-    "sha256": "1EE2A9CB21C295196BBD194D44C64747AAF79EE1EB06F5F6707711550F20C967"
+    "size": 7711,
+    "sha256": "729AC39B7B05F5CAFB97E4C2343734061FC4E08CCA7A78F449951AE4985DB1A4"
   },
   {
     "path": "lib/ui/widgets/crop_image_view.dart",
     "size": 3709,
     "sha256": "62965BD57E052BF2C73A93D462D667D4AB1179D3079CE41975034F2D569A3871"
+  },
+  {
+    "path": "lib/ui/widgets/crop_touch_lift.dart",
+    "size": 2363,
+    "sha256": "81DE04ECFF1FC3FB514154DF3441E20D4DB1129EB751E3A12EB0435FA5CB9A7B"
   },
   {
     "path": "lib/ui/widgets/deduction_note_widgets.dart",
@@ -1066,8 +1111,8 @@
   },
   {
     "path": "lib/ui/widgets/girl_card_view.dart",
-    "size": 12952,
-    "sha256": "66F66F47640E89C230D05908FD9B4AD8AF1E8085F3D294C3100A8CA368C72FC5"
+    "size": 12703,
+    "sha256": "BEA7D24DB45C8AEEC1ABBBD198952047D33F559668422C0C8577A28FB8AFE7E9"
   },
   {
     "path": "lib/ui/widgets/infection_round_legend.dart",
@@ -1076,8 +1121,8 @@
   },
   {
     "path": "lib/ui/widgets/mode_sticker_scene.dart",
-    "size": 5488,
-    "sha256": "C9C7C281D053A04FEAA80551BCC4A76F68FD4D860BD8E58C1A21D91FB04D8E9F"
+    "size": 5500,
+    "sha256": "3A34C3CF9777560AFE79843037D4027F10B0C53F9248995647E3DB78E6A8CF83"
   },
   {
     "path": "lib/ui/widgets/omen_instruction_icons.dart",
@@ -1097,7 +1142,7 @@
   {
     "path": "pubspec.yaml",
     "size": 726,
-    "sha256": "D5B6A09D832C7BBF4F7255855874117A9DAD66A8CECBB2F8424B3810CDB23FD1"
+    "sha256": "906D311C4556199B74C61E18A876D488113CD2565F3DB56CA09CD1A160B0FDE1"
   },
   {
     "path": "scripts/bootstrap_cloud.sh",
@@ -1121,8 +1166,8 @@
   },
   {
     "path": "test/action_card_hand_test.dart",
-    "size": 19405,
-    "sha256": "BA02240A2A2635CCA8B2BB2CDFFCB11FE5C39EB5D84D0D22867DAFBEEDC20746"
+    "size": 19399,
+    "sha256": "C045CE886F63B34355FDBC2FA2A32DF674F4941FA75789F5EC43CF4CC2DE8D5E"
   },
   {
     "path": "test/automatic_infection_routes_test.dart",
@@ -1141,8 +1186,8 @@
   },
   {
     "path": "test/computer_mode_page_test.dart",
-    "size": 14713,
-    "sha256": "8B11E12A324BEB2CAE55C99E586797EA564616DC05B8BD5DDE9332978FAF561B"
+    "size": 14649,
+    "sha256": "CB90AEDC342963E052375367ADCA46AC00C4FCF21093F212C9D7DE8B7F4ED7B0"
   },
   {
     "path": "test/computer_opponent_test.dart",
@@ -1161,8 +1206,8 @@
   },
   {
     "path": "test/farm_interaction_hints_test.dart",
-    "size": 6359,
-    "sha256": "2D4FD7B8F130DC7B855C38610CC704CA38C684B5DC1D54C243E0FD4E5D0BADCE"
+    "size": 6309,
+    "sha256": "8448F6602BC07DDB55F144EDEB77109172DB51263B91FC1026F12F7AB4C42586"
   },
   {
     "path": "test/farm_source_alignment_test.dart",
@@ -1186,8 +1231,8 @@
   },
   {
     "path": "test/game_page_test.dart",
-    "size": 8469,
-    "sha256": "5A67D93E25864088B003D9D8B35546C8BB859490E616D279CF22B21593FE999D"
+    "size": 8427,
+    "sha256": "C0DDBF40D0AEA7863DD2835B83D572233D12E801D59B7117A9E19CD42EC89151"
   },
   {
     "path": "test/game_storage_test.dart",
@@ -1206,13 +1251,13 @@
   },
   {
     "path": "test/home_and_preview_update_test.dart",
-    "size": 7352,
-    "sha256": "CF734CBD4598C1910A0DB55C998A90408CC71DA2997724BDFE19FD38B2D986A4"
+    "size": 7902,
+    "sha256": "6599B86BF52470D0E5AE1F84202EF80638E065C38E639B554216E249517C49CE"
   },
   {
     "path": "test/infection_limit_page_test.dart",
-    "size": 3867,
-    "sha256": "68315FF0ECE97F991F6F83D51284692EDFC83905C17CE443A684EDEB5A7D172B"
+    "size": 3815,
+    "sha256": "6C45C661F12C3FD8BE3FD6820F468875CA70AC46EC4B5EDF5E08141CF3355A54"
   },
   {
     "path": "test/infection_range_preview_test.dart",
@@ -1226,13 +1271,13 @@
   },
   {
     "path": "test/mode_sticker_motion_test.dart",
-    "size": 12049,
-    "sha256": "585CA0442C62C95780AD64FD016C144EA1EC1086321A5DE071CAC1B180AC1C4B"
+    "size": 12054,
+    "sha256": "5D9CCE64EDB7234E45EA18C17273D197F882830FED26CA3E4D733A98D10724C0"
   },
   {
     "path": "test/mode_sticker_physics_test.dart",
-    "size": 4482,
-    "sha256": "766EDD702CD9CCD334EA04F78F11A1932E5667A1926E807711B27A190B11054E"
+    "size": 4797,
+    "sha256": "37D0F5FFF51857846E31EB1EB41D383D3E7AE02C3CFCA99C9EB679292DC6EFDC"
   },
   {
     "path": "test/monitored_infection_limit_test.dart",
@@ -1291,7 +1336,12 @@
   },
   {
     "path": "test/surveillance_undo_test.dart",
-    "size": 8223,
-    "sha256": "3D262B9D7E957EEEE53EBB4924875668A6A415BD34F01EF4699EDB07A53804AB"
+    "size": 7460,
+    "sha256": "8144C1172ADE17D2F61AB51C1F025EBAA482566F88E3EA5219BCB618CA3BD128"
+  },
+  {
+    "path": "test/touch_and_turn_update_test.dart",
+    "size": 6739,
+    "sha256": "57B795BFED15B7BA12F8039F6F0F66BDCD94B674882D4E33093A3BEC93A25ECC"
   }
 ]

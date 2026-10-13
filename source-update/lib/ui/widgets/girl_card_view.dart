@@ -5,6 +5,8 @@ import '../../models/girl_card.dart';
 import '../game_artwork.dart';
 import '../game_theme.dart';
 import 'crop_image_view.dart';
+import 'crop_touch_lift.dart';
+import '../crop_touch_controller.dart';
 import '../game_night_style.dart';
 
 /// 身份蓝光只由秘密反派阶段传入，公开阶段和隐私遮挡下不显示。
@@ -25,6 +27,7 @@ class GirlCardView extends StatelessWidget {
     this.night = false,
     this.rangeHint = false,
     this.hintPulseLit = false,
+    this.cropTouch,
   });
   final GirlCard girl;
   final VoidCallback? onTap;
@@ -42,6 +45,9 @@ class GirlCardView extends StatelessWidget {
   final bool night;
   final bool rangeHint;
   final bool hintPulseLit;
+  final CropTouchController? cropTouch;
+
+  Widget _lift(Widget child) => cropTouch == null ? child : CropTouchLift(plotId: girl.id, motion: cropTouch!, child: child);
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +60,7 @@ class GirlCardView extends StatelessWidget {
     final borderColor = identitySelection
         ? GamePalette.crimson
         : accompliceHighlight
-        ? GamePalette.markerBlue
+        ? const Color(0xFF8AD5F0)
         : selectedCenter
         ? GamePalette.sky
         : revealedAccomplice
@@ -109,6 +115,7 @@ class GirlCardView extends StatelessWidget {
             border: frameBorder,
           ),
           child: ClipRRect(
+            clipBehavior: terrain && cropTouch != null ? Clip.none : Clip.antiAlias,
             borderRadius: BorderRadius.circular(9),
             child: Material(
               color: terrain ? Colors.transparent : placeholder,
@@ -116,48 +123,25 @@ class GirlCardView extends StatelessWidget {
                 onTap: onTap,
                 child: Stack(
                   fit: StackFit.expand,
+                  clipBehavior: terrain && cropTouch != null ? Clip.none : Clip.hardEdge,
                   children: [
                     // 底色始终保留，图片未配置、加载中或失败时自动兜底。
                     ColoredBox(
                       key: ValueKey('card-placeholder-${girl.id}'),
                       color: terrain ? Colors.transparent : placeholder,
                     ),
-                    if (terrain && accompliceHighlight)
-                      Positioned.fill(
-                        child: IgnorePointer(
-                          child: DecoratedBox(
-                            key: ValueKey('accomplice-ground-glow-${girl.id}'),
-                            decoration: BoxDecoration(
-                              gradient: RadialGradient(
-                                center: const Alignment(0, .28),
-                                radius: .72,
-                                colors: [
-                                  const Color(0xFF86D9FF).withValues(alpha: .86),
-                                  const Color(0xFF579DD1).withValues(alpha: .55),
-                                  const Color(0xFF579DD1).withValues(alpha: 0),
-                                ],
-                                stops: const [0, .42, 1],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                     if (crop != null)
                       GameNightStyle.apply(
                         night: night,
                         filter: GameNightStyle.crop,
                         key: ValueKey('crop-tint-${girl.id}'),
-                        child: CropImageView(
-                          artwork: crop,
-                          plotId: girl.id,
-                          eaten: girl.isInfected,
-                        ),
+                        child: _lift(CropImageView(artwork: crop, plotId: girl.id, eaten: girl.isInfected)),
                       )
                     else if (imagePath != null && imagePath.isNotEmpty)
                       GameNightStyle.apply(
                         night: night,
                         filter: GameNightStyle.crop,
-                        child: Padding(
+                        child: _lift(Padding(
                           padding: const EdgeInsets.all(3),
                           child: Image.asset(
                             imagePath,
@@ -171,7 +155,7 @@ class GirlCardView extends StatelessWidget {
                                   ),
                                 ),
                           ),
-                        ),
+                        )),
                       ),
                     if (girl.isInfected)
                       ColoredBox(
@@ -200,6 +184,12 @@ class GirlCardView extends StatelessWidget {
                           ),
                         ),
                       ),
+                    if (terrain && accompliceHighlight)
+                      Positioned.fill(child: IgnorePointer(child: DecoratedBox(
+                        key: ValueKey('accomplice-soil-outline-${girl.id}'),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(9),
+                          border: Border.all(color: const Color(0xFF9ADFFF), width: 2.5)),
+                      ))),
                     // 不显示角色名称或编号，纯色占位卡只保留游戏指示物。
                     Positioned(
                       top: 3,

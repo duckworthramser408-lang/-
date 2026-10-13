@@ -53,9 +53,7 @@ class ModeMotionController extends ChangeNotifier {
     final bounded = acceleration.distance > 9.81
         ? acceleration * (9.81 / acceleration.distance)
         : acceleration;
-    _gravity = _gravity == null
-        ? bounded
-        : _gravity! * .92 + bounded * .08;
+    _gravity = _gravity == null ? bounded : _gravity! * .92 + bounded * .08;
     // 竖屏坐标：物理x向左、屏幕x向右；物理y向上、屏幕y向下。
     final mapped = Offset(-_gravity!.dx, _gravity!.dy);
     _setTarget(mapped.distance < .20 ? Offset.zero : mapped);

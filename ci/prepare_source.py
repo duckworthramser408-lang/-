@@ -33,4 +33,4 @@ for item in files:
     assert target.is_file(), f"Missing source file: {item['path']}"
     assert hashlib.sha256(target.read_bytes()).hexdigest().upper() == item['sha256'], f"Source mismatch: {item['path']}"
 (app / 'android/gradlew').chmod(0o755)
-print(f'Prepared and verified {len(files)} source files for 0.6.10+20.')
+print(f'Prepared and verified {len(files)} source files for 0.6.11+21.')

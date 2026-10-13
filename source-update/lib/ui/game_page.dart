@@ -8,6 +8,8 @@ import '../game_constants.dart';
 import '../models/game_state.dart';
 import 'game_artwork.dart';
 import 'farm_scene_geometry.dart';
+import 'crop_touch_controller.dart';
+import '../audio/action_sound_controller.dart';
 import 'game_theme.dart';
 import 'paper_surface.dart';
 import 'game_night_style.dart';
@@ -35,6 +37,8 @@ class GamePage extends StatefulWidget {
 
 class _GamePageState extends State<GamePage>
     with WidgetsBindingObserver, SingleTickerProviderStateMixin {
+  final _cropTouch = CropTouchController();
+  final _cardSound = ActionSoundController();
   bool _dialogOpen = false;
   bool _dialogScheduled = false;
   bool _resultDismissed = false;
@@ -106,6 +110,7 @@ class _GamePageState extends State<GamePage>
         )..addStatusListener((status) {
           if (status == AnimationStatus.completed && mounted) setState(() {});
         });
+    _cardSound.prepare();
     controller.addListener(_onChanged);
     _startHintPulse();
     _scheduleDialog();
@@ -118,6 +123,8 @@ class _GamePageState extends State<GamePage>
     _music.dispose();
     _previewTimer?.cancel();
     _playParticles.dispose();
+    _cropTouch.dispose();
+    _cardSound.dispose();
     controller.removeListener(_onChanged);
     _stopHintPulse();
     super.dispose();
@@ -128,6 +135,8 @@ class _GamePageState extends State<GamePage>
     if (lifecycle == AppLifecycleState.inactive ||
         lifecycle == AppLifecycleState.paused) {
       _backgrounded = true;
+      _cropTouch.reset();
+      _cardSound.stop();
       _dismissPreviewImmediately();
       _playParticles.stop();
       _music.setSceneActive(false);
@@ -181,6 +190,7 @@ class _GamePageState extends State<GamePage>
 
   void _onChanged() {
     if (!mounted) return;
+    if (_isPrivacy || controller.isComputerTurn) _cropTouch.reset();
     if (state.phase != GamePhase.gameOver) _resultDismissed = false;
     if (!_playAnimating &&
         (state.phase != GamePhase.chooseOmen || _computerMode)) {
@@ -250,6 +260,7 @@ class _GamePageState extends State<GamePage>
       setState(_dismissPreviewImmediately);
       // Particles begin only AFTER the successful preview exit has completed.
       _playParticles.forward(from: 0);
+      if (_music.enabled) _cardSound.play();
     });
   }
 
@@ -490,6 +501,7 @@ class _GamePageState extends State<GamePage>
                           child: GirlCardView(
                             girl: GameArtwork.cardForDisplay(state.girl(id)),
                             terrain: true,
+      cropTouch: _cropTouch,
                             onTap: null,
                             revealedAccomplice: true,
                           ),
@@ -892,7 +904,13 @@ class _GamePageState extends State<GamePage>
     final range = _computerMode
         ? <int>{}
         : controller.infectionRangePreviewTargetIds;
-    return SizedBox.expand(
+    final touchEnabled = !_backgrounded && !_dialogOpen && !controller.resumePrivacyRequired && !_resumeCurtain && !controller.isComputerTurn;
+    return Listener(
+      onPointerDown: (event) { if (touchEnabled) { _cropTouch.touch(event.pointer, event.localPosition, sceneSize); if (_music.enabled && _cropTouch.held.isNotEmpty) _cardSound.pop(); } },
+      onPointerMove: (event) { if (touchEnabled) _cropTouch.touch(event.pointer, event.localPosition, sceneSize); },
+      onPointerUp: (event) => _cropTouch.release(event.pointer, sceneSize),
+      onPointerCancel: (event) => _cropTouch.release(event.pointer, sceneSize),
+      child: SizedBox.expand(
       key: const ValueKey('board-grid'),
       child: Stack(
         children: [
@@ -920,7 +938,7 @@ class _GamePageState extends State<GamePage>
             ),
         ],
       ),
-    );
+    ));
   }
 
   Widget _plot(int id, {bool rangeHint = false}) {
@@ -1029,7 +1047,7 @@ class _GamePageState extends State<GamePage>
           );
         case GamePhase.heroTurn:
           hint =
-              '已提交 ${state.monitorsPlacedThisRound} / ${GameConstants.surveillancePerRound}，待放 ${state.selectedIds.length}';
+              '待标记 ${state.selectedIds.length} / ${GameConstants.surveillancePerRound}，确认后进入下一阶段';
           actions.add(
             _hintButton(
               '确认标记',
@@ -1039,18 +1057,6 @@ class _GamePageState extends State<GamePage>
                     ? controller.submitSurveillance
                     : null,
                 child: const Text('确认标记'),
-              ),
-            ),
-          );
-          actions.add(
-            _hintButton(
-              '结束戴夫行动',
-              controller.canEndHeroTurn && !controller.canSubmitSurveillance,
-              OutlinedButton(
-                onPressed: controller.canEndHeroTurn
-                    ? controller.endHeroTurn
-                    : null,
-                child: const Text('结束戴夫行动'),
               ),
             ),
           );

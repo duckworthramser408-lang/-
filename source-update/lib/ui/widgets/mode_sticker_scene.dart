@@ -9,7 +9,7 @@ import '../mode_motion_controller.dart';
 import '../mode_sticker_physics.dart';
 import 'crop_image_view.dart';
 
-/// 绘本农场铺满模式页；25张同风格贴纸自由飘动、落下堆叠，始终在按钮和标题下层。
+/// 绘本农场铺满模式页；25张同风格贴纸自由飘动、滑动散开，始终在按钮和标题下层。
 class ModeStickerScene extends StatefulWidget {
   const ModeStickerScene({super.key, this.motionController});
   final ModeMotionController? motionController;
@@ -131,7 +131,7 @@ class _ModeStickerSceneState extends State<ModeStickerScene>
             builder: (context, constraints) {
               final size = constraints.biggest;
               final padding = MediaQuery.paddingOf(context);
-              // 尺寸与对局安全区的同一作物保持一致，运动边界则是完整屏幕。
+              // 尺寸与对局安全区的同一作物保持一致，运动边界则向屏幕四边各扩展20%。
               final safeSize = Size(
                 size.width - padding.horizontal,
                 size.height - padding.vertical,

@@ -187,10 +187,10 @@ void main() {
     final beforePause = tester.getRect(sticker);
     for (var i = 1; i <= 25; i++) {
       final rect = tester.getRect(find.byKey(ValueKey('mode-sticker-$i')));
-      expect(rect.left, greaterThanOrEqualTo(0));
-      expect(rect.right, lessThanOrEqualTo(360));
-      expect(rect.top, greaterThanOrEqualTo(0));
-      expect(rect.bottom, lessThanOrEqualTo(640));
+      expect(rect.left, greaterThanOrEqualTo(-72));
+      expect(rect.right, lessThanOrEqualTo(432));
+      expect(rect.top, greaterThanOrEqualTo(-128));
+      expect(rect.bottom, lessThanOrEqualTo(768));
     }
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
     await tester.pumpAndSettle();

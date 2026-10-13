@@ -20,7 +20,7 @@ class ModeStickerBody {
   double get inverseMass => 1 / (radius * radius);
 }
 
-/// 贴纸沿手机重力方向缓慢飘落，不使用摇动发射或随机弹跳。
+/// 贴纸沿手机重力方向飘落，柔性接触允许相互滑过，不使用摇动发射或随机弹跳。
 /// 固定120Hz子步保证不同手机帧率下相同的运动；落稳后停止帧循环。
 class ModeStickerPhysics {
   ModeStickerPhysics({
@@ -50,7 +50,9 @@ class ModeStickerPhysics {
   double _accumulator = 0;
   double _quietTime = 0;
   Offset _gravityDirection = Offset.zero;
-  double get gravity => size.height * .18;
+  Rect get bounds => Rect.fromLTRB(-size.width * .20, -size.height * .20,
+      size.width * 1.20, size.height * 1.20);
+  double get gravity => size.height * .75;
 
   // 保留旧公开入口；含义改为更新重力方向，绝不直接改速度。
   void shake(Offset acceleration) {
@@ -58,8 +60,7 @@ class ModeStickerPhysics {
   }
 
   void setGravity(Offset acceleration) {
-    if (!acceleration.dx.isFinite ||
-        !acceleration.dy.isFinite) {
+    if (!acceleration.dx.isFinite || !acceleration.dy.isFinite) {
       return;
     }
     var direction = acceleration / 9.81;
@@ -90,8 +91,8 @@ class ModeStickerPhysics {
     for (final body in bodies) {
       body.velocity =
           (body.velocity + _gravityDirection * gravity * dt) *
-          math.exp(-dt * 1.8);
-      final limit = size.shortestSide * .20;
+          math.exp(-dt * .75);
+      final limit = size.shortestSide * .60;
       if (body.velocity.distance > limit) {
         body.velocity *= limit / body.velocity.distance;
       }
@@ -141,12 +142,12 @@ class ModeStickerPhysics {
     final direction = _gravityDirection / _gravityDirection.distance;
     final supported = [
       for (final body in bodies)
-        (direction.dx < -.05 && body.position.dx <= body.wallInset + .5) ||
+        (direction.dx < -.05 && body.position.dx <= bounds.left + body.wallInset + .5) ||
             (direction.dx > .05 &&
-                body.position.dx >= size.width - body.wallInset - .5) ||
-            (direction.dy < -.05 && body.position.dy <= body.wallInset + .5) ||
+                body.position.dx >= bounds.right - body.wallInset - .5) ||
+            (direction.dy < -.05 && body.position.dy <= bounds.top + body.wallInset + .5) ||
             (direction.dy > .05 &&
-                body.position.dy >= size.height - body.wallInset - .5),
+                body.position.dy >= bounds.bottom - body.wallInset - .5),
     ];
     for (var pass = 0; pass < bodies.length; pass++) {
       var changed = false;
@@ -175,20 +176,27 @@ class ModeStickerPhysics {
     final distance = delta.distance;
     final overlap = a.radius + b.radius - distance;
     if (overlap <= 0) return;
-    final normal = distance > .0001
+    var normal = distance > .0001
         ? delta / distance
         : Offset(i < j ? 1 : -1, 0);
+    // 纸片之间不承重：仅沿重力的切线分散，不形成刚体高塔。
+    if (_gravityDirection != Offset.zero) {
+      final down = _gravityDirection / _gravityDirection.distance;
+      final tangent = Offset(-down.dy, down.dx);
+      final side = normal.dx * tangent.dx + normal.dy * tangent.dy;
+      normal = tangent * (side.abs() > .01 ? side.sign : (i < j ? 1 : -1));
+    }
     final mass = a.inverseMass + b.inverseMass;
-    a.position -= normal * overlap * a.inverseMass / mass;
-    b.position += normal * overlap * b.inverseMass / mass;
+    a.position -= normal * overlap * .12 * a.inverseMass / mass;
+    b.position += normal * overlap * .12 * b.inverseMass / mass;
     final relative = b.velocity - a.velocity;
     final normalSpeed = relative.dx * normal.dx + relative.dy * normal.dy;
     if (normalSpeed < 0) {
-      final impulse = normal * (-normalSpeed * 1.02 / mass);
+      final impulse = normal * (-normalSpeed * 1.0 / mass);
       a.velocity -= impulse * a.inverseMass;
       b.velocity += impulse * b.inverseMass;
       final tangent = relative - normal * normalSpeed;
-      final friction = tangent * .16 / mass;
+      final friction = tangent * .025 / mass;
       a.velocity += friction * a.inverseMass;
       b.velocity -= friction * b.inverseMass;
       a.angularVelocity *= .93;
@@ -198,10 +206,10 @@ class ModeStickerPhysics {
 
   void _walls(ModeStickerBody body) {
     final inset = body.wallInset;
-    final left = math.min(inset, size.width / 2);
-    final top = math.min(inset, size.height / 2);
-    final right = math.max(left, size.width - inset);
-    final bottom = math.max(top, size.height - inset);
+    final left = math.min(bounds.left + inset, size.width / 2);
+    final top = math.min(bounds.top + inset, size.height / 2);
+    final right = math.max(left, bounds.right - inset);
+    final bottom = math.max(top, bounds.bottom - inset);
     var vx = body.velocity.dx;
     var vy = body.velocity.dy;
     if (body.position.dx < left && vx < 0 ||
@@ -211,7 +219,7 @@ class ModeStickerPhysics {
     if (body.position.dy < top && vy < 0) vy *= -.04;
     if (body.position.dy >= bottom && vy > 0) {
       vy = 0;
-      vx *= .85;
+      vx *= .98;
       body.angularVelocity *= .8;
     }
     body.position = Offset(

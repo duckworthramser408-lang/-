@@ -16,10 +16,13 @@ void main() {
   testWidgets('设置右侧直接返回首页，待选牌和游戏进度保存，再进入按隐私流程恢复', (tester) async {
     final storage = ComputerStorage();
     final engine = startGame()..acknowledgePrivacy();
-    await tester.pumpWidget(HappinessThreadsApp(
-      storage: storage, restoredState: engine.state,
-      computerStorage: ComputerStorage(),
-    ));
+    await tester.pumpWidget(
+      HappinessThreadsApp(
+        storage: storage,
+        restoredState: engine.state,
+        computerStorage: ComputerStorage(),
+      ),
+    );
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const ValueKey('game-rules-dismiss')));
     await tester.pumpAndSettle();
@@ -29,10 +32,16 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const ValueKey('omen-card-1')));
     await tester.pumpAndSettle();
-    final controller = tester.widget<GamePage>(find.byType(GamePage)).controller;
+    final controller = tester
+        .widget<GamePage>(find.byType(GamePage))
+        .controller;
     final before = controller.state.toJson();
-    final settings = tester.getRect(find.byKey(const ValueKey('settings-button')));
-    final home = tester.getRect(find.byKey(const ValueKey('return-home-button')));
+    final settings = tester.getRect(
+      find.byKey(const ValueKey('settings-button')),
+    );
+    final home = tester.getRect(
+      find.byKey(const ValueKey('return-home-button')),
+    );
     expect(home.left, closeTo(settings.right + 8, .01));
     expect(home.top, settings.top);
     await tester.tap(find.byKey(const ValueKey('return-home-button')));
@@ -58,11 +67,15 @@ void main() {
       addTearDown(tester.view.reset);
       final engine = startGame()..acknowledgePrivacy();
       final controller = GameController(
-        storage: ComputerStorage(), restoredState: engine.state,
+        storage: ComputerStorage(),
+        restoredState: engine.state,
       );
-      await tester.pumpWidget(MaterialApp(
-        theme: buildGameTheme(), home: GamePage(controller: controller),
-      ));
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: buildGameTheme(),
+          home: GamePage(controller: controller),
+        ),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.text('已回避，继续'));
       await tester.pumpAndSettle();
@@ -72,24 +85,52 @@ void main() {
         await tester.tap(hand);
         await tester.pumpAndSettle();
         final preview = find.byType(ActionCardPreview);
-        final bounds = tester.getRect(find.byKey(const ValueKey('card-preview-content')));
-        final rounded = tester.widget<ClipRRect>(find.descendant(
-          of: preview, matching: find.byKey(ValueKey('action-card-rounded-${card.id}')),
-        ));
-        expect(rounded.borderRadius.resolve(TextDirection.ltr).topLeft.x, greaterThan(0));
-        expect(find.descendant(of: preview, matching: find.byType(Container)), findsNothing);
-        expect(find.descendant(of: preview,
-          matching: find.text('啃食 ${card.instructions.length} 次')), findsNothing);
-        final description = tester.getRect(find.byKey(const ValueKey('preview-card-effect')));
-        final title = tester.getRect(find.byKey(const ValueKey('preview-card-name')));
+        final bounds = tester.getRect(
+          find.byKey(const ValueKey('card-preview-content')),
+        );
+        final rounded = tester.widget<ClipRRect>(
+          find.descendant(
+            of: preview,
+            matching: find.byKey(ValueKey('action-card-rounded-${card.id}')),
+          ),
+        );
+        expect(
+          rounded.borderRadius.resolve(TextDirection.ltr).topLeft.x,
+          greaterThan(0),
+        );
+        expect(
+          find.descendant(of: preview, matching: find.byType(Container)),
+          findsNothing,
+        );
+        expect(
+          find.descendant(
+            of: preview,
+            matching: find.text('啃食 ${card.instructions.length} 次'),
+          ),
+          findsNothing,
+        );
+        final description = tester.getRect(
+          find.byKey(const ValueKey('preview-card-effect')),
+        );
+        final title = tester.getRect(
+          find.byKey(const ValueKey('preview-card-name')),
+        );
         expect(description.top, greaterThan(bounds.center.dy));
         expect(title.top, greaterThan(bounds.center.dy));
         expect(description.bottom, lessThanOrEqualTo(bounds.bottom));
         expect(description.left, greaterThanOrEqualTo(bounds.left));
         expect(description.right, lessThanOrEqualTo(bounds.right));
-        expect(tester.widgetList<InfectionMethodIcon>(find.descendant(
-          of: preview, matching: find.byType(InfectionMethodIcon),
-        )).map((icon) => icon.method), card.displayInstructions);
+        expect(
+          tester
+              .widgetList<InfectionMethodIcon>(
+                find.descendant(
+                  of: preview,
+                  matching: find.byType(InfectionMethodIcon),
+                ),
+              )
+              .map((icon) => icon.method),
+          card.displayInstructions,
+        );
         expect(controller.state.playedOmenIds, isEmpty);
       }
       await tester.pumpWidget(const SizedBox.shrink());
@@ -101,19 +142,29 @@ void main() {
   testWidgets('夜间三个寄生作物下方独立蓝色光晕，交接/后台与白天不泄露身份', (tester) async {
     final engine = startGame()..acknowledgePrivacy();
     final controller = GameController(
-      storage: ComputerStorage(), restoredState: engine.state,
+      storage: ComputerStorage(),
+      restoredState: engine.state,
     );
-    await tester.pumpWidget(MaterialApp(home: GamePage(controller: controller)));
+    await tester.pumpWidget(
+      MaterialApp(home: GamePage(controller: controller)),
+    );
     await tester.pumpAndSettle();
-    Finder glows() => find.byWidgetPredicate((widget) =>
-      widget.key is ValueKey<String> &&
-      (widget.key as ValueKey<String>).value.startsWith('accomplice-ground-glow-'));
+    Finder glows() => find.byWidgetPredicate(
+      (widget) =>
+          widget.key is ValueKey<String> &&
+          (widget.key as ValueKey<String>).value.startsWith(
+            'accomplice-soil-outline-',
+          ),
+    );
     expect(glows(), findsNothing);
     await tester.tap(find.text('已回避，继续'));
     await tester.pumpAndSettle();
     expect(glows(), findsNWidgets(3));
     for (final id in [1, 5, 25]) {
-      expect(find.byKey(ValueKey('accomplice-ground-glow-$id')), findsOneWidget);
+      expect(
+        find.byKey(ValueKey('accomplice-soil-outline-$id')),
+        findsOneWidget,
+      );
     }
     // 先走真实设备的inactive交接；paused时Flutter已暂停绘制帧。
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
