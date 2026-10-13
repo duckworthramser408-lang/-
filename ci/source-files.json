@@ -901,8 +901,8 @@
   },
   {
     "path": "lib/audio/action_sound_controller.dart",
-    "size": 832,
-    "sha256": "C00D28C3AC453AB194EBF237D47E0C321C0C86CCAFB3096C948446F8133D4D4A"
+    "size": 865,
+    "sha256": "06DBB099325CB7DF6BFC27223425029F6379CA11EBB676F19A7B6202A80975A2"
   },
   {
     "path": "lib/audio/background_music_controller.dart",
@@ -1001,8 +1001,8 @@
   },
   {
     "path": "lib/ui/crop_touch_controller.dart",
-    "size": 1917,
-    "sha256": "E92787C02EAB8CC7B980B99B85C653690BB3DE71685E3A3CF5B6E6C02E27E2BC"
+    "size": 2039,
+    "sha256": "E79416029CF92B88705E3D4A9DAA6300062ABC93AD7BB0640D74D8F1793C9939"
   },
   {
     "path": "lib/ui/farm_scene_geometry.dart",
@@ -1031,8 +1031,8 @@
   },
   {
     "path": "lib/ui/game_page.dart",
-    "size": 43400,
-    "sha256": "F279644B3EDA90FBF58ED605C27A88ED059CA4EC3753C8784A30C5A4468E30E5"
+    "size": 43962,
+    "sha256": "299D4D052079B93822B68898E8B9C9502A3AD4332E40800C32CC3B09E2DB4E2F"
   },
   {
     "path": "lib/ui/game_theme.dart",
@@ -1046,8 +1046,8 @@
   },
   {
     "path": "lib/ui/mode_sticker_physics.dart",
-    "size": 8207,
-    "sha256": "C6D001D6256B1513FD68CCAC710ED35F9FB95AC69871C8850E673228C47122F3"
+    "size": 8254,
+    "sha256": "B2E8BFA5E66811ABA2EF398443F638240FEFF122A59E26466329EB58880CA43D"
   },
   {
     "path": "lib/ui/paper_surface.dart",
@@ -1066,8 +1066,8 @@
   },
   {
     "path": "lib/ui/widgets/action_card_preview.dart",
-    "size": 8058,
-    "sha256": "69CE9FD1B5D8086D67F5307B3044D5ADB71E583FF98509ADB3E1D286C51E1DCD"
+    "size": 8827,
+    "sha256": "ECBA72D436CBB29259CF74F04221C7F95A206D2F58D876F73285912EC18352B6"
   },
   {
     "path": "lib/ui/widgets/crop_image_view.dart",
@@ -1076,8 +1076,8 @@
   },
   {
     "path": "lib/ui/widgets/crop_touch_lift.dart",
-    "size": 2367,
-    "sha256": "021EC1F0663FEF2071D9E0CAADDCC1DE2CB10547F7C8B76E545AFEBB6467B541"
+    "size": 2624,
+    "sha256": "9E47CB765E1F4FE92A511995384DEFE913905F95386A3AB41BD9BCBCADA38269"
   },
   {
     "path": "lib/ui/widgets/deduction_note_widgets.dart",
@@ -1111,8 +1111,8 @@
   },
   {
     "path": "lib/ui/widgets/girl_card_view.dart",
-    "size": 12740,
-    "sha256": "F3FD043BB029468F2D58DF3BB3A759D427EC8BCE4A3FB4B6CF6854C0CE65BA90"
+    "size": 13351,
+    "sha256": "AAF54ED20C748EB435FADFABB3BD349D8DD0BEF2E32271F4BE8545B1565A9A08"
   },
   {
     "path": "lib/ui/widgets/infection_round_legend.dart",
@@ -1181,8 +1181,8 @@
   },
   {
     "path": "test/card_image_test.dart",
-    "size": 10240,
-    "sha256": "2CD74CB25074A86B4FFFCB72A337B59F708E586688ACF4D4C940861E471718E6"
+    "size": 10149,
+    "sha256": "7476B2D4F248483A4C9790FF3B2658BF7262EE3D48EA12287320CACD38FE6214"
   },
   {
     "path": "test/computer_mode_page_test.dart",
@@ -1276,8 +1276,8 @@
   },
   {
     "path": "test/mode_sticker_physics_test.dart",
-    "size": 4797,
-    "sha256": "37D0F5FFF51857846E31EB1EB41D383D3E7AE02C3CFCA99C9EB679292DC6EFDC"
+    "size": 4838,
+    "sha256": "ED1E1C3F60C103FA4288C12A2C8F440CBBA1162AB8F9BE75EA31FB28903E9EF3"
   },
   {
     "path": "test/monitored_infection_limit_test.dart",
@@ -1336,12 +1336,12 @@
   },
   {
     "path": "test/surveillance_undo_test.dart",
-    "size": 7460,
-    "sha256": "8144C1172ADE17D2F61AB51C1F025EBAA482566F88E3EA5219BCB618CA3BD128"
+    "size": 7646,
+    "sha256": "2E2BFD267732C1FDC8B24C84E944DDE29E4B00F9C5A1B05FF037E99478B439C4"
   },
   {
     "path": "test/touch_and_turn_update_test.dart",
-    "size": 6851,
-    "sha256": "7C9995FF2E14C9EB6684B1DD948C8D417B448221F6E166DC56069831A1DED051"
+    "size": 7340,
+    "sha256": "188C5A9CD5FDDFF666DAF862D0C09B4322743A9B67FC3B0ADF9C2D852E90003F"
   }
 ]

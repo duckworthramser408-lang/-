@@ -475,18 +475,24 @@ class _GamePageState extends State<GamePage>
         .join('\n');
   }
 
-
   Widget _resultCropTouch(int id, Widget child) {
     const size = Size(360, 640);
     return Listener(
       onPointerDown: (event) {
         if (_backgrounded) return;
-        _cropTouch.touch(event.pointer, FarmSceneGeometry.plotRect(id, size).center, size);
-        if (_music.enabled) { _cardSound.pop(); }
+        _cropTouch.touch(
+          event.pointer,
+          FarmSceneGeometry.plotRect(id, size).center,
+          size,
+        );
+        if (_music.enabled) {
+          _cardSound.pop();
+        }
       },
       onPointerUp: (event) => _cropTouch.release(event.pointer, size),
       onPointerCancel: (event) => _cropTouch.release(event.pointer, size),
-      child: child);
+      child: child,
+    );
   }
 
   Widget _resultContent() {
@@ -512,13 +518,16 @@ class _GamePageState extends State<GamePage>
                       children: [
                         AspectRatio(
                           aspectRatio: 1,
-                          child: _resultCropTouch(id, GirlCardView(
-                            girl: GameArtwork.cardForDisplay(state.girl(id)),
-                            terrain: true,
-      cropTouch: _cropTouch,
-                            onTap: null,
-                            revealedAccomplice: true,
-                          )),
+                          child: _resultCropTouch(
+                            id,
+                            GirlCardView(
+                              girl: GameArtwork.cardForDisplay(state.girl(id)),
+                              terrain: true,
+                              cropTouch: _cropTouch,
+                              onTap: null,
+                              revealedAccomplice: true,
+                            ),
+                          ),
                         ),
                         const SizedBox(height: 4),
                         Text('第${(id - 1) ~/ 5 + 1}行·第${(id - 1) % 5 + 1}列'),
@@ -918,41 +927,67 @@ class _GamePageState extends State<GamePage>
     final range = _computerMode
         ? <int>{}
         : controller.infectionRangePreviewTargetIds;
-    final touchEnabled = !_backgrounded && !_dialogOpen && !controller.resumePrivacyRequired && !_resumeCurtain && !controller.isComputerTurn;
+    final touchEnabled =
+        !_backgrounded &&
+        !_dialogOpen &&
+        !controller.resumePrivacyRequired &&
+        !_resumeCurtain &&
+        !controller.isComputerTurn;
     return Listener(
-      onPointerDown: (event) { if (touchEnabled) { _cropTouch.touch(event.pointer, event.localPosition, sceneSize); if (_music.enabled && state.girls.any((girl) => FarmSceneGeometry.plotRect(girl.id, sceneSize).contains(event.localPosition))) { _cardSound.pop(); } } },
-      onPointerMove: (event) { if (touchEnabled) { _cropTouch.touch(event.pointer, event.localPosition, sceneSize); } },
+      onPointerDown: (event) {
+        if (touchEnabled) {
+          _cropTouch.touch(event.pointer, event.localPosition, sceneSize);
+          if (_music.enabled &&
+              state.girls.any(
+                (girl) => FarmSceneGeometry.plotRect(
+                  girl.id,
+                  sceneSize,
+                ).contains(event.localPosition),
+              )) {
+            _cardSound.pop();
+          }
+        }
+      },
+      onPointerMove: (event) {
+        if (touchEnabled) {
+          _cropTouch.touch(event.pointer, event.localPosition, sceneSize);
+        }
+      },
       onPointerUp: (event) => _cropTouch.release(event.pointer, sceneSize),
       onPointerCancel: (event) => _cropTouch.release(event.pointer, sceneSize),
       child: SizedBox.expand(
-      key: const ValueKey('board-grid'),
-      child: Stack(
-        children: [
-          for (final girl in state.girls)
-            Positioned.fromRect(
-              key: ValueKey('farm-plot-${girl.id}'),
-              rect: FarmSceneGeometry.plotRect(girl.id, sceneSize),
-              child:
-                  state.phase == GamePhase.heroTurn ||
-                      state.phase == GamePhase.gameOver
-                  ? DeductionNotePlot(
-                      plotId: girl.id,
-                      notes: state.deductionNotes,
-                      enabled:
-                          state.phase == GamePhase.heroTurn && !_dialogOpen,
-                      onPlace: (id, drag) => controller.placeDeductionNote(
-                        id,
-                        drag.symbol,
-                        fromPlotId: drag.fromPlotId,
-                      ),
-                      onRemove: controller.removeDeductionNote,
-                      child: _plot(girl.id, rangeHint: range.contains(girl.id)),
-                    )
-                  : _plot(girl.id, rangeHint: range.contains(girl.id)),
-            ),
-        ],
+        key: const ValueKey('board-grid'),
+        child: Stack(
+          children: [
+            for (final girl in state.girls)
+              Positioned.fromRect(
+                key: ValueKey('farm-plot-${girl.id}'),
+                rect: FarmSceneGeometry.plotRect(girl.id, sceneSize),
+                child:
+                    state.phase == GamePhase.heroTurn ||
+                        state.phase == GamePhase.gameOver
+                    ? DeductionNotePlot(
+                        plotId: girl.id,
+                        notes: state.deductionNotes,
+                        enabled:
+                            state.phase == GamePhase.heroTurn && !_dialogOpen,
+                        onPlace: (id, drag) => controller.placeDeductionNote(
+                          id,
+                          drag.symbol,
+                          fromPlotId: drag.fromPlotId,
+                        ),
+                        onRemove: controller.removeDeductionNote,
+                        child: _plot(
+                          girl.id,
+                          rangeHint: range.contains(girl.id),
+                        ),
+                      )
+                    : _plot(girl.id, rangeHint: range.contains(girl.id)),
+              ),
+          ],
+        ),
       ),
-    ));
+    );
   }
 
   Widget _plot(int id, {bool rangeHint = false}) {

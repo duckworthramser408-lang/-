@@ -50,8 +50,12 @@ class ModeStickerPhysics {
   double _accumulator = 0;
   double _quietTime = 0;
   Offset _gravityDirection = Offset.zero;
-  Rect get bounds => Rect.fromLTRB(-size.width * .20, -size.height * .20,
-      size.width * 1.20, size.height * 1.20);
+  Rect get bounds => Rect.fromLTRB(
+    -size.width * .20,
+    -size.height * .20,
+    size.width * 1.20,
+    size.height * 1.20,
+  );
   double get gravity => size.height * .75;
 
   // 保留旧公开入口；含义改为更新重力方向，绝不直接改速度。
@@ -142,10 +146,12 @@ class ModeStickerPhysics {
     final direction = _gravityDirection / _gravityDirection.distance;
     final supported = [
       for (final body in bodies)
-        (direction.dx < -.05 && body.position.dx <= bounds.left + body.wallInset + .5) ||
+        (direction.dx < -.05 &&
+                body.position.dx <= bounds.left + body.wallInset + .5) ||
             (direction.dx > .05 &&
                 body.position.dx >= bounds.right - body.wallInset - .5) ||
-            (direction.dy < -.05 && body.position.dy <= bounds.top + body.wallInset + .5) ||
+            (direction.dy < -.05 &&
+                body.position.dy <= bounds.top + body.wallInset + .5) ||
             (direction.dy > .05 &&
                 body.position.dy >= bounds.bottom - body.wallInset - .5),
     ];

@@ -137,13 +137,18 @@ void main() {
     GameState.fromJson(engine.state.toJson());
   });
 
-
   for (final mode in GameMode.values) {
     test('模式恢复旧分批白天可撤销，当前确认直接保存交接并锁定', () async {
       final storage = UndoStorage();
-      final engine = startHeroTurn()..tapCard(1)..submitSurveillance();
-      final controller = GameController(storage: storage, restoredState: engine.state, mode: mode,
-        computerDelay: const Duration(days: 1));
+      final engine = startHeroTurn()
+        ..tapCard(1)
+        ..submitSurveillance();
+      final controller = GameController(
+        storage: storage,
+        restoredState: engine.state,
+        mode: mode,
+        computerDelay: const Duration(days: 1),
+      );
       controller.tapCard(1);
       expect(controller.state.monitorsPlacedThisRound, 0);
       controller.tapCard(9);
@@ -153,30 +158,47 @@ void main() {
       expect(storage.saved!.girl(9).monitoredInRound(1), isTrue);
       final snapshot = storage.saved!;
       controller.dispose();
-      final restored = GameController(storage: storage,
-        restoredState: GameState.fromJson(snapshot.toJson()), mode: mode,
-        computerDelay: const Duration(days: 1));
+      final restored = GameController(
+        storage: storage,
+        restoredState: GameState.fromJson(snapshot.toJson()),
+        mode: mode,
+        computerDelay: const Duration(days: 1),
+      );
       restored.tapCard(9);
       expect(restored.state.girl(9).monitoredInRound(1), isTrue);
       expect(restored.state.phase, GamePhase.nightPrivacy);
       restored.dispose();
     });
     testWidgets('模式确认前可取消，确认后自动交接，没有单独结束按钮', (tester) async {
-      final controller = GameController(storage: UndoStorage(), restoredState: startHeroTurn().state,
-        mode: mode, computerDelay: const Duration(days: 1));
-      await tester.pumpWidget(MaterialApp(theme: buildGameTheme(), home: GamePage(controller: controller)));
+      final controller = GameController(
+        storage: UndoStorage(),
+        restoredState: startHeroTurn().state,
+        mode: mode,
+        computerDelay: const Duration(days: 1),
+      );
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: buildGameTheme(),
+          home: GamePage(controller: controller),
+        ),
+      );
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(const ValueKey(1))); await tester.pumpAndSettle();
-      await tester.tap(find.byKey(const ValueKey(1))); await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey(1)));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey(1)));
+      await tester.pumpAndSettle();
       expect(controller.state.selectedIds, isEmpty);
-      await tester.tap(find.byKey(const ValueKey(1))); await tester.pumpAndSettle();
-      await tester.tap(find.text('确认标记')); await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey(1)));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('确认标记'));
+      await tester.pumpAndSettle();
       expect(controller.state.phase, GamePhase.nightPrivacy);
       expect(controller.state.girl(1).monitoredInRound(1), isTrue);
       expect(find.text('结束戴夫行动'), findsNothing);
       expect(find.byType(GirlCardView), findsNothing);
       await controller.flushSave();
-      await tester.pumpWidget(const SizedBox.shrink()); controller.dispose();
+      await tester.pumpWidget(const SizedBox.shrink());
+      controller.dispose();
       expect(tester.takeException(), isNull);
     });
   }

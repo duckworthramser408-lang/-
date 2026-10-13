@@ -47,7 +47,9 @@ class GirlCardView extends StatelessWidget {
   final bool hintPulseLit;
   final CropTouchController? cropTouch;
 
-  Widget _lift(Widget child) => cropTouch == null ? child : CropTouchLift(plotId: girl.id, motion: cropTouch!, child: child);
+  Widget _lift(Widget child) => cropTouch == null
+      ? child
+      : CropTouchLift(plotId: girl.id, motion: cropTouch!, child: child);
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +117,9 @@ class GirlCardView extends StatelessWidget {
             border: frameBorder,
           ),
           child: ClipRRect(
-            clipBehavior: terrain && cropTouch != null ? Clip.none : Clip.antiAlias,
+            clipBehavior: terrain && cropTouch != null
+                ? Clip.none
+                : Clip.antiAlias,
             borderRadius: BorderRadius.circular(9),
             child: Material(
               color: terrain ? Colors.transparent : placeholder,
@@ -123,7 +127,9 @@ class GirlCardView extends StatelessWidget {
                 onTap: onTap,
                 child: Stack(
                   fit: StackFit.expand,
-                  clipBehavior: terrain && cropTouch != null ? Clip.none : Clip.hardEdge,
+                  clipBehavior: terrain && cropTouch != null
+                      ? Clip.none
+                      : Clip.hardEdge,
                   children: [
                     // 底色始终保留，图片未配置、加载中或失败时自动兜底。
                     ColoredBox(
@@ -135,27 +141,35 @@ class GirlCardView extends StatelessWidget {
                         night: night,
                         filter: GameNightStyle.crop,
                         key: ValueKey('crop-tint-${girl.id}'),
-                        child: _lift(CropImageView(artwork: crop, plotId: girl.id, eaten: girl.isInfected)),
+                        child: _lift(
+                          CropImageView(
+                            artwork: crop,
+                            plotId: girl.id,
+                            eaten: girl.isInfected,
+                          ),
+                        ),
                       )
                     else if (imagePath != null && imagePath.isNotEmpty)
                       GameNightStyle.apply(
                         night: night,
                         filter: GameNightStyle.crop,
-                        child: _lift(Padding(
-                          padding: const EdgeInsets.all(3),
-                          child: Image.asset(
-                            imagePath,
-                            key: ValueKey('card-image-${girl.id}'),
-                            fit: BoxFit.contain,
-                            excludeFromSemantics: true,
-                            errorBuilder: (_, error, stackTrace) =>
-                                SizedBox.expand(
-                                  key: ValueKey(
-                                    'card-image-fallback-${girl.id}',
+                        child: _lift(
+                          Padding(
+                            padding: const EdgeInsets.all(3),
+                            child: Image.asset(
+                              imagePath,
+                              key: ValueKey('card-image-${girl.id}'),
+                              fit: BoxFit.contain,
+                              excludeFromSemantics: true,
+                              errorBuilder: (_, error, stackTrace) =>
+                                  SizedBox.expand(
+                                    key: ValueKey(
+                                      'card-image-fallback-${girl.id}',
+                                    ),
                                   ),
-                                ),
+                            ),
                           ),
-                        )),
+                        ),
                       ),
                     if (girl.isInfected)
                       ColoredBox(
@@ -185,11 +199,20 @@ class GirlCardView extends StatelessWidget {
                         ),
                       ),
                     if (terrain && accompliceHighlight)
-                      Positioned.fill(child: IgnorePointer(child: DecoratedBox(
-                        key: ValueKey('accomplice-soil-outline-${girl.id}'),
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(9),
-                          border: Border.all(color: const Color(0xFF9ADFFF), width: 2.5)),
-                      ))),
+                      Positioned.fill(
+                        child: IgnorePointer(
+                          child: DecoratedBox(
+                            key: ValueKey('accomplice-soil-outline-${girl.id}'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(9),
+                              border: Border.all(
+                                color: const Color(0xFF9ADFFF),
+                                width: 2.5,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     // 不显示角色名称或编号，纯色占位卡只保留游戏指示物。
                     Positioned(
                       top: 3,

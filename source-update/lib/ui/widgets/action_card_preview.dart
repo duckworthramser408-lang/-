@@ -27,22 +27,33 @@ class ActionCardPreview extends StatefulWidget {
 
 class _ActionCardPreviewState extends State<ActionCardPreview>
     with TickerProviderStateMixin {
-  late final AnimationController _press = AnimationController(vsync: this,
-    duration: const Duration(milliseconds: 80), reverseDuration: const Duration(milliseconds: 180));
-  late final AnimationController _sparkle = AnimationController(vsync: this,
-    duration: const Duration(milliseconds: 560));
+  late final AnimationController _press = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 80),
+    reverseDuration: const Duration(milliseconds: 180),
+  );
+  late final AnimationController _sparkle = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 560),
+  );
   bool _pressed = false;
   @override
   void initState() {
     super.initState();
     _press.addStatusListener((status) {
-      if (status == AnimationStatus.completed && !_pressed) { _press.reverse(); }
+      if (status == AnimationStatus.completed && !_pressed) {
+        _press.reverse();
+      }
     });
   }
+
   void _releasePress() {
     _pressed = false;
-    if (_press.status == AnimationStatus.completed) { _press.reverse(); }
+    if (_press.status == AnimationStatus.completed) {
+      _press.reverse();
+    }
   }
+
   late final AnimationController _fade = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 180),
@@ -93,7 +104,11 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
               return Center(
                 child: GestureDetector(
                   key: widget.frameKey,
-                  onTapDown: (_) { _pressed = true; _press.forward(); _sparkle.forward(from: 0); },
+                  onTapDown: (_) {
+                    _pressed = true;
+                    _press.forward();
+                    _sparkle.forward(from: 0);
+                  },
                   onTapUp: (_) => _releasePress(),
                   onTapCancel: _releasePress,
                   onTap: () {}, // 点击只反馈，不出牌、不取消预览。
@@ -101,20 +116,38 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
                     key: const ValueKey('card-preview-content'),
                     width: width,
                     height: width * 1672 / 941,
-                    child: AnimatedBuilder(animation: _press, builder: (context, child) =>
-                      Transform.translate(key: const ValueKey('preview-press'),
+                    child: AnimatedBuilder(
+                      animation: _press,
+                      builder: (context, child) => Transform.translate(
+                        key: const ValueKey('preview-press'),
                         offset: Offset(0, 4 * _press.value),
-                        child: Transform.scale(scale: 1 - .018 * _press.value, child: child)),
-                      child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, children: [ActionCardImage(
-                      key: const ValueKey('preview-high-resolution-image'),
-                      card: widget.card,
-                      highResolution: true,
-                      previewDetails: true,
-                      night: widget.night,
+                        child: Transform.scale(
+                          scale: 1 - .018 * _press.value,
+                          child: child,
+                        ),
+                      ),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        fit: StackFit.expand,
+                        children: [
+                          ActionCardImage(
+                            key: const ValueKey(
+                              'preview-high-resolution-image',
+                            ),
+                            card: widget.card,
+                            highResolution: true,
+                            previewDetails: true,
+                            night: widget.night,
+                          ),
+                          IgnorePointer(
+                            child: CustomPaint(
+                              key: const ValueKey('preview-touch-sparkles'),
+                              painter: _PreviewTouchSparkles(_sparkle),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    IgnorePointer(child: CustomPaint(key: const ValueKey('preview-touch-sparkles'),
-                      painter: _PreviewTouchSparkles(_sparkle))),
-                    ])),
                   ),
                 ),
               );
@@ -135,14 +168,27 @@ class _PreviewTouchSparkles extends CustomPainter {
     final t = Curves.easeOut.transform(animation.value);
     for (var i = 0; i < 14; i++) {
       final side = i.isEven ? -1.0 : 1.0;
-      final origin = Offset(side < 0 ? 0 : size.width, size.height * (.30 + (i ~/ 2) * .064));
-      final point = origin + Offset(side * (3 + t * (9 + (i % 4) * 3)), -t * (4 + i % 5 * 2));
-      canvas.drawCircle(point, .8 + (i % 3) * .35,
-        Paint()..color = const Color(0xFFFFF8DC).withValues(alpha: (1 - animation.value) * .85));
+      final origin = Offset(
+        side < 0 ? 0 : size.width,
+        size.height * (.30 + (i ~/ 2) * .064),
+      );
+      final point =
+          origin +
+          Offset(side * (3 + t * (9 + (i % 4) * 3)), -t * (4 + i % 5 * 2));
+      canvas.drawCircle(
+        point,
+        .8 + (i % 3) * .35,
+        Paint()
+          ..color = const Color(
+            0xFFFFF8DC,
+          ).withValues(alpha: (1 - animation.value) * .85),
+      );
     }
   }
+
   @override
-  bool shouldRepaint(_PreviewTouchSparkles oldDelegate) => oldDelegate.animation != animation;
+  bool shouldRepaint(_PreviewTouchSparkles oldDelegate) =>
+      oldDelegate.animation != animation;
 }
 
 /// A finite burst after the preview is gone. Deterministic decorative particles

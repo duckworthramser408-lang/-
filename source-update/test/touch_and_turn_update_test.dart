@@ -65,6 +65,8 @@ void main() {
   testWidgets('点击与高速划过抬起作物，固定土地/游戏选择不随滑动改变，松手落回与后台清理', (tester) async {
     tester.view.physicalSize = const Size(360, 640); tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
+    final sounds = <String>[];
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(ActionSoundController.channel, (call) async { sounds.add(call.method); return null; });
     final controller = GameController(storage: ComputerStorage(), restoredState: startHeroTurn().state);
     await tester.pumpWidget(MaterialApp(theme: buildGameTheme(), home: GamePage(controller: controller)));
     await tester.pumpAndSettle();
@@ -81,11 +83,14 @@ void main() {
     expect(tester.widget<Transform>(find.byKey(const ValueKey('crop-lift-8'))).transform.storage[13], 0);
     await tester.tap(plot); await tester.pump(); await tester.pump(const Duration(milliseconds: 60));
     expect(controller.state.selectedIds, {8});
+    expect(sounds.where((s) => s == 'pop'), hasLength(2));
+    expect(tester.widget<Transform>(find.byKey(const ValueKey('crop-lift-8'))).transform.storage[12], 0, reason: '不产生水平位移');
     expect(tester.widget<Transform>(find.byKey(const ValueKey('crop-lift-8'))).transform.storage[13], lessThan(0));
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive); await tester.pump();
     expect(tester.widget<Transform>(find.byKey(const ValueKey('crop-lift-8'))).transform.storage[13], 0);
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
     await tester.pumpWidget(const SizedBox.shrink()); controller.dispose();
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(ActionSoundController.channel, null);
     expect(tester.takeException(), isNull);
   });
 

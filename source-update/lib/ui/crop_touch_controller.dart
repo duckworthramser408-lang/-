@@ -12,11 +12,15 @@ class CropTouchController extends ChangeNotifier {
     _pointers[pointer] = position;
     held = {
       for (var id = 1; id <= 25; id++)
-        if (_pointers.values.any((p) => FarmSceneGeometry.plotRect(id, size).contains(p))) id,
+        if (_pointers.values.any(
+          (p) => FarmSceneGeometry.plotRect(id, size).contains(p),
+        ))
+          id,
     };
     swept = {
       for (var id = 1; id <= 25; id++)
-        if (_crosses(FarmSceneGeometry.plotRect(id, size), previous, position)) id,
+        if (_crosses(FarmSceneGeometry.plotRect(id, size), previous, position))
+          id,
     };
     notifyListeners();
   }
@@ -35,7 +39,11 @@ class CropTouchController extends ChangeNotifier {
       } else {
         var first = (axis.$3 - axis.$1) / axis.$2;
         var last = (axis.$4 - axis.$1) / axis.$2;
-        if (first > last) { final swap = first; first = last; last = swap; }
+        if (first > last) {
+          final swap = first;
+          first = last;
+          last = swap;
+        }
         low = low > first ? low : first;
         high = high < last ? high : last;
         if (low > high) return false;
@@ -48,13 +56,19 @@ class CropTouchController extends ChangeNotifier {
     _pointers.remove(pointer);
     held = {
       for (var id = 1; id <= 25; id++)
-        if (_pointers.values.any((p) => FarmSceneGeometry.plotRect(id, size).contains(p))) id,
+        if (_pointers.values.any(
+          (p) => FarmSceneGeometry.plotRect(id, size).contains(p),
+        ))
+          id,
     };
     swept = {};
     notifyListeners();
   }
 
   void reset() {
-    _pointers.clear(); held = {}; swept = {}; notifyListeners();
+    _pointers.clear();
+    held = {};
+    swept = {};
+    notifyListeners();
   }
 }

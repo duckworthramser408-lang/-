@@ -34,7 +34,7 @@ jobs:
         working-directory: app
         run: |
           flutter pub get --enforce-lockfile
-          dart format lib/game/game_engine.dart lib/game/game_controller.dart lib/ui/mode_sticker_physics.dart lib/ui/widgets/mode_sticker_scene.dart lib/ui/widgets/girl_card_view.dart lib/ui/widgets/action_card_preview.dart lib/ui/game_page.dart lib/ui/crop_touch_controller.dart lib/ui/widgets/crop_touch_lift.dart lib/audio/action_sound_controller.dart test/mode_sticker_motion_test.dart test/mode_sticker_physics_test.dart test/home_and_preview_update_test.dart test/touch_and_turn_update_test.dart test/action_card_hand_test.dart test/computer_mode_page_test.dart test/farm_interaction_hints_test.dart test/game_page_test.dart test/infection_limit_page_test.dart test/surveillance_undo_test.dart
+          dart format lib/game/game_engine.dart lib/game/game_controller.dart lib/ui/mode_sticker_physics.dart lib/ui/widgets/mode_sticker_scene.dart lib/ui/widgets/girl_card_view.dart lib/ui/widgets/action_card_preview.dart lib/ui/game_page.dart lib/ui/crop_touch_controller.dart lib/ui/widgets/crop_touch_lift.dart lib/audio/action_sound_controller.dart test/mode_sticker_motion_test.dart test/mode_sticker_physics_test.dart test/home_and_preview_update_test.dart test/touch_and_turn_update_test.dart test/action_card_hand_test.dart test/computer_mode_page_test.dart test/farm_interaction_hints_test.dart test/game_page_test.dart test/infection_limit_page_test.dart test/surveillance_undo_test.dart test/card_image_test.dart
           flutter analyze
           flutter test --machine > ../flutter-tests.jsonl
           flutter test --no-pub --dart-define=EXPORT_ART_PREVIEWS=true test/storybook_preview_test.dart

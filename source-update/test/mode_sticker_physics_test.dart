@@ -100,7 +100,10 @@ void main() {
       }
       expect(physics.isSleeping, isTrue, reason: '稳定重力下落稳停止刷新');
       final onFloor = physics.bodies
-          .where((b) => (b.position.dy - (size.height * 1.20 - b.wallInset)).abs() < 1)
+          .where(
+            (b) =>
+                (b.position.dy - (size.height * 1.20 - b.wallInset)).abs() < 1,
+          )
           .length;
       expect(onFloor, greaterThanOrEqualTo(20));
       final settled = physics.bodies.map((b) => b.position).toList();
