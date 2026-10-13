@@ -31,6 +31,18 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
     duration: const Duration(milliseconds: 80), reverseDuration: const Duration(milliseconds: 180));
   late final AnimationController _sparkle = AnimationController(vsync: this,
     duration: const Duration(milliseconds: 560));
+  bool _pressed = false;
+  @override
+  void initState() {
+    super.initState();
+    _press.addStatusListener((status) {
+      if (status == AnimationStatus.completed && !_pressed) _press.reverse();
+    });
+  }
+  void _releasePress() {
+    _pressed = false;
+    if (_press.status == AnimationStatus.completed) _press.reverse();
+  }
   late final AnimationController _fade = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 180),
@@ -81,9 +93,9 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
               return Center(
                 child: GestureDetector(
                   key: widget.frameKey,
-                  onTapDown: (_) { _press.forward(); _sparkle.forward(from: 0); },
-                  onTapUp: (_) => _press.reverse(),
-                  onTapCancel: () => _press.reverse(),
+                  onTapDown: (_) { _pressed = true; _press.forward(); _sparkle.forward(from: 0); },
+                  onTapUp: (_) => _releasePress(),
+                  onTapCancel: _releasePress,
                   onTap: () {}, // 点击只反馈，不出牌、不取消预览。
                   child: SizedBox(
                     key: const ValueKey('card-preview-content'),

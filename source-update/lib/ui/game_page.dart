@@ -906,8 +906,8 @@ class _GamePageState extends State<GamePage>
         : controller.infectionRangePreviewTargetIds;
     final touchEnabled = !_backgrounded && !_dialogOpen && !controller.resumePrivacyRequired && !_resumeCurtain && !controller.isComputerTurn;
     return Listener(
-      onPointerDown: (event) { if (touchEnabled) { _cropTouch.touch(event.pointer, event.localPosition, sceneSize); if (_music.enabled && _cropTouch.held.isNotEmpty) _cardSound.pop(); } },
-      onPointerMove: (event) { if (touchEnabled) _cropTouch.touch(event.pointer, event.localPosition, sceneSize); },
+      onPointerDown: (event) { if (touchEnabled) { _cropTouch.touch(event.pointer, event.localPosition, sceneSize); if (_music.enabled && state.girls.any((girl) => FarmSceneGeometry.plotRect(girl.id, sceneSize).contains(event.localPosition))) _cardSound.pop(); } },
+      onPointerMove: (event) { if (touchEnabled) { _cropTouch.touch(event.pointer, event.localPosition, sceneSize); } },
       onPointerUp: (event) => _cropTouch.release(event.pointer, sceneSize),
       onPointerCancel: (event) => _cropTouch.release(event.pointer, sceneSize),
       child: SizedBox.expand(

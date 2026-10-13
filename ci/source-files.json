@@ -1031,8 +1031,8 @@
   },
   {
     "path": "lib/ui/game_page.dart",
-    "size": 42770,
-    "sha256": "BE5F27F5CE6688EE20C640245D6EBB8F2A47A9A00E74C8E9F24BBBADC6238B5D"
+    "size": 42851,
+    "sha256": "74C64940B954543289DBB2BFA4AEAE1AB2556D9297D158983997D1B33FC84CB8"
   },
   {
     "path": "lib/ui/game_theme.dart",
@@ -1066,8 +1066,8 @@
   },
   {
     "path": "lib/ui/widgets/action_card_preview.dart",
-    "size": 7711,
-    "sha256": "729AC39B7B05F5CAFB97E4C2343734061FC4E08CCA7A78F449951AE4985DB1A4"
+    "size": 8050,
+    "sha256": "27914600E7A477BF61C4EE733781D50AD3D3E32FEE84CBDC2E3BE1ECB118B80A"
   },
   {
     "path": "lib/ui/widgets/crop_image_view.dart",
@@ -1076,8 +1076,8 @@
   },
   {
     "path": "lib/ui/widgets/crop_touch_lift.dart",
-    "size": 2363,
-    "sha256": "81DE04ECFF1FC3FB514154DF3441E20D4DB1129EB751E3A12EB0435FA5CB9A7B"
+    "size": 2367,
+    "sha256": "021EC1F0663FEF2071D9E0CAADDCC1DE2CB10547F7C8B76E545AFEBB6467B541"
   },
   {
     "path": "lib/ui/widgets/deduction_note_widgets.dart",
@@ -1341,7 +1341,7 @@
   },
   {
     "path": "test/touch_and_turn_update_test.dart",
-    "size": 6739,
-    "sha256": "57B795BFED15B7BA12F8039F6F0F66BDCD94B674882D4E33093A3BEC93A25ECC"
+    "size": 6752,
+    "sha256": "DBAF93EC2C7698D06942092A503EEB361B8D1718A9688C4D1A4F140B765F70D4"
   }
 ]

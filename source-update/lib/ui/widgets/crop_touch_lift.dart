@@ -23,7 +23,7 @@ class _CropTouchLiftState extends State<CropTouchLift>
     widget.motion.addListener(_touch);
     WidgetsBinding.instance.addObserver(this);
     _lift.addStatusListener((status) {
-      if (status == AnimationStatus.completed && !widget.motion.held.contains(widget.plotId)) _lift.reverse();
+      if (status == AnimationStatus.completed && !widget.motion.held.contains(widget.plotId)) { _lift.reverse(); }
     });
   }
   void _touch() {

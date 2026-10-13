@@ -91,7 +91,7 @@ void main() {
 
   testWidgets('预览点击下压与两侧光点不消费牌；仅成功出牌消失时叮一次', (tester) async {
     final calls = <String>[];
-    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(ActionSoundController.channel, (call) async { calls.add(call.method); });
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(ActionSoundController.channel, (call) async { calls.add(call.method); return null; });
     final controller = GameController(storage: ComputerStorage(), restoredState: (startGame()..acknowledgePrivacy()).state);
     controller.dismissResumePrivacy();
     await tester.pumpWidget(MaterialApp(theme: buildGameTheme(), home: GamePage(controller: controller)));
