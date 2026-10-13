@@ -73,13 +73,13 @@ void main() {
     final first = tester.getCenter(find.byKey(const ValueKey('farm-plot-6')));
     final last = tester.getCenter(find.byKey(const ValueKey('farm-plot-10')));
     final gesture = await tester.startGesture(first);
-    await gesture.moveTo(last); await tester.pump(const Duration(milliseconds: 100));
+    await gesture.moveTo(last); await tester.pump(); await tester.pump(const Duration(milliseconds: 100));
     expect(tester.widget<Transform>(find.byKey(const ValueKey('crop-lift-8'))).transform.storage[13], lessThan(0));
     expect(tester.getRect(plot), original);
     await gesture.up(); await tester.pumpAndSettle();
     expect(controller.state.selectedIds, isEmpty);
     expect(tester.widget<Transform>(find.byKey(const ValueKey('crop-lift-8'))).transform.storage[13], 0);
-    await tester.tap(plot); await tester.pump(const Duration(milliseconds: 60));
+    await tester.tap(plot); await tester.pump(); await tester.pump(const Duration(milliseconds: 60));
     expect(controller.state.selectedIds, {8});
     expect(tester.widget<Transform>(find.byKey(const ValueKey('crop-lift-8'))).transform.storage[13], lessThan(0));
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive); await tester.pump();
@@ -99,6 +99,7 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('omen-card-1'))); await tester.pumpAndSettle();
     final touch = await tester.startGesture(tester.getCenter(find.byKey(const ValueKey('card-preview-content'))));
     await tester.pump(const Duration(milliseconds: 110));
+    await tester.pump(const Duration(milliseconds: 90));
     expect(tester.widget<Transform>(find.byKey(const ValueKey('preview-press'))).transform.storage[13], greaterThan(0));
     expect(find.byKey(const ValueKey('preview-touch-sparkles')), findsOneWidget);
     expect(controller.state.phase, GamePhase.chooseOmen);

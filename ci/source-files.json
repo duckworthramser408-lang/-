@@ -1031,8 +1031,8 @@
   },
   {
     "path": "lib/ui/game_page.dart",
-    "size": 43371,
-    "sha256": "E4590DE119189A7C29A8073C61CB4E3FB46C8DCA6865DF01423A2E2E1DE57B94"
+    "size": 43400,
+    "sha256": "F279644B3EDA90FBF58ED605C27A88ED059CA4EC3753C8784A30C5A4468E30E5"
   },
   {
     "path": "lib/ui/game_theme.dart",
@@ -1111,8 +1111,8 @@
   },
   {
     "path": "lib/ui/widgets/girl_card_view.dart",
-    "size": 12703,
-    "sha256": "BEA7D24DB45C8AEEC1ABBBD198952047D33F559668422C0C8577A28FB8AFE7E9"
+    "size": 12740,
+    "sha256": "F3FD043BB029468F2D58DF3BB3A759D427EC8BCE4A3FB4B6CF6854C0CE65BA90"
   },
   {
     "path": "lib/ui/widgets/infection_round_legend.dart",
@@ -1186,8 +1186,8 @@
   },
   {
     "path": "test/computer_mode_page_test.dart",
-    "size": 14649,
-    "sha256": "CB90AEDC342963E052375367ADCA46AC00C4FCF21093F212C9D7DE8B7F4ED7B0"
+    "size": 14721,
+    "sha256": "600CBDB6283CBB98DFD35A867C9C3128A103A5D5C2CDB63F804DB29F975961EE"
   },
   {
     "path": "test/computer_opponent_test.dart",
@@ -1341,7 +1341,7 @@
   },
   {
     "path": "test/touch_and_turn_update_test.dart",
-    "size": 6752,
-    "sha256": "DBAF93EC2C7698D06942092A503EEB361B8D1718A9688C4D1A4F140B765F70D4"
+    "size": 6851,
+    "sha256": "7C9995FF2E14C9EB6684B1DD948C8D417B448221F6E166DC56069831A1DED051"
   }
 ]

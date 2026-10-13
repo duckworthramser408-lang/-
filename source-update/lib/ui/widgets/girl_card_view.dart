@@ -60,7 +60,7 @@ class GirlCardView extends StatelessWidget {
     final borderColor = identitySelection
         ? GamePalette.crimson
         : accompliceHighlight
-        ? const Color(0xFF8AD5F0)
+        ? (terrain ? const Color(0xFF8AD5F0) : GamePalette.markerBlue)
         : selectedCenter
         ? GamePalette.sky
         : revealedAccomplice

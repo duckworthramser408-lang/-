@@ -970,6 +970,7 @@ class _GamePageState extends State<GamePage>
       key: ValueKey(id),
       girl: GameArtwork.cardForDisplay(girl),
       terrain: true,
+      cropTouch: _cropTouch,
       night: _nightScene,
       rangeHint: rangeHint,
       hintPulseLit: _hintPulseLit,

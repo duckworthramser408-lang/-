@@ -267,6 +267,8 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('确认标记'));
     await tester.pumpAndSettle();
+    await finishComputerTurn(tester);
+    await startDetective(tester);
     final computerBefore = first.state.toJson();
     await returnToMenu(tester);
     expect(computer.saved!.toJson(), computerBefore);
