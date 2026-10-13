@@ -36,12 +36,12 @@ class _ActionCardPreviewState extends State<ActionCardPreview>
   void initState() {
     super.initState();
     _press.addStatusListener((status) {
-      if (status == AnimationStatus.completed && !_pressed) _press.reverse();
+      if (status == AnimationStatus.completed && !_pressed) { _press.reverse(); }
     });
   }
   void _releasePress() {
     _pressed = false;
-    if (_press.status == AnimationStatus.completed) _press.reverse();
+    if (_press.status == AnimationStatus.completed) { _press.reverse(); }
   }
   late final AnimationController _fade = AnimationController(
     vsync: this,

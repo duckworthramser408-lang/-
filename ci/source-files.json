@@ -1031,8 +1031,8 @@
   },
   {
     "path": "lib/ui/game_page.dart",
-    "size": 42851,
-    "sha256": "74C64940B954543289DBB2BFA4AEAE1AB2556D9297D158983997D1B33FC84CB8"
+    "size": 43371,
+    "sha256": "E4590DE119189A7C29A8073C61CB4E3FB46C8DCA6865DF01423A2E2E1DE57B94"
   },
   {
     "path": "lib/ui/game_theme.dart",
@@ -1066,8 +1066,8 @@
   },
   {
     "path": "lib/ui/widgets/action_card_preview.dart",
-    "size": 8050,
-    "sha256": "27914600E7A477BF61C4EE733781D50AD3D3E32FEE84CBDC2E3BE1ECB118B80A"
+    "size": 8058,
+    "sha256": "69CE9FD1B5D8086D67F5307B3044D5ADB71E583FF98509ADB3E1D286C51E1DCD"
   },
   {
     "path": "lib/ui/widgets/crop_image_view.dart",
