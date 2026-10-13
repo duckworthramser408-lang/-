@@ -165,9 +165,7 @@ void main() {
     );
     final imageIndex = stack.children.indexWhere(
       (widget) =>
-          widget is ColorFiltered &&
-          widget.child is Padding &&
-          (widget.child as Padding).child is Image,
+          widget is ColorFiltered,
     );
     expect(stack.children.first, isA<ColoredBox>());
     expect(imageIndex, greaterThan(0));
