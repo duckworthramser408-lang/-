@@ -168,7 +168,7 @@ void main() {
       final card = find.byKey(ValueKey(id));
       final frame = tester.widget<AnimatedContainer>(find.descendant(of: card, matching: find.byType(AnimatedContainer)).first);
       expect((frame.decoration! as BoxDecoration).boxShadow, isEmpty, reason: '身份蓝光不能填满土地内部');
-      final ring = tester.widget<DecoratedBox>(find.byKey(ValueKey('accomplice-soil-outline-'+id.toString())));
+      final ring = tester.widget<DecoratedBox>(find.byKey(ValueKey('accomplice-soil-outline-$id')));
       expect((ring.decoration as BoxDecoration).gradient, isNull);
     }
     // 先走真实设备的inactive交接；paused时Flutter已暂停绘制帧。
