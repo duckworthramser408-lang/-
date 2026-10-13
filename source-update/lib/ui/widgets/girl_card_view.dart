@@ -92,7 +92,7 @@ class GirlCardView extends StatelessWidget {
           padding: terrain ? EdgeInsets.zero : frameBorder.dimensions,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            boxShadow: glow
+            boxShadow: glow && !(terrain && accompliceHighlight)
                 ? [
                     BoxShadow(
                       color: borderColor.withValues(alpha: 0.65),

@@ -1111,8 +1111,8 @@
   },
   {
     "path": "lib/ui/widgets/girl_card_view.dart",
-    "size": 13351,
-    "sha256": "AAF54ED20C748EB435FADFABB3BD349D8DD0BEF2E32271F4BE8545B1565A9A08"
+    "size": 13388,
+    "sha256": "0F87F3B3E8F4D445F1BA3A876F9915E696E6EA7B0852526BB781861F9542D851"
   },
   {
     "path": "lib/ui/widgets/infection_round_legend.dart",
@@ -1251,8 +1251,8 @@
   },
   {
     "path": "test/home_and_preview_update_test.dart",
-    "size": 7902,
-    "sha256": "6599B86BF52470D0E5AE1F84202EF80638E065C38E639B554216E249517C49CE"
+    "size": 8374,
+    "sha256": "4305D2CACA7322C58417C63EA20308232722F94B5495500C446B2D5EE1DB65CD"
   },
   {
     "path": "test/infection_limit_page_test.dart",
